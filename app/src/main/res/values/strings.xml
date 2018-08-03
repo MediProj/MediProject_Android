@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">MediProject</string>
+    <string name="prev">이전</string>
 </resources>
