@@ -35,11 +35,13 @@
     <style name="btnPrev" parent="@style/btnNav" >
         <item name="android:layout_alignParentLeft">true</item>
         <!-- <item name="android:layout_alignParentStart">true</item> -->
+        <item name="android:onClick">onPrevClick</item>
     </style>
 
     <style name="btnNext" parent="@style/btnNav" >
         <item name="android:layout_alignParentRight">true</item>
         <!-- <item name="android:layout_alignParentEnd">true</item> -->
+        <item name="android:onClick">onNextClick</item>
     </style>
     <!-- Base Layout Widgets END -->
 

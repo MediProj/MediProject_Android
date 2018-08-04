@@ -11,13 +11,43 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainActivity">
+        <activity
+            android:name=".MainActivity">
+        </activity>
+
+        <activity
+            android:name=".BaseActivity">
+        </activity>
+
+        <activity
+            android:name=".ContainerSelectActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+
+        <activity
+            android:name=".PromptBottleActivity">
+        </activity>
+
+        <activity
+            android:name=".PromptDiaperActivity">
+        </activity>
+
+        <activity
+            android:name=".PromptGreenActivity">
+        </activity>
+
+        <activity
+            android:name=".RecordConsumeActivity">
+        </activity>
+
+        <activity
+            android:name=".RecordUrineActivity">
+        </activity>
+
     </application>
 
 </manifest>
