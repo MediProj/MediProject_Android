@@ -3,4 +3,24 @@
 
     <string name="prev">이전</string>
     <string name="next">다음</string>
+
+    <!-- 용기 종류 선택 -->
+    <string name="containerTitle">측정 대상 용기 선택</string>
+
+    <!-- 녹색 통 용기 안내 -->
+    <string name="greenTitle">녹색 소변통 무게 측정 안내</string>
+
+    <!-- 귀저기 용기 안내 -->
+    <string name="diaperTitle">귀저기 무게 측정 안내</string>
+
+    <!-- 투명 통 용기 안내 -->
+    <string name="bottleTitle">투명 통 무게 측정 안내</string>
+
+    <!-- 소변 무게 측정 -->
+    <string name="urineTitle">소변 무게 측정</string>
+
+    <!-- 섭취량 기록 -->
+    <string name="consumeTitle">섭취량 기록</string>
+    <string name="consumePrompt">식단 메뉴 중 드신 메뉴를 선택하세요.</string>
+
 </resources>
