@@ -44,11 +44,24 @@
     <!-- Base Layout Widgets END -->
 
     <!-- 3 Image Layout SETUP -->
-    <style name="img" >
-        <item name="android:layout_width">wrap_content</item>
+    <style name="linearImg" >
+        <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_below">@id/titleBar</item>
         <item name="android:layout_above">@id/btnPrev</item>
+        <item name="android:orientation">horizontal</item>
+    </style>
+
+    <style name="img" >
+        <item name="android:layout_width">0px</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:layout_below">@id/titleBar</item>
+        <item name="android:layout_above">@id/btnPrev</item>
+        <item name="android:background">#FFFFFF</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:layout_margin">20dp</item>
+        <item name="android:layout_gravity">center_vertical</item>
     </style>
 
     <style name="imgLeft" parent="@style/img">
@@ -66,4 +79,5 @@
         <!-- <item name="android:layout_alignParentEnd">true</item> -->
     </style>
     <!-- 3 Image Layout END -->
+
 </resources>
