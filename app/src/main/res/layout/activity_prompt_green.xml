@@ -1,10 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    style="@style/linearViewFull"
+    tools:context=".PromptGreenActivity">
 
     <TextView
         android:id="@+id/titleBar"
@@ -12,7 +11,7 @@
         android:text="@string/greenTitle" />
 
     <LinearLayout
-        style="@style/linearView">
+        style="@style/linearViewContent">
 
         <ImageView
             android:id="@+id/greenEx1"
@@ -34,14 +33,25 @@
 
     </LinearLayout>
 
-    <Button
-        android:id="@+id/btnPrev"
-        style="@style/btnPrev"
-        android:text="@string/prev" />
+    <LinearLayout
+        style="@style/linearViewBottom">
 
-    <Button
-        android:id="@+id/btnNext"
-        style="@style/btnNext"
-        android:text="@string/next" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 
-</RelativeLayout>
+            <Button
+                android:id="@+id/btnPrev"
+                style="@style/btnPrev"
+                android:text="@string/prev" />
+
+            <Button
+                android:id="@+id/btnNext"
+                style="@style/btnNext"
+                android:text="@string/next" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>
