@@ -19,7 +19,6 @@
     <Button
         android:id="@+id/btn_next"
         style="@style/btnNext"
-        android:text="@string/next"
-        />
+        android:text="@string/next" />
 
 </RelativeLayout>
