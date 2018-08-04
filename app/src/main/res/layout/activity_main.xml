@@ -7,17 +7,17 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/prompt"
+        android:id="@+id/titleBar"
         style="@style/titleBar"
         android:text="제목" />
 
     <Button
-        android:id="@+id/btn_prev"
+        android:id="@+id/btnPrev"
         style="@style/btnPrev"
         android:text="@string/prev" />
 
     <Button
-        android:id="@+id/btn_next"
+        android:id="@+id/btnNext"
         style="@style/btnNext"
         android:text="@string/next" />
 
