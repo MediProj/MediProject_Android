@@ -1,6 +1,8 @@
 <resources>
     <string name="app_name">MediProject</string>
 
+    <string name="titleDef">제목</string>
+
     <string name="prev">이전</string>
     <string name="next">다음</string>
 
