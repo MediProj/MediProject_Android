@@ -15,10 +15,14 @@
         style="@style/linearView">
 
         <GridView
+            android:id="@+id/menuGrid"
             android:layout_width="0px"
             android:layout_height="wrap_content"
-            android:layout_weight="1">
-
+            android:layout_weight="1"
+            android:gravity="center"
+            android:numColumns="2"
+            android:verticalSpacing="10dp"
+            android:horizontalSpacing="10dp" >
         </GridView>
 
         <LinearLayout
