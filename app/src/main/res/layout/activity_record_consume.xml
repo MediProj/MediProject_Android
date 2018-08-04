@@ -12,7 +12,8 @@
         android:text="@string/consumeTitle" />
 
     <LinearLayout
-        style="@style/linearView">
+        style="@style/linearView"
+        android:baselineAligned="false">
 
         <GridView
             android:id="@+id/menuGrid"
