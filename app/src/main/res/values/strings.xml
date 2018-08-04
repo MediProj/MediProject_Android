@@ -20,7 +20,10 @@
     <string name="bottleTitle">투명 통 무게 측정 안내</string>
 
     <!-- 소변 무게 측정 -->
-    <string name="urineTitle">소변 무게 측정</string>
+    <string name="urineTitle">소변량 측정</string>
+    <string name="weightBtn">저울로 측정</string>
+    <string name="urineHint">소변량 입력</string>
+    <string name="urineUnit">cc</string>
 
     <!-- 섭취량 기록 -->
     <string name="consumeTitle">섭취량 기록</string>
