@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/titleBar"
+        style="@style/titleBar"
+        android:text="@string/diaperTitle" />
+
+    <LinearLayout
+        style="@style/linearImg">
+
+        <ImageView
+            android:id="@+id/diaperEx1"
+            style="@style/imgLeft"
+            android:src="@drawable/container_diaper"
+            android:contentDescription="@string/containerDiaperDescription"/>
+
+        <ImageView
+            android:id="@+id/diaperEx2"
+            style="@style/imgCenter"
+            android:src="@drawable/container_diaper"
+            android:contentDescription="@string/containerBottleDescription" />
+
+        <ImageView
+            android:id="@+id/diaperEx3"
+            style="@style/imgRight"
+            android:src="@drawable/container_diaper"
+            android:contentDescription="@string/containerGreenDescription"/>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btnPrev"
+        style="@style/btnPrev"
+        android:text="@string/prev" />
+
+    <Button
+        android:id="@+id/btnNext"
+        style="@style/btnNext"
+        android:text="@string/next" />
+
+</RelativeLayout>
