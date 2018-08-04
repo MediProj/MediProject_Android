@@ -6,6 +6,9 @@
 
     <!-- 용기 종류 선택 -->
     <string name="containerTitle">측정 대상 용기 선택</string>
+    <string name="containerDiaperDescription">귀저기 무게 측정</string>
+    <string name="containerGreenDescription">녹색 소변통 무게 측정</string>
+    <string name="containerBottleDescription">투명 통 무게 측정</string>
 
     <!-- 녹색 통 용기 안내 -->
     <string name="greenTitle">녹색 소변통 무게 측정 안내</string>
