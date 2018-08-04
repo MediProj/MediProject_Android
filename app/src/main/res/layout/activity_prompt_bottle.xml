@@ -18,7 +18,7 @@
             android:id="@+id/bottleEx1"
             style="@style/imgLeft"
             android:src="@drawable/container_bottle"
-            android:contentDescription="@string/containerDiaperDescription"/>
+            android:contentDescription="@string/containerBottleDescription"/>
 
         <ImageView
             android:id="@+id/bottleEx2"
@@ -30,7 +30,7 @@
             android:id="@+id/bottleEx3"
             style="@style/imgRight"
             android:src="@drawable/container_bottle"
-            android:contentDescription="@string/containerGreenDescription"/>
+            android:contentDescription="@string/containerBottleDescription"/>
 
     </LinearLayout>
 
