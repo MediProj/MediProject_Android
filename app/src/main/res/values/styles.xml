@@ -8,6 +8,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Base Layout Widgets SETUP -->
     <style name="titleBar" >
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">100dp</item>
@@ -37,8 +38,32 @@
     </style>
 
     <style name="btnNext" parent="@style/btnNav" >
-        <!-- <item name="android:layout_alignParentEnd">true</item> -->
         <item name="android:layout_alignParentRight">true</item>
+        <!-- <item name="android:layout_alignParentEnd">true</item> -->
+    </style>
+    <!-- Base Layout Widgets END -->
+
+    <!-- 3 Image Layout SETUP -->
+    <style name="img" >
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_below">@id/titleBar</item>
+        <item name="android:layout_above">@id/btnPrev</item>
     </style>
 
+    <style name="imgLeft" parent="@style/img">
+        <item name="android:layout_alignParentLeft">true</item>
+        <!-- <item name="android:layout_alignParentStart">true</item> -->
+    </style>
+
+    <style name="imgCenter" parent="@style/img">
+        <item name="android:layout_centerHorizontal">true</item>
+        <!-- <item name="android:layout_alignParentStart">true</item> -->
+    </style>
+
+    <style name="imgRight" parent="@style/img">
+        <item name="android:layout_alignParentRight">true</item>
+        <!-- <item name="android:layout_alignParentEnd">true</item> -->
+    </style>
+    <!-- 3 Image Layout END -->
 </resources>
