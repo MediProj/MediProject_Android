@@ -10,7 +10,7 @@
         android:id="@+id/titleBar"
         style="@style/titleBar"
         android:text="@string/titleDef" />
-    
+    <!--
     <LinearLayout
         style="@style/linearView">
 
@@ -18,12 +18,9 @@
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_weight="4"/>
-        
-        <Button
-            android:layout_width=""
-            android:layout_height="" />
 
     </LinearLayout>
+    -->
 
     <Button
         android:id="@+id/btnPrev"

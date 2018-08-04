@@ -3,6 +3,7 @@ package com.example.medi.mediproject;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 public class RecordConsumeActivity extends BaseActivity {
     @Override
@@ -10,16 +11,16 @@ public class RecordConsumeActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_record_consume);
 
-        buttonPrev.findViewById(R.id.btnPrev);
-        buttonNext.findViewById(R.id.btnNext);
+        buttonPrev = (Button) findViewById(R.id.btnPrev);
+        buttonNext = (Button) findViewById(R.id.btnNext);
     }
 
-    private void onPrevClick(View view) {
+    public void onPrevClick(View view) {
         Intent intent = new Intent(RecordConsumeActivity.this, RecordUrineActivity.class);
         startActivity(intent);
     }
 
-    private void onNextClick(View view) {
+    public void onNextClick(View view) {
 
     }
 }

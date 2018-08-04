@@ -20,7 +20,9 @@
         </activity>
 
         <activity
-            android:name=".ContainerSelectActivity">
+            android:name=".ContainerSelectActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -29,23 +31,33 @@
         </activity>
 
         <activity
-            android:name=".PromptBottleActivity">
+            android:name=".PromptBottleActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape">
         </activity>
 
         <activity
-            android:name=".PromptDiaperActivity">
+            android:name=".PromptDiaperActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape">
         </activity>
 
         <activity
-            android:name=".PromptGreenActivity">
+            android:name=".PromptGreenActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape">
         </activity>
 
         <activity
-            android:name=".RecordConsumeActivity">
+            android:name=".RecordConsumeActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape">
         </activity>
 
         <activity
-            android:name=".RecordUrineActivity">
+            android:name=".RecordUrineActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape">
         </activity>
 
     </application>

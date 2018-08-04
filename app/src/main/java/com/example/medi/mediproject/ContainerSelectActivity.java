@@ -16,12 +16,12 @@ public class ContainerSelectActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_container);
 
-        buttonPrev.findViewById(R.id.btnPrev);
-        buttonNext.findViewById(R.id.btnNext);
+        buttonPrev = (Button) findViewById(R.id.btnPrev);
+        buttonNext = (Button) findViewById(R.id.btnNext);
 
-        imgBtnDiaper.findViewById(R.id.imgDiaper);
-        imgBtnBottle.findViewById(R.id.imgBottle);
-        imgBtnGreen.findViewById(R.id.imgGreen);
+        imgBtnDiaper = (ImageButton) findViewById(R.id.imgDiaper);
+        imgBtnBottle = (ImageButton) findViewById(R.id.imgBottle);
+        imgBtnGreen = (ImageButton) findViewById(R.id.imgGreen);
 
         imgBtnDiaper.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
@@ -45,11 +45,13 @@ public class ContainerSelectActivity extends BaseActivity {
         });
     }
 
-    private void onPrevClick(View view) {
+    @Override
+    public void onPrevClick(View view) {
 
     }
 
-    private void onNextClick(View view) {
+    //@Override
+    public void onNextClick(View view) {
         Intent intent = new Intent(ContainerSelectActivity.this, RecordUrineActivity.class);
         startActivity(intent);
     }
