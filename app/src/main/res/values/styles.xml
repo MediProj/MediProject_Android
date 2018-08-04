@@ -8,4 +8,37 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="titleBar" >
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">100dp</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:textSize">40dp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:gravity">center_vertical</item>
+        <item name="android:paddingLeft">20dp</item>
+        <item name="android:background">#004B87</item>
+    </style>
+
+    <style name="btnNav" >
+        <item name="android:layout_width">140dp</item>
+        <item name="android:layout_height">70dp</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">30dp</item>
+        <item name="android:layout_margin">20dp</item>
+        <item name="android:textColor">#FFFFFF</item>
+        <item name="android:background">@drawable/capsule</item>
+    </style>
+
+    <style name="btnPrev" parent="@style/btnNav" >
+        <item name="android:layout_alignParentLeft">true</item>
+        <!-- <item name="android:layout_alignParentStart">true</item> -->
+    </style>
+
+    <style name="btnNext" parent="@style/btnNav" >
+        <!-- <item name="android:layout_alignParentEnd">true</item> -->
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+
 </resources>
