@@ -12,7 +12,7 @@
         android:text="@string/diaperTitle" />
 
     <LinearLayout
-        style="@style/linearImg">
+        style="@style/linearView">
 
         <ImageView
             android:id="@+id/diaperEx1"

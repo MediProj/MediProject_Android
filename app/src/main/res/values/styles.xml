@@ -44,12 +44,13 @@
     <!-- Base Layout Widgets END -->
 
     <!-- 3 Image Layout SETUP -->
-    <style name="linearImg" >
+    <style name="linearView" >
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_below">@id/titleBar</item>
         <item name="android:layout_above">@id/btnPrev</item>
         <item name="android:orientation">horizontal</item>
+        <item name="android:gravity">center_vertical</item>
     </style>
 
     <style name="img" >
