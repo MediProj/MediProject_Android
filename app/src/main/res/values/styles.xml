@@ -51,6 +51,7 @@
         <item name="android:layout_above">@id/btnPrev</item>
         <item name="android:orientation">horizontal</item>
         <item name="android:gravity">center_vertical</item>
+        <item name="android:layout_margin">20dp</item>
     </style>
 
     <style name="img" >
