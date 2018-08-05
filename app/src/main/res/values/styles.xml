@@ -21,7 +21,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">0px</item>
         <item name="android:layout_weight">2</item>
-        <item name="android:textSize">40sp</item>
+        <item name="android:textSize">30sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:gravity">center_vertical</item>
@@ -31,10 +31,10 @@
 
     <style name="btnNav" >
         <item name="android:layout_width">140dp</item>
-        <item name="android:layout_height">70dp</item>
+        <item name="android:layout_height">wrap_content</item>
         <item name="android:textStyle">bold</item>
-        <item name="android:textSize">30sp</item>
-        <item name="android:layout_margin">10dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:layout_margin">10sp</item>
         <item name="android:textColor">#FFFFFF</item>
         <item name="android:background">@drawable/capsule</item>
     </style>
@@ -60,7 +60,7 @@
     </style>
 
     <style name="linearViewContent" parent="@style/linearViewHoriz" >
-        <item name="android:layout_weight">5</item>
+        <item name="android:layout_weight">7</item>
         <item name="android:gravity">center_vertical</item>
         <item name="android:layout_margin">20dp</item>
     </style>
@@ -104,7 +104,7 @@
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">0dp</item>
         <item name="android:layout_alignParentTop">true</item>
-        <item name="android:textSize">30dp</item>
+        <item name="android:textSize">30sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/White</item>
         <item name="android:gravity">center_vertical</item>
@@ -116,9 +116,9 @@
         <item name="android:layout_width">140dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_alignParentLeft">true</item>
-        <item name="android:layout_marginLeft">20dp</item>
+        <item name="android:layout_margin">10sp</item>
         <item name="android:text">이전</item>
-        <item name="android:textSize">30dp</item>
+        <item name="android:textSize">15sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/White</item>
         <item name="android:background">@drawable/capsule</item>
@@ -129,9 +129,9 @@
         <item name="android:layout_width">140dp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_alignParentRight">true</item>
-        <item name="android:layout_marginRight">20dp</item>
+        <item name="android:layout_margin">10sp</item>
         <item name="android:text">다음</item>
-        <item name="android:textSize">30dp</item>
+        <item name="android:textSize">15sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/White</item>
         <item name="android:background">@drawable/capsule</item>
