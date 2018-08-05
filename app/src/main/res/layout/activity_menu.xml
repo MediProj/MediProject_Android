@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:weightSum="8"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <TextView style="@style/Title"
+        android:id="@+id/title"
+        android:layout_weight="2"
+        android:text="MediProj"/>
+
+    <ScrollView
+        android:layout_weight="5"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <LinearLayout
+        style="@style/Body"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/tv"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/Content"/>
+
+            <TextView
+            style="@style/Menu"
+            android:id="@+id/stool"
+            android:text="대변"/>
+
+        <TextView
+            style="@style/Menu"
+            android:id="@+id/urine"
+            android:text="소변"/>
+
+        <TextView
+            style="@style/Menu"
+            android:id="@+id/consume"
+            android:text="섭취량"/>
+
+        <TextView
+            style="@style/Menu"
+            android:id="@+id/report"
+            android:text="기록보기"/>
+    </LinearLayout>
+
+    </ScrollView>
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+    <Button
+        android:layout_weight="1"
+        android:id="@+id/Bnt_prev"
+        style="@style/Bt_prev"/>
+    </RelativeLayout>
+
+</LinearLayout>

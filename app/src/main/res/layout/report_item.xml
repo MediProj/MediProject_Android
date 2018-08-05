@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:weightSum="5"
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:text="NAME"
+        style="@style/Content"
+        android:id="@+id/item_name"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp" />
+
+
+    <TextView
+        android:text="DATE"
+        android:id="@+id/item_date"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp" />
+
+    <TextView
+        android:text="STOOL CNT"
+        android:id="@+id/item_stool"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp" />
+
+    <TextView
+        android:text="URINE AMOUNT"
+        android:id="@+id/item_urine"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp" />
+
+
+    <TextView
+        android:text="CONSUME AMOUNT"
+        android:id="@+id/item_consume"
+        android:layout_weight="1"
+        android:layout_width="wrap_content"
+        android:layout_height="0dp" />
+
+</LinearLayout>

@@ -61,6 +61,15 @@
             android:screenOrientation="landscape">
         </activity>
 
+        <!-- ina manifest -->
+
+        <activity android:name=".MenuActivity" />
+        <activity android:name=".TimeDateActivity" />
+        <activity android:name=".StoolActivity"/>
+        <activity android:name=".ReportActivity"/>
+
+        <!-- ina manifest END -->
+
     </application>
 
 </manifest>

@@ -3,4 +3,14 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!-- ina color -->
+
+    <color name="Blue">#004b87</color>
+    <color name="White">#FFFFFF</color>
+    <color name="Gray">#989898</color>
+    <color name="Gray2">#DDDDDD</color>
+    <color name="Green">#77bc1f</color>
+
+    <!-- ina color END-->
 </resources>

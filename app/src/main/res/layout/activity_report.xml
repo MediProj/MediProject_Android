@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:weightSum="8"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_weight="2"
+        style="@style/Title"
+        android:id="@+id/title"
+        android:text="기록 보기 및 수정"/>
+
+    <RelativeLayout
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:layout_weight="5"
+        style="@style/Body">
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:orientation="horizontal"
+            android:weightSum="8"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+        <TextView
+            android:layout_weight="7"
+            android:id="@+id/tv_report_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="8월 4일 인아님 기록"
+            android:layout_margin="20dp"
+            style="@style/Content"/>
+
+        <Button
+            android:layout_weight="1"
+            android:id="@+id/bt_edit"
+            android:layout_margin="15dp"
+            android:text="수정"
+            android:textSize="20dp"
+            android:textColor="@color/White"
+            android:layout_toRightOf="@+id/tv_report_date"
+            android:layout_width="100dp"
+            android:backgroundTint="@color/Green"
+            android:layout_height="wrap_content"
+            android:background="@drawable/capsule"/>
+        </LinearLayout>
+
+        <ListView
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/ll"
+            android:id="@+id/report_list"
+            android:layout_width="300dp"
+            android:layout_height="match_parent">
+        </ListView>
+
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+        <Button android:id="@+id/Bnt_prev" style="@style/Bt_prev"/>
+    </RelativeLayout>
+</LinearLayout>
