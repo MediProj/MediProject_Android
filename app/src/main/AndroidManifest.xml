@@ -12,7 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".VolleyTestActivity">
+            android:name=".MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -63,10 +65,18 @@
 
         <!-- ina manifest -->
 
-        <activity android:name=".MenuActivity" />
-        <activity android:name=".TimeDateActivity" />
-        <activity android:name=".StoolActivity"/>
-        <activity android:name=".ReportActivity"/>
+        <activity android:name=".MenuActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".TimeDateActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".StoolActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".ReportActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape"/>
 
         <!-- ina manifest END -->
 

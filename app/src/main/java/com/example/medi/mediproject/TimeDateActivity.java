@@ -34,8 +34,9 @@ public class TimeDateActivity extends Activity {
 
         //title 표시
         Intent intent = getIntent();
-        String page_title= intent.getStringExtra("Page");
+        final String page_title= intent.getStringExtra("Page");
         final String name = intent.getStringExtra("Name");
+        final String page_id = intent.getStringExtra("PageId");
 
         title.setText(page_title);
         tv.setText(name +"님 날짜와 시간을 선택하고\n다음 버튼을 눌러주세요");
@@ -78,9 +79,19 @@ public class TimeDateActivity extends Activity {
 
                 //다음 페이지로 이동
                 else {
-                    Intent intent2 = new Intent(TimeDateActivity.this, PromptBottleActivity.class);
-                    //intent2.putExtra("Name", name);
-                    startActivity(intent2);
+                    if (page_id.equals("stool")) {
+                        Intent intent2 = new Intent(TimeDateActivity.this, StoolActivity.class);
+                        startActivity(intent2);
+                    }
+                    else if(page_id.equals("urine")) {
+                        Intent intent2 = new Intent(TimeDateActivity.this, ContainerSelectActivity.class);
+                        startActivity(intent2);
+                    }
+
+                    else if(page_id.equals("consume")) {
+                        Intent intent2 = new Intent(TimeDateActivity.this, RecordConsumeActivity.class);
+                        startActivity(intent2);
+                    }
 
                 }
             }
