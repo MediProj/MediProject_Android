@@ -22,7 +22,7 @@ import java.util.HashMap;
 import java.util.Map;
 import java.util.StringTokenizer;
 
-public class MainActivity extends BaseActivity {
+public class VolleyTestActivity extends BaseActivity {
 
     private Button btn;
     private EditText inp;
@@ -42,7 +42,7 @@ public class MainActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.activity_volley_test);
 
         btn = findViewById(R.id.btn);
         inp = findViewById(R.id.input);
