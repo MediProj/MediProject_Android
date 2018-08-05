@@ -16,12 +16,13 @@ public class RecordConsumeActivity extends BaseActivity {
     }
 
     public void onPrevClick(View view) {
-        Intent intent = new Intent(RecordConsumeActivity.this, RecordUrineActivity.class);
+        Intent intent = new Intent(RecordConsumeActivity.this, TimeDateActivity.class);
         startActivity(intent);
     }
 
     public void onNextClick(View view) {
-
+        Intent intent = new Intent(RecordConsumeActivity.this, ReportActivity.class);
+        startActivity(intent);
     }
 }
 

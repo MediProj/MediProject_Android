@@ -45,11 +45,6 @@
                 style="@style/btnPrev"
                 android:text="@string/prev" />
 
-            <Button
-                android:id="@+id/btnNext"
-                style="@style/btnNext"
-                android:text="@string/next" />
-
         </RelativeLayout>
 
     </LinearLayout>

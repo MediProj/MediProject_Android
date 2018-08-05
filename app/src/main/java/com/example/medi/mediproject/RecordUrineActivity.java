@@ -21,7 +21,7 @@ public class RecordUrineActivity extends BaseActivity {
     }
 
     public void onNextClick(View view) {
-        Intent intent = new Intent(RecordUrineActivity.this, RecordConsumeActivity.class);
+        Intent intent = new Intent(RecordUrineActivity.this, ReportActivity.class);
         startActivity(intent);
     }
 }

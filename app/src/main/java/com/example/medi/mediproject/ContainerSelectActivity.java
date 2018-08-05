@@ -47,12 +47,7 @@ public class ContainerSelectActivity extends BaseActivity {
 
     @Override
     public void onPrevClick(View view) {
-
-    }
-
-    //@Override
-    public void onNextClick(View view) {
-        Intent intent = new Intent(ContainerSelectActivity.this, RecordUrineActivity.class);
-        startActivity(intent);
+        Intent intGreen = new Intent(ContainerSelectActivity.this, TimeDateActivity.class);
+        startActivity(intGreen);
     }
 }
