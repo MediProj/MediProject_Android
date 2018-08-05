@@ -78,8 +78,8 @@ public class TimeDateActivity extends Activity {
 
                 //다음 페이지로 이동
                 else {
-                    Intent intent2 = new Intent(TimeDateActivity.this, StoolActivity.class);
-                    intent2.putExtra("Name", name);
+                    Intent intent2 = new Intent(TimeDateActivity.this, PromptBottleActivity.class);
+                    //intent2.putExtra("Name", name);
                     startActivity(intent2);
 
                 }
