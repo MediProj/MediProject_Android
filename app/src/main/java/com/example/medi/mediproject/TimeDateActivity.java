@@ -18,6 +18,8 @@ public class TimeDateActivity extends Activity {
     TextView title,tv;
     final int DIALOG_DATE = 1;
     final int DIALOG_TIME = 2;
+    String name = "인아";
+    int page_id=0;
     boolean date_flag=false;
     boolean time_flag=false;
 
@@ -33,13 +35,23 @@ public class TimeDateActivity extends Activity {
         bt_time=findViewById(R.id.bt_time);
 
         //title 표시
-        Intent intent = getIntent();
-        final String page_title= intent.getStringExtra("Page");
-        final String name = intent.getStringExtra("Name");
-        final String page_id = intent.getStringExtra("PageID");
+        final Intent intent = getIntent();
+        page_id= intent.getIntExtra("val",0);
 
-        title.setText(page_title);
+        switch (page_id){
+            //stool
+            case 0:
+                title.setText("대변 횟수 측정");
+                break;
+            case 1:
+                title.setText("소변량 측정");
+                break;
+            case 2:
+                title.setText("섭취량 기록");
+        }
+
         tv.setText(name +"님 날짜와 시간을 선택하고\n다음 버튼을 눌러주세요");
+
         //Date
         bt_date.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,7 +73,6 @@ public class TimeDateActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent2 = new Intent(TimeDateActivity.this,MenuActivity.class);
-                intent2.putExtra("Name", name);
                 startActivity(intent2);
 
             }
@@ -79,16 +90,16 @@ public class TimeDateActivity extends Activity {
 
                 //다음 페이지로 이동
                 else {
-                    if (page_id.equals("stool")) {
+                    if (page_id==0) {
                         Intent intent2 = new Intent(TimeDateActivity.this, StoolActivity.class);
                         startActivity(intent2);
                     }
-                    else if(page_id.equals("urine")) {
+                    else if(page_id==1) {
                         Intent intent2 = new Intent(TimeDateActivity.this, ContainerSelectActivity.class);
                         startActivity(intent2);
                     }
 
-                    else if(page_id.equals("consume")) {
+                    else if(page_id==2) {
                         Intent intent2 = new Intent(TimeDateActivity.this, RecordConsumeActivity.class);
                         startActivity(intent2);
                     }

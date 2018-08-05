@@ -17,6 +17,7 @@ public class RecordConsumeActivity extends BaseActivity {
 
     public void onPrevClick(View view) {
         Intent intent = new Intent(RecordConsumeActivity.this, TimeDateActivity.class);
+        intent.putExtra("val",2);
         startActivity(intent);
     }
 

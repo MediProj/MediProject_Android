@@ -48,6 +48,7 @@ public class ContainerSelectActivity extends BaseActivity {
     @Override
     public void onPrevClick(View view) {
         Intent intGreen = new Intent(ContainerSelectActivity.this, TimeDateActivity.class);
+        intGreen.putExtra("val",1);
         startActivity(intGreen);
     }
 }

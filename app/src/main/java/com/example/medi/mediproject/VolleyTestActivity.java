@@ -29,7 +29,6 @@ public class VolleyTestActivity extends BaseActivity {
     private TextView tv;
     private String inpText;
 
-    private StringRequest stringRequest;
     private RequestQueue queue;
 
     private String authToken;

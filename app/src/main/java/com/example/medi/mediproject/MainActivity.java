@@ -74,7 +74,6 @@ public class MainActivity extends Activity {
         }){
             public Map<String,String> getHeaders() throws AuthFailureError{
                 Map<String, String> header = new HashMap< String, String >();
-                p_num.setText("Token "+token);
                 header.put("Authorization", "Token "+token);
                 return header;
             }
@@ -91,7 +90,7 @@ public class MainActivity extends Activity {
                     intent.putExtra("Name", p_name.getText().toString());
                     intent.putExtra("Number",p_num.getText().toString());
                     queue.add(loginRequest);
-                    Toast.makeText(getApplicationContext(), token, Toast.LENGTH_LONG).show();
+
                     startActivity(intent);
                 }
             }

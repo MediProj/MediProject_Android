@@ -37,9 +37,7 @@ public class MenuActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent2 = new Intent(MenuActivity.this, TimeDateActivity.class);
-                intent2.putExtra("Page", "대변 횟수 측정");
-                intent2.putExtra("PageID","stool");
-                intent2.putExtra("Name", name);
+                intent2.putExtra("val", 0);
                 startActivity(intent2);
             }
         });
@@ -49,9 +47,7 @@ public class MenuActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent2 = new Intent(MenuActivity.this,TimeDateActivity.class);
-                intent2.putExtra("Page", "소변량 측정");
-                intent2.putExtra("PageID","urine");
-                intent2.putExtra("Name", name);
+                intent2.putExtra("val", 1);
                 startActivity(intent2);
 
             }
@@ -62,9 +58,7 @@ public class MenuActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent2 = new Intent(MenuActivity.this,TimeDateActivity.class);
-                intent2.putExtra("Page", "섭취량 기록");
-                intent2.putExtra("PageID","consume");
-                intent2.putExtra("Name", name);
+                intent2.putExtra("val", 2);
                 startActivity(intent2);
             }
         });
@@ -86,7 +80,6 @@ public class MenuActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent2 = new Intent(MenuActivity.this,MainActivity.class);
-                intent2.putExtra("Name", name);
                 startActivity(intent2);
 
             }

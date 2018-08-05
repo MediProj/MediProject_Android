@@ -22,9 +22,6 @@ public class StoolActivity extends Activity {
         bt_prev = findViewById(R.id.Bnt_prev);
         tv_stool_num = findViewById(R.id.tv_stool_num);
 
-        Intent intent = getIntent();
-        final String name = intent.getStringExtra("Name");
-
         //stool num 얻어오기
 
         //next bnt 텍스트 수전
@@ -35,8 +32,8 @@ public class StoolActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent2 = new Intent(StoolActivity.this, TimeDateActivity.class);
+                intent2.putExtra("val", 0);
                 startActivity(intent2);
-
             }
         });
 
@@ -44,8 +41,7 @@ public class StoolActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent2 = new Intent(StoolActivity.this, MenuActivity.class);
-                Toast.makeText(getApplicationContext(), name + "님 성공적으로 등록되었습니다", Toast.LENGTH_LONG).show();
-                intent2.putExtra("Name", name);
+                Toast.makeText(getApplicationContext(),"성공적으로 등록되었습니다", Toast.LENGTH_LONG).show();
                 startActivity(intent2);
 
             }
