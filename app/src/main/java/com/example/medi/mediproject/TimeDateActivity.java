@@ -36,7 +36,7 @@ public class TimeDateActivity extends Activity {
         Intent intent = getIntent();
         final String page_title= intent.getStringExtra("Page");
         final String name = intent.getStringExtra("Name");
-        final String page_id = intent.getStringExtra("PageId");
+        final String page_id = intent.getStringExtra("PageID");
 
         title.setText(page_title);
         tv.setText(name +"님 날짜와 시간을 선택하고\n다음 버튼을 눌러주세요");
