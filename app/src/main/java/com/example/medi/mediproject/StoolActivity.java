@@ -14,7 +14,6 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonArrayRequest;
 import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.Volley;
 
@@ -46,50 +45,7 @@ public class StoolActivity extends Activity {
         Toast.makeText(getApplicationContext(),pid,Toast.LENGTH_LONG).show();
         String str_user_pk = MediValues.patientData.get(pid).get("user_pk");
         int user_pk = Integer.parseInt(str_user_pk);
-
-        //stool num 얻어오기
-        queue = Volley.newRequestQueue(this);
-        String url = "http://54.202.222.14/records/api/records-list/";
-
-        JSONArray tmp = new JSONArray();
-        JSONObject post = null;
-
-        try {
-            post = new JSONObject();
-            post.put("patient", user_pk);
-            post.put("stool_count",5);
-            post.put("liquid_amount", 0.0);
-            post.put("consume_amount",0.0);
-            post.put("urine_amount", 0.0);
-            tmp.put(post);
-        } catch (JSONException e) {
-            e.printStackTrace();
-        }
-
-        JsonObjectRequest jsonArrayRequest = new JsonObjectRequest(Request.Method.POST,url,post,new Response.Listener<JSONObject>() {
-            @Override
-            public void onResponse(JSONObject response) {
-                Log.d("Response", response.toString());
-                Toast.makeText(getApplicationContext(),"Hello!!!!",Toast.LENGTH_LONG ).show();
-            }
-        }, new Response.ErrorListener() {
-            @Override
-            public void onErrorResponse(VolleyError error) {
-                Log.d("Error", error.toString());
-                Toast.makeText(getApplicationContext(),error.toString(),Toast.LENGTH_LONG).show();
-            }
-        }){
-            @Override
-            public Map<String, String> getHeaders() throws AuthFailureError {
-                Map<String, String> headers = new HashMap<String, String>();
-                String auth = "Token " + MediValues.ACCESS_TOKEN;
-                headers.put("Authorization", auth);
-                return headers;
-            }
-
-        };
-
-        queue.add(jsonArrayRequest);
+        MediPostRequest postRequest = new MediPostRequest(user_pk,50, 5.0f,5.0f,5.0f,this);
 
         //next bnt 텍스트 수전
         bt_next.setText("등록");

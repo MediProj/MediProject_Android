@@ -46,10 +46,10 @@ public class MediPostRequest {
         try {
             post = new JSONObject();
             post.put("patient", user_pk);
-            post.put("stool_count",5);
-            post.put("liquid_amount", 0.0);
-            post.put("consume_amount",0.0);
-            post.put("urine_amount", 0.0);
+            post.put("stool_count",stool_count);
+            post.put("liquid_amount",liquid_amount);
+            post.put("consume_amount",consume_amount);
+            post.put("urine_amount",urine_amount);
             tmp.put(post);
         } catch (JSONException e) {
             e.printStackTrace();
