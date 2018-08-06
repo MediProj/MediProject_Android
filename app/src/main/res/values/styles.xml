@@ -8,6 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <!-- Splash Screen -->
+    <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:windowBackground">@drawable/splash_background</item>
+    </style>
+    <!-- Splash Screen END -->
+
     <!-- Base Layout Widgets SETUP -->
     <style name="linearViewFull" >
         <item name="android:layout_width">match_parent</item>
