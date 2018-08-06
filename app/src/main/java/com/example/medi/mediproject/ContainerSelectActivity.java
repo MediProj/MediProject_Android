@@ -11,10 +11,15 @@ public class ContainerSelectActivity extends BaseActivity {
     private ImageButton imgBtnBottle;
     private ImageButton imgBtnGreen;
 
+    String pid;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_container);
+
+        Intent intent = getIntent();
+        pid = intent.getStringExtra("pid");
 
         buttonPrev = (Button) findViewById(R.id.btnPrev);
         buttonNext = (Button) findViewById(R.id.btnNext);
@@ -26,6 +31,7 @@ public class ContainerSelectActivity extends BaseActivity {
         imgBtnDiaper.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intDiaper = new Intent(ContainerSelectActivity.this, PromptDiaperActivity.class);
+                intDiaper.putExtra("pid", pid);
                 startActivity(intDiaper);
             }
         });
@@ -33,6 +39,7 @@ public class ContainerSelectActivity extends BaseActivity {
         imgBtnBottle.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intBottle = new Intent(ContainerSelectActivity.this, PromptBottleActivity.class);
+                intBottle.putExtra("pid", pid);
                 startActivity(intBottle);
             }
         });
@@ -40,6 +47,7 @@ public class ContainerSelectActivity extends BaseActivity {
         imgBtnGreen.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 Intent intGreen = new Intent(ContainerSelectActivity.this, PromptGreenActivity.class);
+                intGreen.putExtra("pid", pid);
                 startActivity(intGreen);
             }
         });
