@@ -21,6 +21,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 import org.json.JSONTokener;
 
+import java.text.BreakIterator;
 import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
@@ -33,12 +34,10 @@ public class MainActivity extends Activity {
     EditText p_name, p_num;
     String urlToken = "http://54.202.222.14/api-token-auth/";
     String urlData = "http://54.202.222.14/patients/api/patients-list/";
-    JSONArray arr = new JSONArray();
-    boolean volley_fin = false;
+    boolean Login = false;
     private static String TAG="LoginTAG";
     private RequestQueue queue;
-    private String authToken;
-
+    String authToken;
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
@@ -50,7 +49,6 @@ public class MainActivity extends Activity {
 
         // Instantiate the RequestQueue.
         queue = Volley.newRequestQueue(this);
-
         authToken = "";
 
         Map<String, String> params = new HashMap<>();
@@ -68,6 +66,7 @@ public class MainActivity extends Activity {
                         tokens.nextToken();
                         tokens.nextToken();
                         MediValues.ACCESS_TOKEN = authToken = tokens.nextToken();
+                        getPatientData();
                     }
                 },
                 new Response.ErrorListener() {
@@ -83,40 +82,15 @@ public class MainActivity extends Activity {
 
         //queue.add(stringRequest);
         queue.add(jsObjRequest);
-        try {
-            Thread.sleep(5000);
-        } catch (Exception e) {
-        }
 
-        MediDataRequest jsRequest = new MediDataRequest(urlData,
-                new Response.Listener<JSONArray>() {
-                    @Override
-                    public void onResponse(JSONArray response) {
-                        Log.d("Response: ", response.toString());
 
-                    }
-                },
-                new Response.ErrorListener() {
-                    @Override
-                    public void onErrorResponse(VolleyError response) {
-                        Log.d("Response: Error", response.toString());
-                    }
-                }
-        );
-
-        jsRequest.setTag(TAG);
-        queue.add(jsRequest);
-
-        //Toast.makeText(getApplicationContext(),String.valueOf(volley_fin),Toast.LENGTH_LONG).show();
-        tv.setText(String.valueOf(volley_fin));
         bt_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, MenuActivity.class);
                 intent.putExtra("Name", p_name.getText().toString());
                 intent.putExtra("Number", p_num.getText().toString());
-                tv.setText(String.valueOf(volley_fin));
-                //startActivity(intent);
+                 startActivity(intent);
             }
         });
     }
@@ -127,6 +101,56 @@ public class MainActivity extends Activity {
         if(queue != null) {
             queue.cancelAll(TAG);
         }
+    }
+
+    protected void getPatientData() {
+        MediDataRequest jsRequest = new MediDataRequest(urlData,
+                new Response.Listener<JSONArray>() {
+                    @Override
+                    public void onResponse(JSONArray response) {
+                        //Log.d("Response: ", response.toString());
+                        Toast.makeText(getApplicationContext(),"hello", Toast.LENGTH_LONG).show();
+                        parsePatientJSON(response);
+                    }
+                },
+                new Response.ErrorListener() {
+                    @Override
+                    public void onErrorResponse(VolleyError response) {
+                        Log.d("Response: Error", response.toString());
+                   }
+                }
+        );
+        jsRequest.setTag(TAG);
+
+        queue.add(jsRequest);
+    }
+
+    protected void parsePatientJSON(JSONArray response) {
+        MediValues.patientData = new HashMap<>();
+
+        for(int i = 0; i < response.length(); i++) {
+            try {
+                JSONObject entry = response.getJSONObject(i);
+                String pid = entry.getString("pid");
+                String name = entry.getString("name");
+                String birth = entry.getString("birth");
+
+                Map<String, String> temp = new HashMap<>();
+                temp.put("name", name);
+                temp.put("birth", birth);
+                MediValues.patientData.put(pid, temp);
+            } catch (JSONException je){
+            }
+        }
+        CheckRegister();
+    }
+
+    public void CheckRegister(){
+        String name = p_name.getText().toString();
+        String num = p_num.getText().toString();
+
+        if(name.equals(MediValues.patientData.get(num).get("name")))
+            Login=true;
     }
 
 }
