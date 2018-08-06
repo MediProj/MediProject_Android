@@ -18,7 +18,7 @@ public class TimeDateActivity extends Activity {
     TextView title,tv;
     final int DIALOG_DATE = 1;
     final int DIALOG_TIME = 2;
-    String name = "인아";
+    String name =null;
     int page_id=0;
     boolean date_flag=false;
     boolean time_flag=false;
