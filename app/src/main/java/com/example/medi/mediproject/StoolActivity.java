@@ -8,8 +8,12 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
+import com.android.volley.toolbox.Volley;
+
 public class StoolActivity extends Activity {
 
+    RequestQueue queue;
     Button bt_prev, bt_next;
     TextView tv_stool_num;
     String stool_num = "1";
@@ -27,6 +31,7 @@ public class StoolActivity extends Activity {
         pid=intent.getStringExtra("pid");
 
         //stool num 얻어오기
+        queue = Volley.newRequestQueue(this);
 
         //next bnt 텍스트 수전
         bt_next.setText("등록");

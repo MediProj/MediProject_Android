@@ -118,11 +118,13 @@ public class SplashActivity extends AppCompatActivity {
                 String name = entry.getString("name");
                 String birth = entry.getString("birth");
                 String pk= entry.getString("pk");
+                String user_pk= entry.getString("user_pk");
 
                 Map<String, String> temp = new HashMap<>();
                 temp.put("name", name);
                 temp.put("birth", birth);
                 temp.put("pk", pk);
+                temp.put("user_pk", user_pk);
                 MediValues.patientData.put(pid, temp);
             } catch (JSONException je){
             }
