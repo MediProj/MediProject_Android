@@ -33,8 +33,9 @@ public class MainActivity extends Activity {
     EditText p_name, p_num;
     String urlToken = "http://54.202.222.14/api-token-auth/";
     String urlData = "http://54.202.222.14/patients/api/patients-list/";
-    String pdata=null;
-    private static String TAG="MainTAG";
+    JSONArray arr = new JSONArray();
+    boolean volley_fin = false;
+    private static String TAG="LoginTAG";
     private RequestQueue queue;
     private String authToken;
 
@@ -92,7 +93,7 @@ public class MainActivity extends Activity {
                     @Override
                     public void onResponse(JSONArray response) {
                         Log.d("Response: ", response.toString());
-                        Toast.makeText(getApplicationContext(),"UZU POLITE REQUEST!",Toast.LENGTH_LONG ).show();
+
                     }
                 },
                 new Response.ErrorListener() {
@@ -103,17 +104,19 @@ public class MainActivity extends Activity {
                 }
         );
 
-
         jsRequest.setTag(TAG);
         queue.add(jsRequest);
 
+        //Toast.makeText(getApplicationContext(),String.valueOf(volley_fin),Toast.LENGTH_LONG).show();
+        tv.setText(String.valueOf(volley_fin));
         bt_login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, MenuActivity.class);
                 intent.putExtra("Name", p_name.getText().toString());
                 intent.putExtra("Number", p_num.getText().toString());
-                startActivity(intent);
+                tv.setText(String.valueOf(volley_fin));
+                //startActivity(intent);
             }
         });
     }
