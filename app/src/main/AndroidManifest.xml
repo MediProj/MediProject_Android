@@ -12,6 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
 
+
         <activity android:name=".SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
@@ -32,7 +33,10 @@
         </activity>
         <activity android:name=".ContainerSelectActivity"/>
         <activity android:name=".RecordConsumeActivity"/>
-        <activity android:name=".StoolActivity"/>
+        <activity android:name=".StoolActivity">
+
+        </activity>
+
         <activity android:name=".PromptBottleActivity"/>
         <activity android:name=".ReportActivity"/>
         <activity android:name=".PromptDiaperActivity"/>

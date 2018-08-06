@@ -130,6 +130,8 @@ public class TimeDateActivity extends Activity {
         year= cal.get(Calendar.YEAR);
         month= cal.get(Calendar.MONTH);
         day = cal.get(Calendar.DATE);
+        if(day>1)
+            day--;
         hour = cal.get(Calendar.HOUR);
         minute=cal.get(Calendar.MINUTE);
 
