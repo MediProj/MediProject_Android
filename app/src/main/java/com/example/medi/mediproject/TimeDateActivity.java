@@ -13,6 +13,11 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
+import java.sql.Time;
+import java.text.SimpleDateFormat;
+import java.util.Calendar;
+import java.util.Date;
+
 public class TimeDateActivity extends Activity {
     Button bt_prev, bt_next, bt_time,bt_date;
     TextView title,tv;
@@ -21,6 +26,7 @@ public class TimeDateActivity extends Activity {
     String name =null;
     String pid=null;
     int page_id=0;
+    int year, month, day, hour, minute;
     boolean date_flag=false;
     boolean time_flag=false;
 
@@ -40,6 +46,7 @@ public class TimeDateActivity extends Activity {
         page_id= intent.getIntExtra("val",0);
         pid = intent.getStringExtra("pid");
         name = MediValues.patientData.get(pid).get("name");
+
 
         switch (page_id){
             //stool
@@ -118,6 +125,14 @@ public class TimeDateActivity extends Activity {
     }
 
     public Dialog onCreateDialog(int id){
+
+        Calendar cal = Calendar.getInstance();
+        year= cal.get(Calendar.YEAR);
+        month= cal.get(Calendar.MONTH);
+        day = cal.get(Calendar.DATE);
+        hour = cal.get(Calendar.HOUR);
+        minute=cal.get(Calendar.MINUTE);
+
         switch(id){
             case DIALOG_DATE :
                 DatePickerDialog datePickerDialog = new DatePickerDialog(TimeDateActivity.this,
@@ -126,7 +141,7 @@ public class TimeDateActivity extends Activity {
                         Toast.makeText(getApplicationContext(),year+"년 "+(month+1)+"월 "+day +"일을 선택했습니다",Toast.LENGTH_SHORT).show();
                         date_flag=true;
                     }
-                        },2018,8,5);
+                        },year,month,day);
                 return datePickerDialog;
 
             case DIALOG_TIME :
@@ -137,7 +152,7 @@ public class TimeDateActivity extends Activity {
                                 Toast.makeText(getApplicationContext(),hour+"시 "+ minute +"분을 선택했습니다",Toast.LENGTH_SHORT).show();
                                 time_flag=true;
                             }
-                        }, 12,30,false);
+                        }, hour,minute,false);
                 return timePickerDialog;
         }
         return super.onCreateDialog(id);
