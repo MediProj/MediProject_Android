@@ -138,10 +138,12 @@ public class VolleyTestActivity extends BaseActivity {
                 String pid = entry.getString("pid");
                 String name = entry.getString("name");
                 String birth = entry.getString("birth");
+                String pk= entry.getString("pk");
 
                 Map<String, String> temp = new HashMap<>();
                 temp.put("name", name);
                 temp.put("birth", birth);
+                temp.put("pk", pk);
                 MediValues.patientData.put(pid, temp);
             } catch (JSONException je){
             }
