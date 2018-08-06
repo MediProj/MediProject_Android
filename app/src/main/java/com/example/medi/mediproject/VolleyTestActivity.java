@@ -13,10 +13,10 @@ import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 
 import org.json.JSONArray;
+import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.HashMap;
@@ -78,6 +78,8 @@ public class VolleyTestActivity extends BaseActivity {
                         tokens.nextToken();
                         MediValues.ACCESS_TOKEN = authToken = tokens.nextToken();
                         tv.setText(authToken);
+
+                        getPatientData();
                     }
                 },
                 new Response.ErrorListener() {
@@ -92,21 +94,25 @@ public class VolleyTestActivity extends BaseActivity {
         //stringRequest.setTag(TAG);
         jsObjRequest.setTag(TAG);
 
-        //queue.add(stringRequest);
         queue.add(jsObjRequest);
-        try {
-            Thread.sleep(5000);
-        } catch (Exception e) {
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        if(queue != null) {
+            queue.cancelAll(TAG);
         }
+    }
 
-
+    protected void getPatientData() {
         MediDataRequest jsRequest = new MediDataRequest(urlData,
                 new Response.Listener<JSONArray>() {
                     @Override
                     public void onResponse(JSONArray response) {
                         //Log.d("Response: ", response.toString());
                         Toast.makeText(getApplicationContext(),"hello", Toast.LENGTH_LONG).show();
-                        tv.setText(response.toString());
+                        parsePatientJSON(response);
                     }
                 },
                 new Response.ErrorListener() {
@@ -122,12 +128,25 @@ public class VolleyTestActivity extends BaseActivity {
         queue.add(jsRequest);
     }
 
-    @Override
-    protected void onStop() {
-        super.onStop();
-        if(queue != null) {
-            queue.cancelAll(TAG);
+    protected void parsePatientJSON(JSONArray response) {
+        MediValues.patientData = new HashMap<>();
+
+        for(int i = 0; i < response.length(); i++) {
+            try {
+                JSONObject entry = response.getJSONObject(i);
+                String pid = entry.getString("pid");
+                String name = entry.getString("name");
+                String birth = entry.getString("birth");
+
+                Map<String, String> temp = new HashMap<>();
+                temp.put("name", name);
+                temp.put("birth", birth);
+                MediValues.patientData.put(pid, temp);
+            } catch (JSONException je){
+            }
         }
+
+        tv.setText(MediValues.patientData.get("20180105").get("name"));
     }
 
     public void onPrevClick(View view) {

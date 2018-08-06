@@ -13,11 +13,7 @@
         android:theme="@style/AppTheme">
         <activity
             android:name=".MainActivity">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
 
         <activity
@@ -26,7 +22,13 @@
 
         <activity android:name=".MenuActivity"/>
         <activity android:name=".TimeDateActivity"/>
-        <activity android:name=".VolleyTestActivity"/>
+        <activity android:name=".VolleyTestActivity">
+        <intent-filter>
+            <action android:name="android.intent.action.MAIN" />
+
+            <category android:name="android.intent.category.LAUNCHER" />
+        </intent-filter>
+        </activity>
         <activity android:name=".ContainerSelectActivity"/>
         <activity android:name=".RecordConsumeActivity"/>
         <activity android:name=".StoolActivity"/>
