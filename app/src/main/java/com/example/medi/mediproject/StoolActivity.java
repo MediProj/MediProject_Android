@@ -3,34 +3,20 @@ package com.example.medi.mediproject;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.AuthFailureError;
-import com.android.volley.Request;
 import com.android.volley.RequestQueue;
-import com.android.volley.Response;
-import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
-import com.android.volley.toolbox.Volley;
-
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
-
-import java.util.HashMap;
-import java.util.Map;
 
 public class StoolActivity extends Activity {
 
-    RequestQueue queue;
     Button bt_prev, bt_next;
     TextView tv_stool_num;
-    String stool_num = "1";
-    String pid;
+    String str_stool_num = "0";
+    String pid,str_user_pk;
+    int user_pk, stool_num=0;
 
     public void onCreate(Bundle SavedInstanceState) {
         super.onCreate(SavedInstanceState);
@@ -42,10 +28,18 @@ public class StoolActivity extends Activity {
 
         final Intent intent = getIntent();
         pid=intent.getStringExtra("pid");
-        Toast.makeText(getApplicationContext(),pid,Toast.LENGTH_LONG).show();
-        String str_user_pk = MediValues.patientData.get(pid).get("user_pk");
-        int user_pk = Integer.parseInt(str_user_pk);
-        MediPostRequest postRequest = new MediPostRequest(user_pk,50, 5.0f,5.0f,5.0f,this);
+
+        String str_pk = MediValues.patientData.get(pid).get("pk");
+        str_user_pk = MediValues.patientData.get(pid).get("user_pk");
+        user_pk = Integer.parseInt(str_user_pk);
+
+        MediGetRequest getRequest = new MediGetRequest(str_pk, "stool_count", this);
+
+        str_stool_num = getRequest.getData();
+
+        //stool num ++
+        stool_num = Integer.parseInt(str_stool_num);
+        str_stool_num = String.valueOf(stool_num);
 
         //next bnt 텍스트 수전
         bt_next.setText("등록");
@@ -57,6 +51,7 @@ public class StoolActivity extends Activity {
                 Intent intent2 = new Intent(StoolActivity.this, TimeDateActivity.class);
                 intent2.putExtra("val", 0);
                 intent2.putExtra("pid",pid);
+                MediPostRequest postRequest = new MediPostRequest(user_pk,stool_num, 0.0f,0.0f,0.0f, view.getContext());
                 startActivity(intent2);
             }
         });
