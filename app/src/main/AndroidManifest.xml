@@ -12,23 +12,22 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".MainActivity">
+            android:name=".VolleyTestActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
 
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
 
         <activity
             android:name=".BaseActivity">
         </activity>
 
+        <activity android:name=".MainActivity"/>
         <activity android:name=".MenuActivity"/>
         <activity android:name=".TimeDateActivity"/>
-        <activity android:name=".VolleyTestActivity">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
 
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        </activity>
         <activity android:name=".ContainerSelectActivity"/>
         <activity android:name=".RecordConsumeActivity"/>
         <activity android:name=".StoolActivity"/>

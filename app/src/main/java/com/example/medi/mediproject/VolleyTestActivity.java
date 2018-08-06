@@ -1,5 +1,6 @@
 package com.example.medi.mediproject;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.method.ScrollingMovementMethod;
 import android.util.Log;
@@ -147,6 +148,8 @@ public class VolleyTestActivity extends BaseActivity {
         }
 
         tv.setText(MediValues.patientData.get("20180105").get("name"));
+        Intent intent = new Intent(VolleyTestActivity.this, MainActivity.class);
+        startActivity(intent);
     }
 
     public void onPrevClick(View view) {
