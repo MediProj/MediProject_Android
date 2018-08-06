@@ -33,6 +33,9 @@ public class ReportActivity extends Activity {
         title =findViewById(R.id.title);
         bt_prev=findViewById(R.id.Bnt_prev);
 
+        Intent intent = getIntent();
+        String pid = intent.getStringExtra("pid");
+        String name= MediValues.patientData.get(pid).get("name");
         title.setText("기록 조회 및 수정");
         /*
         final Intent intent=getIntent();

@@ -32,7 +32,6 @@ public class VolleyTestActivity extends BaseActivity {
     private String inpText;
 
     private RequestQueue queue;
-
     private String authToken;
 
     public static final String TAG = "MainTAG";
@@ -43,7 +42,6 @@ public class VolleyTestActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_volley_test);
 
         btn = findViewById(R.id.btn);
         inp = findViewById(R.id.input);

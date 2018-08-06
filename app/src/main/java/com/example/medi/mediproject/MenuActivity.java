@@ -10,7 +10,7 @@ import android.widget.TextView;
 public class MenuActivity extends Activity {
     TextView tv,tv_stool, tv_urine, tv_consume,tv_report;
     Button bt_prev;
-    String name,number;
+    String name,pid,pk;
 
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -19,8 +19,8 @@ public class MenuActivity extends Activity {
         final Intent intent=getIntent();
 
         //Patient Info (name/number)
-        name = intent.getStringExtra("Name");
-        number= intent.getStringExtra("Number");
+        pid= intent.getStringExtra("pid");
+        name= MediValues.patientData.get(pid).get("name");
 
         tv =findViewById(R.id.tv);
         tv_stool=findViewById(R.id.stool);
@@ -37,7 +37,7 @@ public class MenuActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent2 = new Intent(MenuActivity.this, TimeDateActivity.class);
-                intent2.putExtra("val", 0);
+                intent2.putExtra("pid", pid);
                 startActivity(intent2);
             }
         });
@@ -47,7 +47,7 @@ public class MenuActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent2 = new Intent(MenuActivity.this,TimeDateActivity.class);
-                intent2.putExtra("val", 1);
+                intent2.putExtra("pid", pid);
                 startActivity(intent2);
 
             }
@@ -58,7 +58,7 @@ public class MenuActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent2 = new Intent(MenuActivity.this,TimeDateActivity.class);
-                intent2.putExtra("val", 2);
+                intent2.putExtra("pid", pid);
                 startActivity(intent2);
             }
         });
@@ -68,8 +68,7 @@ public class MenuActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent2 = new Intent(MenuActivity.this,ReportActivity.class);
-                intent2.putExtra("Page", "기록 조회 및 수정");
-                intent2.putExtra("Name", name);
+                intent2.putExtra("pid", pid);
                 startActivity(intent2);
 
             }
