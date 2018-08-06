@@ -28,13 +28,15 @@ public class MainActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, MenuActivity.class);
-                intent.putExtra("Name", p_name.getText().toString());
-                intent.putExtra("Number", p_num.getText().toString());
                 CheckRegister();
 
-                if(!Login)
-                    Toast.makeText(getApplicationContext(),"잘못된 이름/환자번호 입니다", Toast.LENGTH_LONG).show();
-                startActivity(intent);
+                if (!Login)
+                    Toast.makeText(getApplicationContext(), "잘못된 이름/환자번호 입니다", Toast.LENGTH_LONG).show();
+
+                else {
+                    intent.putExtra("pid", p_num.getText().toString());
+                    startActivity(intent);
+                }
             }
         });
     }
