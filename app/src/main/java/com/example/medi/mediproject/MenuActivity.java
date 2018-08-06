@@ -37,6 +37,7 @@ public class MenuActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent2 = new Intent(MenuActivity.this, TimeDateActivity.class);
+                intent2.putExtra("val",0);
                 intent2.putExtra("pid", pid);
                 startActivity(intent2);
             }
@@ -47,6 +48,7 @@ public class MenuActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent2 = new Intent(MenuActivity.this,TimeDateActivity.class);
+                intent2.putExtra("val",1);
                 intent2.putExtra("pid", pid);
                 startActivity(intent2);
 
@@ -58,6 +60,7 @@ public class MenuActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent2 = new Intent(MenuActivity.this,TimeDateActivity.class);
+                intent2.putExtra("val",2);
                 intent2.putExtra("pid", pid);
                 startActivity(intent2);
             }
