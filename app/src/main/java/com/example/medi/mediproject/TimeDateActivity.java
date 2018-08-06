@@ -19,6 +19,7 @@ public class TimeDateActivity extends Activity {
     final int DIALOG_DATE = 1;
     final int DIALOG_TIME = 2;
     String name =null;
+    String pid=null;
     int page_id=0;
     boolean date_flag=false;
     boolean time_flag=false;
@@ -37,6 +38,8 @@ public class TimeDateActivity extends Activity {
         //title 표시
         final Intent intent = getIntent();
         page_id= intent.getIntExtra("val",0);
+        pid = intent.getStringExtra("pid");
+        name = MediValues.patientData.get(pid).get("name");
 
         switch (page_id){
             //stool
@@ -73,6 +76,7 @@ public class TimeDateActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent2 = new Intent(TimeDateActivity.this,MenuActivity.class);
+                intent2.putExtra("pid",pid);
                 startActivity(intent2);
 
             }
@@ -92,15 +96,18 @@ public class TimeDateActivity extends Activity {
                 else {
                     if (page_id==0) {
                         Intent intent2 = new Intent(TimeDateActivity.this, StoolActivity.class);
+                        intent2.putExtra("pid", pid);
                         startActivity(intent2);
                     }
                     else if(page_id==1) {
                         Intent intent2 = new Intent(TimeDateActivity.this, ContainerSelectActivity.class);
+                        intent2.putExtra("pid", pid);
                         startActivity(intent2);
                     }
 
                     else if(page_id==2) {
                         Intent intent2 = new Intent(TimeDateActivity.this, RecordConsumeActivity.class);
+                        intent2.putExtra("pid", pid);
                         startActivity(intent2);
                     }
 

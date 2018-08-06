@@ -13,6 +13,7 @@ public class StoolActivity extends Activity {
     Button bt_prev, bt_next;
     TextView tv_stool_num;
     String stool_num = "1";
+    String pid;
 
     public void onCreate(Bundle SavedInstanceState) {
         super.onCreate(SavedInstanceState);
@@ -21,6 +22,9 @@ public class StoolActivity extends Activity {
         bt_next = findViewById(R.id.Bnt_next);
         bt_prev = findViewById(R.id.Bnt_prev);
         tv_stool_num = findViewById(R.id.tv_stool_num);
+
+        final Intent intent = getIntent();
+        pid=intent.getStringExtra("pid");
 
         //stool num 얻어오기
 
@@ -33,6 +37,7 @@ public class StoolActivity extends Activity {
             public void onClick(View view) {
                 Intent intent2 = new Intent(StoolActivity.this, TimeDateActivity.class);
                 intent2.putExtra("val", 0);
+                intent2.putExtra("pid",pid);
                 startActivity(intent2);
             }
         });
@@ -42,8 +47,8 @@ public class StoolActivity extends Activity {
             public void onClick(View view) {
                 Intent intent2 = new Intent(StoolActivity.this, MenuActivity.class);
                 Toast.makeText(getApplicationContext(),"성공적으로 등록되었습니다", Toast.LENGTH_LONG).show();
+                intent2.putExtra("pid",pid);
                 startActivity(intent2);
-
             }
         });
 

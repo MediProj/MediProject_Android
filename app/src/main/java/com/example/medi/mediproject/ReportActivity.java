@@ -24,6 +24,7 @@ public class ReportActivity extends Activity {
     ArrayList <ReportItem> list;
     TextView title;
     Button bt_prev;
+    String name,pid;
     Date date = new Date(1,2,3);
 
     public void onCreate(Bundle SavedInstanceState){
@@ -33,9 +34,9 @@ public class ReportActivity extends Activity {
         title =findViewById(R.id.title);
         bt_prev=findViewById(R.id.Bnt_prev);
 
-        Intent intent = getIntent();
-        String pid = intent.getStringExtra("pid");
-        String name= MediValues.patientData.get(pid).get("name");
+        final Intent intent = getIntent();
+        pid = intent.getStringExtra("pid");
+        name= MediValues.patientData.get(pid).get("name");
         title.setText("기록 조회 및 수정");
         /*
         final Intent intent=getIntent();
@@ -56,6 +57,7 @@ public class ReportActivity extends Activity {
             @Override
             public void onClick(View view) {
                 Intent intent2 = new Intent(ReportActivity.this, MenuActivity.class);
+                intent2.putExtra("pid", pid);
                 startActivity(intent2);
             }
         });
