@@ -12,6 +12,8 @@ import com.android.volley.toolbox.JsonArrayRequest;
 
 public class MediDataRequest extends JsonArrayRequest {
 
+//    public JSONArray MediArray;
+
     public MediDataRequest(String url, Listener<JSONArray> listener,
                          ErrorListener errorListener) {
         super(url, listener, errorListener);
@@ -24,4 +26,5 @@ public class MediDataRequest extends JsonArrayRequest {
         headers.put("Authorization", auth);
         return headers;
     }
+
 }
