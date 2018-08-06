@@ -8,6 +8,7 @@
 
     <RelativeLayout
         android:layout_weight="7"
+        android:layout_gravity="center"
         style="@style/Body">
 
         <TextView

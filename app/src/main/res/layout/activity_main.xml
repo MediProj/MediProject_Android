@@ -26,7 +26,7 @@
             android:layout_gravity="center"
             android:gravity="bottom"
             android:text="안녕하세요"
-            android:textSize="40dp"
+            android:textSize="40sp"
             android:textStyle="bold"
             android:layout_width="wrap_content"
             android:layout_height="0dp"/>
@@ -43,24 +43,24 @@
         <EditText
             android:id="@+id/p_name"
             android:layout_weight="1"
-            android:layout_width="130dp"
+            android:layout_width="200sp"
             android:layout_height="0dp"
-            android:textSize="30dp"/>
+            android:textSize="30sp"/>
 
         <TextView
             android:layout_weight="1"
             android:gravity="bottom"
             android:layout_width="wrap_content"
             android:layout_height="0dp"
-            android:textSize="20dp"
+            android:textSize="20sp"
             android:text="번호"/>
 
         <EditText
             android:id="@+id/p_num"
             android:layout_weight="1"
-            android:layout_width="130dp"
+            android:layout_width="200sp"
             android:layout_height="0dp"
-            android:textSize="30dp"/>
+            android:textSize="30sp"/>
 
         <TextView
             android:layout_weight="1"
@@ -77,14 +77,14 @@
 
         <Button
             android:id="@+id/bt_login"
-            android:layout_marginBottom="10dp"
+            android:layout_marginBottom="10sp"
             android:layout_gravity="center"
             android:background="@drawable/capsule"
             android:backgroundTint="@color/Green"
             android:textColor="@color/White"
-            android:textSize="20dp"
-            android:layout_width="120dp"
+            android:textSize="20sp"
+            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="들어가기"/>
+            android:text="  들어가기  "/>
     </RelativeLayout>
 </LinearLayout>

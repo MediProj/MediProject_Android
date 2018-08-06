@@ -139,14 +139,14 @@
 
     <style name="Content">
         <item name="android:gravity">center_horizontal</item>
-        <item name="android:textSize">20dp</item>
-        <item name="android:layout_margin">10dp</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:layout_margin">10sp</item>
     </style>
 
     <style name="CenterText">
         <item name="android:layout_centerHorizontal">true</item>
         <item name="android:gravity">center_horizontal</item>
-        <item name="android:layout_margin">10dp</item>
+        <item name="android:layout_margin">15sp</item>
     </style>
 
     <style name="Body">
@@ -158,9 +158,9 @@
     <style name="Menu">
         <item name="android:gravity">center</item>
         <item name="android:layout_marginTop">10dp</item>
-        <item name="android:layout_height">50dp</item>
-        <item name="android:layout_width">150dp</item>
-        <item name="android:textSize">25dp</item>
+        <item name="android:layout_height">50sp</item>
+        <item name="android:layout_width">150sp</item>
+        <item name="android:textSize">25sp</item>
         <item name="android:textColor">@color/White</item>
         <item name="android:background">@color/Green</item>
         <item name="android:textStyle">bold</item>

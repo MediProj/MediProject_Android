@@ -33,11 +33,13 @@ public class ReportActivity extends Activity {
         title =findViewById(R.id.title);
         bt_prev=findViewById(R.id.Bnt_prev);
 
+        title.setText("기록 조회 및 수정");
+        /*
         final Intent intent=getIntent();
         String page_title = intent.getStringExtra("Page");
         final String name = intent.getStringExtra("Name");
+
         title.setText(page_title);
-/*
         list = new ArrayList<ReportItem>();
         listView = findViewById(R.id.report_list);
 
@@ -45,16 +47,15 @@ public class ReportActivity extends Activity {
         list.add(new ReportItem(date, "ina", 1,0.0,0.0,0.0));
         listViewAdapter= new ListViewAdapter(getApplicationContext(),list);
         listView.setAdapter(listViewAdapter);
-
+*/
+        bt_prev.setText("처음으로");
         bt_prev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent2 = new Intent(ReportActivity.this, MenuActivity.class);
-                intent2.putExtra("Name", name);
                 startActivity(intent2);
             }
         });
-*/
     }
 
     private class ListViewAdapter extends BaseAdapter{

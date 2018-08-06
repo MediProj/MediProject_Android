@@ -12,9 +12,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name=".LoginActivity"
-            android:configChanges="orientation"
-            android:screenOrientation="landscape">
+            android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -26,6 +24,19 @@
             android:name=".BaseActivity">
         </activity>
 
+        <activity android:name=".MenuActivity"/>
+        <activity android:name=".TimeDateActivity"/>
+        <activity android:name=".VolleyTestActivity"/>
+        <activity android:name=".ContainerSelectActivity"/>
+        <activity android:name=".RecordConsumeActivity"/>
+        <activity android:name=".StoolActivity"/>
+        <activity android:name=".PromptBottleActivity"/>
+        <activity android:name=".ReportActivity"/>
+        <activity android:name=".PromptDiaperActivity"/>
+        <activity android:name=".PromptGreenActivity"/>
+        <activity android:name=".RecordUrineActivity"/>
+
+        <!--
         <activity
             android:name=".ContainerSelectActivity"
             android:configChanges="orientation"
@@ -63,7 +74,6 @@
             android:screenOrientation="landscape">
         </activity>
 
-        <!-- ina manifest -->
 
         <activity android:name=".MenuActivity"
             android:configChanges="orientation"
@@ -77,8 +87,7 @@
         <activity android:name=".ReportActivity"
             android:configChanges="orientation"
             android:screenOrientation="landscape"/>
-
-        <!-- ina manifest END -->
+        -->
 
     </application>
 
