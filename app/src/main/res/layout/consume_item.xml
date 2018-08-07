@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:weightSum="5"
+    android:orientation="horizontal" android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <TextView
+        android:text="밥"
+        android:id="@+id/name"
+        style="@style/Content"
+        android:gravity="right"
+        android:layout_weight="2"
+        android:layout_width="0dp"
+        android:layout_gravity="center"
+        android:layout_height="wrap_content"/>
+
+    <TextView
+        android:id="@+id/amount"
+        android:text="0"
+        android:layout_gravity="center"
+        android:background="@color/Gray2"
+        style="@style/Content"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:gravity="center"
+        android:layout_height="wrap_content"/>
+
+    <RelativeLayout
+        android:layout_weight="2"
+        android:layout_width="0dp"
+        android:layout_gravity="center_horizontal"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/minus"
+            android:text="-"
+            android:backgroundTint="@color/Green"
+            style="@style/Bt_consume"/>
+
+        <TextView
+            android:id="@+id/plus"
+            android:text="+"
+            android:backgroundTint="@color/Green"
+            android:layout_toRightOf="@+id/minus"
+            style="@style/Bt_consume"/>
+    </RelativeLayout>
+</LinearLayout>
