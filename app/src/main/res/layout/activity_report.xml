@@ -46,7 +46,7 @@
         </RelativeLayout>
 
         <ListView
-            android:id="@+id/report_list"
+            android:id="@+id/ReportList"
             android:layout_below="@+id/ll"
             android:layout_margin="50sp"
             android:layout_centerInParent="true"

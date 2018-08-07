@@ -1,77 +1,189 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    style="@style/linearViewFull"
-    tools:context=".RecordConsumeActivity">
+    android:orientation="vertical"
+    android:weightSum="10"
+    android:layout_width="match_parent" android:layout_height="match_parent">
 
     <TextView
-        android:id="@+id/titleBar"
-        style="@style/titleBar"
-        android:text="@string/consumeTitle" />
-
+        android:layout_weight="2"
+        style="@style/Title" android:id="@+id/title" android:text="Title"/>
+<!--
     <LinearLayout
-        style="@style/linearViewContent"
-        android:baselineAligned="false">
+        style="@style/Body"
+        android:layout_weight="7"
+        android:weightSum="5"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <GridView
-            android:id="@+id/menuGrid"
-            android:layout_width="0px"
-            android:layout_height="wrap_content"
+        <TextView
             android:layout_weight="1"
-            android:gravity="center"
-            android:numColumns="2"
-            android:verticalSpacing="10dp"
-            android:horizontalSpacing="10dp" >
-        </GridView>
+            android:text="      드신 양을 입력하세요"
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            style="@style/Content"/>
 
         <LinearLayout
-            android:layout_width="0px"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:orientation="vertical"
-            android:gravity="center_vertical"
-            android:layout_margin="20dp">
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="5"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
 
             <TextView
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="@string/drinkPrompt"
-                android:textSize="40sp"
-                android:textStyle="bold"/>
+                android:text="밥"
+                style="@style/Content"
+                android:gravity="right"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
 
-            <EditText
-                android:id="@+id/drinkPrint"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="@string/drinkHint"
-                android:textSize="40sp"
-                android:textStyle="bold"
-                android:inputType="numberDecimal" />
+            <TextView
+                android:id="@+id/amount1"
+                android:text="0"
+                android:background="@color/Gray2"
+                style="@style/Content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:gravity="center"
+                android:layout_height="wrap_content"/>
 
+            <RelativeLayout
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/bt_plus1"
+                    android:text="-"
+                    android:backgroundTint="@color/Green"
+                    style="@style/Bt_consume"/>
+
+                <TextView
+                    android:id="@+id/bt_minus1"
+                    android:text="+"
+                    android:backgroundTint="@color/Green"
+                    android:layout_toRightOf="@+id/bt_plus1"
+                    style="@style/Bt_consume"/>
+            </RelativeLayout>
         </LinearLayout>
 
-    </LinearLayout>
-
-    <LinearLayout
-        style="@style/linearViewBottom">
-
-        <RelativeLayout
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="5"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
+            android:layout_height="0dp">
 
-            <Button
-                android:id="@+id/btnPrev"
-                style="@style/btnPrev"
-                android:text="@string/prev" />
+                <TextView
+                    android:text="국"
+                    style="@style/Content"
+                    android:gravity="right"
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"/>
 
-            <Button
-                android:id="@+id/btnNext"
-                style="@style/btnNext"
-                android:text="@string/next" />
+                <TextView
+                    android:id="@+id/amount2"
+                    android:text="0"
+                    android:background="@color/Gray2"
+                    style="@style/Content"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:gravity="center"
+                    android:layout_height="wrap_content"/>
 
-        </RelativeLayout>
+                <RelativeLayout
+                    android:layout_weight="2"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:id="@+id/bt_plus2"
+                        android:text="-"
+                        android:backgroundTint="@color/Green"
+                        style="@style/Bt_consume"/>
+
+                    <TextView
+                        android:id="@+id/bt_minus2"
+                        android:text="+"
+                        android:backgroundTint="@color/Green"
+                        android:layout_toRightOf="@+id/bt_plus2"
+                        style="@style/Bt_consume"/>
+                </RelativeLayout>
 
     </LinearLayout>
+
+        <LinearLayout
+            android:layout_weight="1"
+            android:orientation="horizontal"
+            android:weightSum="5"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
+
+            <TextView
+                android:text="반찬"
+                style="@style/Content"
+                android:gravity="right"
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"/>
+
+            <TextView
+                android:id="@+id/amount3"
+                android:text="0"
+                android:background="@color/Gray2"
+                style="@style/Content"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:gravity="center"
+
+                android:layout_height="wrap_content"/>
+
+            <RelativeLayout
+                android:layout_weight="2"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:id="@+id/bt_plus3"
+                    android:text="-"
+                    android:backgroundTint="@color/Green"
+                    style="@style/Bt_consume"/>
+
+                <TextView
+                    android:id="@+id/bt_minus3"
+                    android:text="+"
+                    android:backgroundTint="@color/Green"
+                    android:layout_toRightOf="@+id/bt_plus3"
+                    style="@style/Bt_consume"/>
+            </RelativeLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+    -->
+
+    <ListView
+        android:id="@+id/ConsumeList"
+        android:layout_weight="7"
+        android:layout_margin="50sp"
+        android:layout_width="match_parent"
+        android:layout_height="0sp">
+
+    </ListView>
+    <RelativeLayout
+        android:layout_weight="1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <Button
+            android:id="@+id/Bnt_prev"
+            style="@style/Bt_prev" />
+
+        <Button
+            android:id="@+id/Bnt_next"
+            style="@style/Bt_next" />
+    </RelativeLayout>
 
 </LinearLayout>

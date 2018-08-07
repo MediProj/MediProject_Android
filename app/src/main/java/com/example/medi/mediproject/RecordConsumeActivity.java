@@ -10,7 +10,7 @@ public class RecordConsumeActivity extends BaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_record_consume);
+        setContentView(R.layout.activity_record_liquid);
 
         Intent intent =getIntent();
         pid = intent.getStringExtra("pid");

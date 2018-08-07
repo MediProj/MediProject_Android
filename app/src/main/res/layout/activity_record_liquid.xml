@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/linearViewFull"
+    tools:context=".RecordConsumeActivity">
+
+    <TextView
+        android:id="@+id/titleBar"
+        style="@style/titleBar"
+        android:text="@string/consumeTitle" />
+
+    <LinearLayout
+        style="@style/linearViewContent"
+        android:baselineAligned="false">
+
+        <GridView
+            android:id="@+id/menuGrid"
+            android:layout_width="0px"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:numColumns="2"
+            android:verticalSpacing="10dp"
+            android:horizontalSpacing="10dp" >
+        </GridView>
+
+        <LinearLayout
+            android:layout_width="0px"
+            android:layout_height="match_parent"
+            android:layout_weight="2"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_margin="20dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="@string/drinkPrompt"
+                android:textSize="40sp"
+                android:textStyle="bold"/>
+
+            <EditText
+                android:id="@+id/drinkPrint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:hint="@string/drinkHint"
+                android:textSize="40sp"
+                android:textStyle="bold"
+                android:inputType="numberDecimal" />
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        style="@style/linearViewBottom">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <Button
+                android:id="@+id/btnPrev"
+                style="@style/btnPrev"
+                android:text="@string/prev" />
+
+            <Button
+                android:id="@+id/btnNext"
+                style="@style/btnNext"
+                android:text="@string/next" />
+
+        </RelativeLayout>
+
+    </LinearLayout>
+
+</LinearLayout>

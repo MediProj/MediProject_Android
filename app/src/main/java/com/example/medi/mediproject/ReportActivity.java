@@ -36,7 +36,7 @@ public class ReportActivity extends Activity {
         final Intent intent = getIntent();
         pid = intent.getStringExtra("pid");
         name= MediValues.patientData.get(pid).get("name");
-
+        listView = findViewById(R.id.ReportList);
         //오늘날짜
         Calendar cal = Calendar.getInstance();
         int month= cal.get(Calendar.MONTH)+1;
@@ -107,11 +107,11 @@ public class ReportActivity extends Activity {
             if(view==null){
                 view =inflater.inflate(R.layout.report_item,viewGroup,false);
                 holder = new ViewHolder();
-                holder.tv_name= findViewById(R.id.item_name);
-                holder.tv_date=findViewById(R.id.item_date);
-                holder.tv_stool=findViewById(R.id.item_stool);
-                holder.tv_urine=findViewById(R.id.item_urine);
-                holder.tv_consume=findViewById(R.id.item_consume);
+                holder.tv_name= view.findViewById(R.id.item_name);
+                holder.tv_date=view.findViewById(R.id.item_date);
+                holder.tv_stool=view.findViewById(R.id.item_stool);
+                holder.tv_urine=view.findViewById(R.id.item_urine);
+                holder.tv_consume=view.findViewById(R.id.item_consume);
                 view.setTag(holder);
             }
             else{
@@ -128,7 +128,7 @@ public class ReportActivity extends Activity {
         }
     }
 
-    private class ViewHolder {
+    public class ViewHolder {
         TextView tv_name,tv_stool, tv_urine,tv_consume,tv_date;
     }
 }

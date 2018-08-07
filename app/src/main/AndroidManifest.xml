@@ -27,6 +27,8 @@
         </activity>
         <activity android:name=".MainActivity"/>
         <activity android:name=".MenuActivity"/>
+        <activity android:name=".ConsumeMenuActivity"/>
+        <activity android:name=".RecordConsume2Activity"/>
         <activity android:name=".TimeDateActivity"/>
         <activity android:name=".VolleyTestActivity">
 
