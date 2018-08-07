@@ -45,7 +45,12 @@
             android:layout_weight="1"
             android:layout_width="200sp"
             android:layout_height="0dp"
-            android:textSize="30sp"/>
+            android:textSize="30sp"
+            android:nextFocusDown="@+id/p_num"
+            android:nextFocusRight="@+id/p_num"
+            android:nextFocusForward="@+id/p_num"
+            android:inputType="text"
+            android:imeOptions="actionNext"/>
 
         <TextView
             android:layout_weight="1"
@@ -60,7 +65,11 @@
             android:layout_weight="1"
             android:layout_width="200sp"
             android:layout_height="0dp"
-            android:textSize="30sp"/>
+            android:textSize="30sp"
+            android:nextFocusLeft="@+id/p_name"
+            android:nextFocusUp="@+id/p_name"
+            android:inputType="text"
+            android:imeOptions="actionDone"/>
 
         <TextView
             android:layout_weight="1"
