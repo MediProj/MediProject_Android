@@ -17,6 +17,7 @@ public class RecordConsumeActivity extends BaseActivity {
 
         buttonPrev = (Button) findViewById(R.id.btnPrev);
         buttonNext = (Button) findViewById(R.id.btnNext);
+
     }
 
     public void onPrevClick(View view) {

@@ -161,17 +161,6 @@ public class TimeDateActivity extends Activity {
                         }
                 }, today_flag, hour,minute,false);
 
-                //timePickerDialog.onTimeChanged((TimePicker) timePickerDialog.getCurrentFocus(),hour, minute);
-                /*
-                TimePickerDialog timePickerDialog = new TimePickerDialog(TimeDateActivity.this,
-                        new TimePickerDialog.OnTimeSetListener() {
-                            @Override
-                            public void onTimeSet(TimePicker timePicker, int hour, int minute) {
-                                Toast.makeText(getApplicationContext(),hour+"시 "+ minute +"분을 선택했습니다",Toast.LENGTH_SHORT).show();
-                                time_flag=true;
-                            }
-                        }, hour,minute,false);
-            */
                 return timePickerDialog;
 
         }
