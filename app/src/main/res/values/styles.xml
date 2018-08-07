@@ -11,6 +11,7 @@
     <!-- Splash Screen -->
     <style name="SplashTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowBackground">@drawable/splash_background</item>
+        <item name="android:scaleType">centerCrop</item>
     </style>
     <!-- Splash Screen END -->
 
@@ -155,6 +156,7 @@
     </style>
 
     <style name="Content">
+        <item name="android:textColor">@color/Black</item>
         <item name="android:gravity">center_horizontal</item>
         <item name="android:textSize">30sp</item>
         <item name="android:layout_margin">10sp</item>

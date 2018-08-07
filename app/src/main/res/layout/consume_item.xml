@@ -1,10 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:weightSum="5"
+    android:background="@color/Back"
     android:orientation="horizontal" android:layout_width="match_parent"
     android:layout_height="wrap_content">
     <TextView
         android:text="밥"
+        android:textColor="#000000"
         android:id="@+id/name"
         style="@style/Content"
         android:gravity="right"
@@ -16,6 +18,7 @@
     <TextView
         android:id="@+id/amount"
         android:text="0"
+        android:textColor="#000000"
         android:layout_gravity="center"
         android:background="@color/Gray2"
         style="@style/Content"

@@ -11,6 +11,8 @@
     <color name="Gray">#989898</color>
     <color name="Gray2">#DDDDDD</color>
     <color name="Green">#77bc1f</color>
-
+    <color name="Black">#000000</color>
+    <color name="Back">#FFFFFF</color>
     <!-- ina color END-->
+
 </resources>
