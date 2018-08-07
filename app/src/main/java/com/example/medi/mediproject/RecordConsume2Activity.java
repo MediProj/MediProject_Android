@@ -34,9 +34,9 @@ public class RecordConsume2Activity extends Activity {
         bt_prev=findViewById(R.id.Bnt_prev);
 
         list = new ArrayList<>();
-        list.add(new ConsumeItem("밥", "0"));
-        list.add(new ConsumeItem("국", "0"));
-        list.add(new ConsumeItem("반착", "0"));
+        list.add(new ConsumeItem("밥", 0));
+        list.add(new ConsumeItem("국", 0));
+        list.add(new ConsumeItem("반찬", 0));
 
         listView = findViewById(R.id.ConsumeList);
 
@@ -89,7 +89,7 @@ public class RecordConsume2Activity extends Activity {
         }
 
         @Override
-        public View getView(int i, View view, ViewGroup viewGroup) {
+        public View getView(final int i, View view, ViewGroup viewGroup) {
 
             ConsumeViewHolder holder=null;
 
@@ -106,17 +106,17 @@ public class RecordConsume2Activity extends Activity {
                 holder=(ConsumeViewHolder)view.getTag();
             }
 
-            String str_amount=list.get(i).amount;
-            final int amount = Integer.parseInt(str_amount);
             final ConsumeViewHolder finalHolder = holder;
-
-            holder.fname.setText(list.get(i).name);
+            final String name= this.list.get(i).name;
+            holder.fname.setText(name);
 
            holder.plus.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(amount<5) {
-                        finalHolder.amount.setText(String.valueOf(amount + 1));
+                    if(listViewAdapter.list.get(i).amount<=6) {
+                        int amount = listViewAdapter.list.get(i).amount;
+                        finalHolder.amount.setText(getStringAmount(amount+1));
+                        listViewAdapter.updateList(i, name, amount+1);
                     }
                 }
             });
@@ -124,13 +124,34 @@ public class RecordConsume2Activity extends Activity {
             holder.minus.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(amount>0) {
-                        finalHolder.amount.setText(String.valueOf(amount - 1));
+                    if(listViewAdapter.list.get(i).amount>0) {
+                        int amount=listViewAdapter.list.get(i).amount;
+                        finalHolder.amount.setText(getStringAmount(amount-1));
+                        listViewAdapter.updateList(i,name, amount-1);
                     }
                 }
             });
-
             return view;
+        }
+
+        public String getStringAmount(int amount){
+            switch (amount){
+                case 0 : return "0";
+                case 1 : return "1/4";
+                case 2: return "1/2";
+                case 3: return "3/4";
+                case 4: return "1";
+                case 5: return "3/2";
+                case 6: return "2";
+            }
+
+            return "0";
+        }
+
+        public void updateList(int i,String name, int newAmount){
+
+            this.list.remove(i);
+            this.list.add(i, new ConsumeItem(name, newAmount));
         }
     }
 
