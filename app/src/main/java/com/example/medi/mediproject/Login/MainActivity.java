@@ -1,4 +1,4 @@
-package com.example.medi.mediproject;
+package com.example.medi.mediproject.Login;
 
 import android.app.Activity;
 import android.content.Intent;
@@ -8,6 +8,10 @@ import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.medi.mediproject.MediValues;
+import com.example.medi.mediproject.MenuActivity;
+import com.example.medi.mediproject.R;
 
 public class MainActivity extends Activity {
 

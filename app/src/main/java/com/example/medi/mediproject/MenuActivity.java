@@ -6,6 +6,9 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.example.medi.mediproject.Login.MainActivity;
 
 public class MenuActivity extends Activity {
     TextView tv,tv_stool, tv_urine, tv_consume,tv_report;
@@ -27,7 +30,7 @@ public class MenuActivity extends Activity {
         tv_urine=findViewById(R.id.urine);
         tv_consume=findViewById(R.id.consume);
         tv_report =findViewById(R.id.report);
-        bt_prev=findViewById(R.id.Bnt_prev);
+        bt_prev=findViewById(R.id.Bnt_logout);
 
         //인사
         tv.setText(name + "님 안녕하세요! 메뉴를 선택해 주세요");
@@ -77,13 +80,13 @@ public class MenuActivity extends Activity {
             }
         });
 
-        //Previous
+        //Previous => logout
         bt_prev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 Intent intent2 = new Intent(MenuActivity.this,MainActivity.class);
+                Toast.makeText(getApplicationContext(),"로그아웃", Toast.LENGTH_SHORT).show();
                 startActivity(intent2);
-
             }
         });
 

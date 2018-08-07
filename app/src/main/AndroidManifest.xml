@@ -13,7 +13,7 @@
         android:theme="@style/AppTheme">
 
 
-        <activity android:name=".SplashActivity"
+        <activity android:name=".Login.SplashActivity"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,16 +25,16 @@
         <activity
             android:name=".BaseActivity">
         </activity>
-        <activity android:name=".MainActivity"/>
+        <activity android:name=".Login.MainActivity"/>
         <activity android:name=".MenuActivity"/>
         <activity android:name=".ConsumeMenuActivity"/>
-        <activity android:name=".RecordConsume2Activity"/>
+        <activity android:name=".RecordConsumeActivity"/>
         <activity android:name=".TimeDateActivity"/>
         <activity android:name=".VolleyTestActivity">
 
         </activity>
         <activity android:name=".ContainerSelectActivity"/>
-        <activity android:name=".RecordConsumeActivity"/>
+        <activity android:name=".RecordLiquidActivity"/>
         <activity android:name=".StoolActivity">
 
         </activity>
@@ -73,7 +73,7 @@
         </activity>
 
         <activity
-            android:name=".RecordConsumeActivity"
+            android:name=".RecordLiquidActivity"
             android:configChanges="orientation"
             android:screenOrientation="landscape">
         </activity>

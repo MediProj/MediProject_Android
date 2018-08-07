@@ -5,7 +5,6 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
-import android.widget.TextView;
 
 public class ConsumeMenuActivity extends Activity {
     Button bt_liq, bt_cons;
@@ -25,7 +24,7 @@ public class ConsumeMenuActivity extends Activity {
         bt_liq.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent2 = new Intent(ConsumeMenuActivity.this, RecordConsumeActivity.class);
+                Intent intent2 = new Intent(ConsumeMenuActivity.this, RecordLiquidActivity.class);
                 intent2.putExtra("pid", pid);
                 startActivity(intent2);
             }
@@ -34,7 +33,7 @@ public class ConsumeMenuActivity extends Activity {
         bt_cons.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent2 = new Intent(ConsumeMenuActivity.this, RecordConsume2Activity.class);
+                Intent intent2 = new Intent(ConsumeMenuActivity.this, RecordConsumeActivity.class);
                 intent2.putExtra("pid", pid);
                 startActivity(intent2);
             }

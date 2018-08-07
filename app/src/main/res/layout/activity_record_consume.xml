@@ -6,167 +6,54 @@
 
     <TextView
         android:layout_weight="2"
-        style="@style/Title" android:id="@+id/title" android:text="Title"/>
-<!--
-    <LinearLayout
-        style="@style/Body"
-        android:layout_weight="7"
-        android:weightSum="5"
+        style="@style/Title" android:id="@+id/title" android:text="섭취량 기록"/>
+
+    <RadioGroup
+        android:layout_marginTop="30sp"
+        android:id="@+id/consume_check"
+        android:layout_weight="1"
         android:layout_gravity="center"
-        android:gravity="center"
-        android:orientation="vertical">
+        android:layout_width="wrap_content"
+        android:layout_height="0dp"
+        android:orientation="horizontal">
 
-        <TextView
-            android:layout_weight="1"
-            android:text="      드신 양을 입력하세요"
-            android:id="@+id/tv"
+        <RadioButton
+            android:id="@+id/c1"
+            android:text="아침"
+            style="@style/Content"
+            android:gravity="center"
             android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            style="@style/Content"/>
+            android:layout_height="match_parent" />
 
-        <LinearLayout
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="5"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
+        <RadioButton
+            android:id="@+id/c2"
+            android:text="점심"
+            style="@style/Content"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
 
-            <TextView
-                android:text="밥"
-                style="@style/Content"
-                android:gravity="right"
-                android:layout_weight="2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
+        <RadioButton
+            android:id="@+id/c3"
+            android:text="저녁"
+            style="@style/Content"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
 
-            <TextView
-                android:id="@+id/amount1"
-                android:text="0"
-                android:background="@color/Gray2"
-                style="@style/Content"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:gravity="center"
-                android:layout_height="wrap_content"/>
 
-            <RelativeLayout
-                android:layout_weight="2"
-                android:layout_width="0dp"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/bt_plus1"
-                    android:text="-"
-                    android:backgroundTint="@color/Green"
-                    style="@style/Bt_consume"/>
-
-                <TextView
-                    android:id="@+id/bt_minus1"
-                    android:text="+"
-                    android:backgroundTint="@color/Green"
-                    android:layout_toRightOf="@+id/bt_plus1"
-                    style="@style/Bt_consume"/>
-            </RelativeLayout>
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="5"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
-
-                <TextView
-                    android:text="국"
-                    style="@style/Content"
-                    android:gravity="right"
-                    android:layout_weight="2"
-                    android:layout_width="0dp"
-                    android:layout_height="wrap_content"/>
-
-                <TextView
-                    android:id="@+id/amount2"
-                    android:text="0"
-                    android:background="@color/Gray2"
-                    style="@style/Content"
-                    android:layout_weight="1"
-                    android:layout_width="0dp"
-                    android:gravity="center"
-                    android:layout_height="wrap_content"/>
-
-                <RelativeLayout
-                    android:layout_weight="2"
-                    android:layout_width="0dp"
-                    android:layout_height="match_parent">
-
-                    <TextView
-                        android:id="@+id/bt_plus2"
-                        android:text="-"
-                        android:backgroundTint="@color/Green"
-                        style="@style/Bt_consume"/>
-
-                    <TextView
-                        android:id="@+id/bt_minus2"
-                        android:text="+"
-                        android:backgroundTint="@color/Green"
-                        android:layout_toRightOf="@+id/bt_plus2"
-                        style="@style/Bt_consume"/>
-                </RelativeLayout>
-
-    </LinearLayout>
-
-        <LinearLayout
-            android:layout_weight="1"
-            android:orientation="horizontal"
-            android:weightSum="5"
-            android:layout_width="match_parent"
-            android:layout_height="0dp">
-
-            <TextView
-                android:text="반찬"
-                style="@style/Content"
-                android:gravity="right"
-                android:layout_weight="2"
-                android:layout_width="0dp"
-                android:layout_height="wrap_content"/>
-
-            <TextView
-                android:id="@+id/amount3"
-                android:text="0"
-                android:background="@color/Gray2"
-                style="@style/Content"
-                android:layout_weight="1"
-                android:layout_width="0dp"
-                android:gravity="center"
-
-                android:layout_height="wrap_content"/>
-
-            <RelativeLayout
-                android:layout_weight="2"
-                android:layout_width="0dp"
-                android:layout_height="match_parent">
-
-                <TextView
-                    android:id="@+id/bt_plus3"
-                    android:text="-"
-                    android:backgroundTint="@color/Green"
-                    style="@style/Bt_consume"/>
-
-                <TextView
-                    android:id="@+id/bt_minus3"
-                    android:text="+"
-                    android:backgroundTint="@color/Green"
-                    android:layout_toRightOf="@+id/bt_plus3"
-                    style="@style/Bt_consume"/>
-            </RelativeLayout>
-
-        </LinearLayout>
-    </LinearLayout>
-    -->
+        <RadioButton
+            android:id="@+id/c4"
+            android:text="기타"
+            style="@style/Content"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </RadioGroup>
 
     <ListView
         android:id="@+id/ConsumeList"
-        android:layout_weight="7"
+        android:layout_weight="6"
         android:layout_margin="50sp"
         android:layout_width="match_parent"
         android:layout_height="0sp">

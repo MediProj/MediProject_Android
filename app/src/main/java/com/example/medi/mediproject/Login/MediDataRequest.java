@@ -1,4 +1,4 @@
-package com.example.medi.mediproject;
+package com.example.medi.mediproject.Login;
 
 import android.support.annotation.Nullable;
 
@@ -12,6 +12,7 @@ import com.android.volley.Response;
 import com.android.volley.Response.ErrorListener;
 import com.android.volley.Response.Listener;
 import com.android.volley.toolbox.JsonArrayRequest;
+import com.example.medi.mediproject.MediValues;
 
 public class MediDataRequest extends JsonArrayRequest {
 

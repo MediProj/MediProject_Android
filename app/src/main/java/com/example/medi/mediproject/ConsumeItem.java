@@ -7,6 +7,7 @@ public class ConsumeItem {
     public ConsumeItem(String name, int amount){
         this.name=name;
         this.amount=amount;
+
     }
 
 }
