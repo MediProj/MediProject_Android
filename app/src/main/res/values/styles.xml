@@ -119,25 +119,26 @@
     </style>
 
     <style name="Bt_prev">
-        <item name="android:layout_width">140dp</item>
+        <item name="android:layout_width">200sp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_alignParentLeft">true</item>
-        <item name="android:layout_margin">10sp</item>
+        <item name="android:layout_marginLeft">20sp</item>
+        <item name="android:layout_marginBottom">20sp</item>
         <item name="android:text">이전</item>
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/White</item>
         <item name="android:background">@drawable/capsule</item>
     </style>
 
     <style name="Bt_next">
-
-        <item name="android:layout_width">140dp</item>
+        <item name="android:layout_width">200sp</item>
         <item name="android:layout_height">wrap_content</item>
         <item name="android:layout_alignParentRight">true</item>
-        <item name="android:layout_margin">10sp</item>
+        <item name="android:layout_marginRight">20sp</item>
+        <item name="android:layout_marginBottom">20sp</item>
         <item name="android:text">다음</item>
-        <item name="android:textSize">15sp</item>
+        <item name="android:textSize">20sp</item>
         <item name="android:textStyle">bold</item>
         <item name="android:textColor">@color/White</item>
         <item name="android:background">@drawable/capsule</item>
@@ -145,7 +146,7 @@
 
     <style name="Content">
         <item name="android:gravity">center_horizontal</item>
-        <item name="android:textSize">20sp</item>
+        <item name="android:textSize">30sp</item>
         <item name="android:layout_margin">10sp</item>
     </style>
 
@@ -163,7 +164,7 @@
 
     <style name="Menu">
         <item name="android:gravity">center</item>
-        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_marginTop">15sp</item>
         <item name="android:layout_height">0dp</item>
         <item name="android:layout_width">150sp</item>
         <item name="android:textSize">25sp</item>

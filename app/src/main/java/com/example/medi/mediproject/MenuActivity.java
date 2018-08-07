@@ -30,7 +30,7 @@ public class MenuActivity extends Activity {
         bt_prev=findViewById(R.id.Bnt_prev);
 
         //인사
-        tv.setText(name + "님 안녕하세요!\n메뉴를 선택해 주세요");
+        tv.setText(name + "님 안녕하세요! 메뉴를 선택해 주세요");
 
         //Stool page
         tv_stool.setOnClickListener(new View.OnClickListener() {

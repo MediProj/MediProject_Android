@@ -10,65 +10,61 @@
         android:layout_weight="2"
         android:text="MediProj"/>
 
-    <ScrollView
+    <LinearLayout
+        style="@style/Body"
         android:layout_weight="7"
-        android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:weightSum="7"
+        android:layout_gravity="center"
+        android:gravity="center"
+        android:orientation="vertical">
 
-        <LinearLayout
-            style="@style/Body"
-            android:weightSum="7"
-            android:layout_gravity="center"
-            android:gravity="center"
-            android:orientation="vertical">
+        <TextView
+            android:layout_weight="1"
+            android:text="Hello"
+            android:id="@+id/tv"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            style="@style/Content"/>
 
-            <TextView
-                android:layout_weight="1"
-                android:text="Hello"
-                android:id="@+id/tv"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp"
-                style="@style/Content"/>
-
-            <TextView
-                style="@style/Menu"
-                android:layout_weight="1"
-                android:id="@+id/stool"
-                android:text="대변"/>
-
-            <TextView
+        <TextView
+            style="@style/Menu"
+            android:layout_weight="1"
+            android:id="@+id/stool"
+            android:text="대변"/>
+        <TextView
             android:layout_weight="1"
             style="@style/Menu"
             android:id="@+id/urine"
             android:text="소변"/>
 
-            <TextView
+        <TextView
             android:layout_weight="1"
             style="@style/Menu"
             android:id="@+id/consume"
             android:text="섭취량"/>
 
-            <TextView
+        <TextView
             android:layout_weight="1"
             style="@style/Menu"
             android:id="@+id/report"
             android:text="기록보기"/>
 
-            <TextView
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp" />
+        <TextView
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp" />
+
     </LinearLayout>
 
-    </ScrollView>
     <RelativeLayout
         android:layout_weight="1"
         android:layout_width="match_parent"
         android:layout_height="0dp">
-    <Button
-        android:layout_weight="1"
-        android:id="@+id/Bnt_prev"
-        style="@style/Bt_prev"/>
+
+        <Button
+            android:layout_weight="2"
+            android:id="@+id/Bnt_prev"
+            style="@style/Bt_prev"/>
     </RelativeLayout>
 
 </LinearLayout>

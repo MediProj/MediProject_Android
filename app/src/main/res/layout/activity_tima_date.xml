@@ -25,28 +25,29 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content" />
 
-
            <Button
-                android:id="@+id/bt_date"
-                android:layout_weight="1"
-                android:layout_height="0dp"
-                style="@style/Menu"
+               android:id="@+id/bt_date"
+               android:layout_margin="20sp"
+               android:layout_weight="1"
+               android:layout_height="0dp"
+               style="@style/Menu"
+               android:layout_width="200sp"
                android:layout_gravity="center_horizontal"
-                android:text="날짜선택" />
+               android:text="날짜 선택" />
 
             <Button
                 android:id="@+id/bt_time"
+                android:layout_margin="20sp"
                 android:layout_weight="1"
                 android:layout_height="0dp"
+                android:layout_width="200sp"
                 style="@style/Menu"
                 android:layout_gravity="center_horizontal"
                 android:text="시간 선택" />
 
-            <TextView
-                android:layout_weight="1"
-                android:layout_width="wrap_content"
-                android:layout_height="0dp" />
+
     </LinearLayout>
+
     <RelativeLayout
         android:layout_weight="1"
         android:layout_width="match_parent"
@@ -54,11 +55,11 @@
 
         <Button
             android:id="@+id/Bnt_prev"
-            style="@style/Bt_prev"/>
+            style="@style/Bt_prev" />
 
         <Button
             android:id="@+id/Bnt_next"
-            style="@style/Bt_next"/>
+            style="@style/Bt_next" />
     </RelativeLayout>
 
 </LinearLayout>

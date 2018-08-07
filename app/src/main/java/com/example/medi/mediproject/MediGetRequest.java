@@ -21,7 +21,6 @@ import java.util.Map;
 
 public class MediGetRequest {
     private String url  = "http://54.202.222.14/patients/api/patients-list/";
-    private String data="";
 
     MediGetRequest(String pk, final String key, Context context){
         url = url +String.valueOf(pk)+"/";
@@ -33,7 +32,9 @@ public class MediGetRequest {
             public void onResponse(JSONObject response) {
                 Log.d("Respnse", response.toString());
                 try {
-                    data= response.getString(key);
+                    String tmp= response.getString(key);
+                    MediValues.stool_count= Integer.parseInt(tmp);
+
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -57,7 +58,4 @@ public class MediGetRequest {
 
     }
 
-    public String getData(){
-        return data;
-    }
 }

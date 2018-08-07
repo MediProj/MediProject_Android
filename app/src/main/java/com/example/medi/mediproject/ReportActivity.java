@@ -13,6 +13,7 @@ import android.widget.ListView;
 import android.widget.TextView;
 
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
@@ -22,7 +23,7 @@ public class ReportActivity extends Activity {
     ListView listView;
     ListViewAdapter listViewAdapter;
     ArrayList <ReportItem> list;
-    TextView title;
+    TextView title, tv_report_title;
     Button bt_prev;
     String name,pid;
     Date date = new Date(1,2,3);
@@ -31,13 +32,24 @@ public class ReportActivity extends Activity {
         super.onCreate(SavedInstanceState);
         setContentView(R.layout.activity_report);
 
-        title =findViewById(R.id.title);
-        bt_prev=findViewById(R.id.Bnt_prev);
-
+        //patient info
         final Intent intent = getIntent();
         pid = intent.getStringExtra("pid");
         name= MediValues.patientData.get(pid).get("name");
+
+        //오늘날짜
+        Calendar cal = Calendar.getInstance();
+        int month= cal.get(Calendar.MONTH)+1;
+        int day = cal.get(Calendar.DATE);
+        String str_date = String.valueOf(month)+"월 "+String.valueOf(day) + "일 ";
+
+        title =findViewById(R.id.title);
+        bt_prev=findViewById(R.id.Bnt_prev);
+        tv_report_title = findViewById(R.id.tv_report_date);
+
         title.setText("기록 조회 및 수정");
+        tv_report_title.setText(name + "님의 "+ str_date + "기록 입니다");
+
         /*
         final Intent intent=getIntent();
         String page_title = intent.getStringExtra("Page");

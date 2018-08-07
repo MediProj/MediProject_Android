@@ -24,11 +24,12 @@ public class TimeDateActivity extends Activity {
     final int DIALOG_DATE = 1;
     final int DIALOG_TIME = 2;
     String name =null;
-    String pid=null;
+    String pid,str_pk;
     int page_id=0;
-    int year, month, day, hour, minute;
+    int year, month, day, hour, minute,Shour, Sminute;
     boolean date_flag=false;
     boolean time_flag=false;
+    boolean today_flag = false;
 
     public void onCreate(Bundle SavedInstanceState){
         super.onCreate(SavedInstanceState);
@@ -46,7 +47,7 @@ public class TimeDateActivity extends Activity {
         page_id= intent.getIntExtra("val",0);
         pid = intent.getStringExtra("pid");
         name = MediValues.patientData.get(pid).get("name");
-
+        str_pk = MediValues.patientData.get(pid).get("pk");
 
         switch (page_id){
             //stool
@@ -103,6 +104,7 @@ public class TimeDateActivity extends Activity {
                 else {
                     if (page_id==0) {
                         Intent intent2 = new Intent(TimeDateActivity.this, StoolActivity.class);
+                        MediGetRequest getRequest = new MediGetRequest(str_pk, "stool_count",view.getContext());
                         intent2.putExtra("pid", pid);
                         startActivity(intent2);
                     }
@@ -125,26 +127,42 @@ public class TimeDateActivity extends Activity {
     }
 
     public Dialog onCreateDialog(int id){
-
+        today_flag=false;
         Calendar cal = Calendar.getInstance();
         year= cal.get(Calendar.YEAR);
         month= cal.get(Calendar.MONTH);
         day = cal.get(Calendar.DATE);
-        hour = cal.get(Calendar.HOUR);
+        hour = cal.get(Calendar.HOUR_OF_DAY);
         minute=cal.get(Calendar.MINUTE);
 
         switch(id){
             case DIALOG_DATE :
                 DatePickerDialog datePickerDialog = new DatePickerDialog(TimeDateActivity.this,
                         new DatePickerDialog.OnDateSetListener(){
-                    public void onDateSet(DatePicker view, int year, int month, int day){
-                        Toast.makeText(getApplicationContext(),year+"년 "+(month+1)+"월 "+day +"일을 선택했습니다",Toast.LENGTH_SHORT).show();
+                    public void onDateSet(DatePicker view, int syear, int smonth, int sday){
+                        Toast.makeText(getApplicationContext(),syear+"년 "+(smonth+1)+"월 "+sday +"일을 선택했습니다",Toast.LENGTH_SHORT).show();
                         date_flag=true;
+
+                        if(syear==year && smonth==month && sday==day)
+                            today_flag =true;
                     }
                         },year,month,day);
+
+                datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
                 return datePickerDialog;
 
             case DIALOG_TIME :
+                final BoundTimePickerDialog timePickerDialog = new BoundTimePickerDialog(TimeDateActivity.this,
+                        new TimePickerDialog.OnTimeSetListener() {
+                        @Override
+                        public void onTimeSet(TimePicker timePicker, int shour, int sminute) {
+                            Toast.makeText(getApplicationContext(),shour+"시 "+ sminute +"분을 선택했습니다",Toast.LENGTH_SHORT).show();
+                            time_flag=true;
+                        }
+                }, today_flag, hour,minute,false);
+
+                //timePickerDialog.onTimeChanged((TimePicker) timePickerDialog.getCurrentFocus(),hour, minute);
+                /*
                 TimePickerDialog timePickerDialog = new TimePickerDialog(TimeDateActivity.this,
                         new TimePickerDialog.OnTimeSetListener() {
                             @Override
@@ -153,7 +171,9 @@ public class TimeDateActivity extends Activity {
                                 time_flag=true;
                             }
                         }, hour,minute,false);
+            */
                 return timePickerDialog;
+
         }
         return super.onCreateDialog(id);
     }
