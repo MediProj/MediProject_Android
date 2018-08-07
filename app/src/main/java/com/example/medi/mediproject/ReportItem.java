@@ -4,12 +4,12 @@ package com.example.medi.mediproject;
 import java.util.Date;
 
 public class ReportItem {
-    Date date;
+    String date;
     String name;
     Integer stool_cnt;
-    Double urine_amt, liquid_amt, consume_amt;
+    float urine_amt, liquid_amt, consume_amt;
 
-    public ReportItem(Date date, String name, Integer stool, Double urine, Double liquid, Double consume){
+    public ReportItem(String date, String name, Integer stool,float urine, float liquid, float consume){
         this.date=date;
         this.name= name;
         this.stool_cnt=stool;

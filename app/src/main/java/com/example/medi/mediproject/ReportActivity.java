@@ -17,6 +17,7 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
+import static java.lang.String.format;
 import static java.lang.String.valueOf;
 
 public class ReportActivity extends Activity {
@@ -24,9 +25,9 @@ public class ReportActivity extends Activity {
     ListViewAdapter listViewAdapter;
     ArrayList <ReportItem> list;
     TextView title, tv_report_title;
-    Button bt_prev;
+    Button bt_prev,bt_edit;
     String name,pid;
-    Date date = new Date(1,2,3);
+    Date date;
 
     public void onCreate(Bundle SavedInstanceState){
         super.onCreate(SavedInstanceState);
@@ -37,33 +38,37 @@ public class ReportActivity extends Activity {
         pid = intent.getStringExtra("pid");
         name= MediValues.patientData.get(pid).get("name");
         listView = findViewById(R.id.ReportList);
+
         //오늘날짜
         Calendar cal = Calendar.getInstance();
+        int year = cal.get(Calendar.YEAR);
         int month= cal.get(Calendar.MONTH)+1;
         int day = cal.get(Calendar.DATE);
         String str_date = String.valueOf(month)+"월 "+String.valueOf(day) + "일 ";
+        date = new Date(year,month,day);
 
         title =findViewById(R.id.title);
         bt_prev=findViewById(R.id.Bnt_prev);
+        bt_edit = findViewById(R.id.bt_edit);
         tv_report_title = findViewById(R.id.tv_report_date);
+        list = new ArrayList<ReportItem>();
+        listView = findViewById(R.id.ReportList);
 
         title.setText("기록 조회 및 수정");
         tv_report_title.setText(name + "님의 "+ str_date + "기록 입니다");
 
-        /*
-        final Intent intent=getIntent();
-        String page_title = intent.getStringExtra("Page");
-        final String name = intent.getStringExtra("Name");
-
-        title.setText(page_title);
-        list = new ArrayList<ReportItem>();
-        listView = findViewById(R.id.report_list);
 
         //임시로
-        list.add(new ReportItem(date, "ina", 1,0.0,0.0,0.0));
+        list.add(new ReportItem(str_date, name, 1,0.0f,0.0f,0.0f));
         listViewAdapter= new ListViewAdapter(getApplicationContext(),list);
         listView.setAdapter(listViewAdapter);
-*/
+
+        bt_edit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+            }
+        });
+
         bt_prev.setText("처음으로");
         bt_prev.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -107,21 +112,21 @@ public class ReportActivity extends Activity {
             if(view==null){
                 view =inflater.inflate(R.layout.report_item,viewGroup,false);
                 holder = new ViewHolder();
-                holder.tv_name= view.findViewById(R.id.item_name);
-                holder.tv_date=view.findViewById(R.id.item_date);
-                holder.tv_stool=view.findViewById(R.id.item_stool);
-                holder.tv_urine=view.findViewById(R.id.item_urine);
-                holder.tv_consume=view.findViewById(R.id.item_consume);
+                holder.tv_time= view.findViewById(R.id.time);
+                holder.tv_stool=view.findViewById(R.id.stool);
+                holder.tv_urine=view.findViewById(R.id.urine);
+                holder.tv_liquid=view.findViewById(R.id.liquid);
+                holder.tv_consume=view.findViewById(R.id.consume);
                 view.setTag(holder);
             }
             else{
                 holder=(ViewHolder)view.getTag();
             }
 
-            holder.tv_name.setText(list.get(i).name);
-            holder.tv_date.setText("today");
+            holder.tv_time.setText(list.get(i).date);
             holder.tv_stool.setText(valueOf(list.get(i).stool_cnt));
             holder.tv_urine.setText(valueOf(list.get(i).urine_amt));
+            holder.tv_liquid.setText(String.valueOf(list.get(i).liquid_amt));
             holder.tv_consume.setText(valueOf(list.get(i).consume_amt));
 
             return view;
@@ -129,6 +134,6 @@ public class ReportActivity extends Activity {
     }
 
     public class ViewHolder {
-        TextView tv_name,tv_stool, tv_urine,tv_consume,tv_date;
+        TextView tv_time,tv_stool, tv_urine,tv_consume,tv_liquid;
     }
 }

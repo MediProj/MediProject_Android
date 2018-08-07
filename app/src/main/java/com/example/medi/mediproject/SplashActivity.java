@@ -82,7 +82,6 @@ public class SplashActivity extends AppCompatActivity {
         }, 3000);
 
 
-
     }
 
 
@@ -99,6 +98,8 @@ public class SplashActivity extends AppCompatActivity {
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError response) {
+                        Toast.makeText(getApplicationContext(),response.toString(), Toast.LENGTH_LONG).show();
+
                         Log.d("Response: Error", response.toString());
                     }
                 }

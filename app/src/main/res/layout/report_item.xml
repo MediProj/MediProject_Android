@@ -1,47 +1,107 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
-    android:weightSum="5"
+    android:weightSum="6"
     android:gravity="center"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
 
     <TextView
-        android:text="NAME"
-        style="@style/Content"
-        android:id="@+id/item_name"
-        android:layout_weight="1"
-        android:layout_width="wrap_content"
+        android:id="@+id/time"
+        android:layout_weight="2"
+        android:text="Time"
+        android:textColor="@color/White"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:background="@color/Green"
+        android:gravity="center"
+        android:layout_width="match_parent"
         android:layout_height="0dp" />
 
-
-    <TextView
-        android:text="DATE"
-        android:id="@+id/item_date"
+    <LinearLayout
         android:layout_weight="1"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp" />
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
 
-    <TextView
-        android:text="STOOL CNT"
-        android:id="@+id/item_stool"
+        <TextView
+            android:text="대변횟수"
+            android:gravity="center"
+            android:background="@color/Gray2"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:text="Stool Count"
+            android:id="@+id/stool"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <LinearLayout
         android:layout_weight="1"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp" />
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
 
-    <TextView
-        android:text="URINE AMOUNT"
-        android:id="@+id/item_urine"
+        <TextView
+            android:text="소변량"
+            android:gravity="center"
+            android:background="@color/Gray2"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:text="Stool Count"
+            android:id="@+id/urine"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <LinearLayout
         android:layout_weight="1"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp" />
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
 
-
-    <TextView
-        android:text="CONSUME AMOUNT"
-        android:id="@+id/item_consume"
+        <TextView
+            android:text="수분 섭취량"
+            android:gravity="center"
+            android:background="@color/Gray2"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:text="Stool Count"
+            android:id="@+id/liquid"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <LinearLayout
         android:layout_weight="1"
-        android:layout_width="wrap_content"
-        android:layout_height="0dp" />
+        android:weightSum="2"
+        android:layout_width="match_parent"
+        android:layout_height="0dp">
+
+        <TextView
+            android:text="식사량"
+            android:gravity="center"
+            android:background="@color/Gray2"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <TextView
+            android:text="Stool Count"
+            android:id="@+id/consume"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+
 
 </LinearLayout>
