@@ -22,8 +22,9 @@
             </intent-filter>
         </activity>
 
-        <activity
-            android:name=".BaseActivity">
+        <activity android:name=".BaseActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape">
         </activity>
         <activity android:name=".Login.MainActivity"/>
         <activity android:name=".MenuActivity"/>

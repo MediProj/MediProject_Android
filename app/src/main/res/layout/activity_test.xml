@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/linearViewScreen">
+
+    <ImageView
+        style="@style/titleBanner"
+        android:src="@drawable/logo_white"/>
+
+    <ScrollView
+        style="@style/linearViewCont">
+
+        <LinearLayout
+            style="@style/layoutHoriz"
+            android:orientation="vertical" >
+
+            <TextView
+                style="@style/header1"
+                android:text="난 제목이다"/>
+
+            <TextView
+                style="@style/prompt"
+                android:text="난 제목이 아닌 글이다"/>
+
+            <Button
+                style="@style/buttonDef"
+                android:text="요! 난 버튼"/>
+
+            <EditText
+                style="@style/editText"
+                android:layout_width="600dp"
+                android:inputType="text"
+                android:hint="여기다 입력하면 된다야"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        style="@style/linearViewBot">
+
+        <Button
+            style="@style/buttonPrev"
+            android:text="TEST1"/>
+
+        <Button
+            style="@style/buttonNext"
+            android:text="TEST2"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
