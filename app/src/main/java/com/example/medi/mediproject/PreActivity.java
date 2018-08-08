@@ -26,7 +26,7 @@ public class PreActivity extends Activity {
 
         final Intent intent = getIntent();
         final String pid = intent.getStringExtra("pid");
-        intent.getIntExtra("val", page_id);
+        page_id = intent.getIntExtra("val", 0);
         String name = MediValues.patientData.get(pid).get("name");
 
         Calendar cal = Calendar.getInstance();
