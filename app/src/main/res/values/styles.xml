@@ -186,5 +186,16 @@
     </style>
 
     <!-- ina style END -->
+    <style name="MenuButton">
+        <item name="android:layout_weight">1</item>
+        <item name="android:textSize">35sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/White</item>
 
+        <item name="android:layout_margin">30sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:background">@drawable/round</item>
+        <item name="android:layout_width">0sp</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
 </resources>

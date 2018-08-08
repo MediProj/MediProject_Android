@@ -6,6 +6,109 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <RelativeLayout
+        android:layout_weight="2"
+        android:background="@color/Blue"
+        android:layout_width="match_parent"
+        android:layout_height="0sp">
+
+        <ImageView
+            android:layout_margin="17sp"
+            android:layout_width="200sp"
+            android:layout_height="match_parent"
+            android:src="@drawable/white_logo"/>
+
+        <TextView
+            android:id="@+id/Bnt_logout"
+
+            android:text="나가기"
+            android:textColor="@color/White"
+            android:textStyle="bold"
+            android:textSize="30sp"
+
+            android:layout_alignParentRight="true"
+            android:layout_marginHorizontal="30sp"
+            android:layout_centerVertical="true"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:layout_weight="3"
+        android:layout_width="match_parent"
+        android:layout_height="0sp">
+
+        <TextView
+            android:id="@+id/tv"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:text="안녕하세요"
+            android:textSize="40sp"
+            android:textStyle="bold"
+            android:textColor="@color/Black"
+
+            android:layout_centerInParent="true"/>
+
+    </RelativeLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0sp"
+        android:layout_marginHorizontal="60sp"
+
+        android:layout_weight="4"
+        android:gravity="center_horizontal"
+        android:weightSum="4">
+
+        <TextView
+            android:id="@+id/stool"
+            style="@style/MenuButton"
+            android:backgroundTint="@color/Green"
+            android:text="대변" />
+
+        <TextView
+            android:id="@+id/urine"
+            style="@style/MenuButton"
+            android:backgroundTint="@color/Green"
+            android:text="소변" />
+
+        <TextView
+            android:id="@+id/consume"
+            style="@style/MenuButton"
+            android:backgroundTint="@color/Green"
+            android:text="섭취량" />
+
+        <TextView
+            android:id="@+id/report"
+            style="@style/MenuButton"
+            android:backgroundTint="@color/Green"
+            android:text="기록 조회" />
+
+    </LinearLayout>
+
+    <!--
+    <LinearLayout
+        android:gravity="center"
+        android:layout_weight="2"
+        android:layout_width="match_parent"
+        android:layout_height="0sp">
+        <Button
+            android:id="@+id/Bnt_logout"
+            android:background="@drawable/button"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginVertical="15sp"
+            android:textColor="@color/White"
+            android:textStyle="bold"
+            android:textSize="30sp"
+            android:text="로그아웃"/>
+    </LinearLayout>
+
+
     <TextView style="@style/Title"
         android:id="@+id/title"
         android:layout_weight="2"
@@ -70,5 +173,5 @@
             android:id="@+id/Bnt_logout"
             style="@style/Bt_prev"/>
     </RelativeLayout>
-
+-->
 </LinearLayout>

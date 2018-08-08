@@ -12,7 +12,7 @@ import com.example.medi.mediproject.Login.MainActivity;
 
 public class MenuActivity extends Activity {
     TextView tv,tv_stool, tv_urine, tv_consume,tv_report;
-    Button bt_prev;
+    TextView bt_prev;
     String name,pid,pk;
 
     public void onCreate(Bundle savedInstanceState){
