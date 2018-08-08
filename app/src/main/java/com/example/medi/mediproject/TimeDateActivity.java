@@ -1,9 +1,11 @@
 package com.example.medi.mediproject;
 
 import android.app.Activity;
+import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -17,6 +19,7 @@ import java.sql.Time;
 import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.zip.Inflater;
 
 public class TimeDateActivity extends Activity {
     Button bt_prev, bt_next, bt_time,bt_date;
@@ -137,7 +140,7 @@ public class TimeDateActivity extends Activity {
 
         switch(id){
             case DIALOG_DATE :
-                DatePickerDialog datePickerDialog = new DatePickerDialog(TimeDateActivity.this,
+                DatePickerDialog datePickerDialog = new DatePickerDialog(TimeDateActivity.this, AlertDialog.THEME_HOLO_LIGHT,
                         new DatePickerDialog.OnDateSetListener(){
                     public void onDateSet(DatePicker view, int syear, int smonth, int sday){
                         Toast.makeText(getApplicationContext(),syear+"년 "+(smonth+1)+"월 "+sday +"일을 선택했습니다",Toast.LENGTH_SHORT).show();
@@ -147,19 +150,19 @@ public class TimeDateActivity extends Activity {
                             today_flag =true;
                     }
                         },year,month,day);
-
+                datePickerDialog.getDatePicker().setCalendarViewShown(false);
                 datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
                 return datePickerDialog;
 
             case DIALOG_TIME :
-                final BoundTimePickerDialog timePickerDialog = new BoundTimePickerDialog(TimeDateActivity.this,
-                        new TimePickerDialog.OnTimeSetListener() {
-                        @Override
-                        public void onTimeSet(TimePicker timePicker, int shour, int sminute) {
-                            Toast.makeText(getApplicationContext(),shour+"시 "+ sminute +"분을 선택했습니다",Toast.LENGTH_SHORT).show();
-                            time_flag=true;
-                        }
-                }, today_flag, hour,minute,false);
+                final TimePickerDialog timePickerDialog = new TimePickerDialog(TimeDateActivity.this,
+                        AlertDialog.THEME_HOLO_LIGHT,  new TimePickerDialog.OnTimeSetListener() {
+                    @Override
+                    public void onTimeSet(TimePicker timePicker, int shour, int sminute) {
+                        Toast.makeText(getApplicationContext(),shour+"시 "+ sminute +"분을 선택했습니다",Toast.LENGTH_SHORT).show();
+                        time_flag=true;
+                    }
+                }, hour,minute,false);
 
                 return timePickerDialog;
 

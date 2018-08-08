@@ -49,6 +49,7 @@
             android:textSize="40sp"
             android:textStyle="bold"
             android:textColor="@color/Black"
+            android:fontFamily="@font/noto_sans_cjk_kr_regular"
 
             android:layout_centerInParent="true"/>
 

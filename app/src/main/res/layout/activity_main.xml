@@ -83,6 +83,11 @@
             android:layout_margin="20sp"/>
 
         <TextView
+            android:id="@+id/text"
+            android:fontFamily="@font/test"
+            android:textSize="20dp"
+            android:textColor="@color/White"
+            android:text="폰트가되어라"
             android:layout_weight="1"
             android:layout_width="match_parent"
             android:layout_height="0dp" />
