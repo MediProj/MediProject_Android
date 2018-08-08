@@ -23,7 +23,6 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        final TextView tv = findViewById(R.id.title);
         bt_login = findViewById(R.id.bt_login);
         p_name = findViewById(R.id.p_name);
         p_num = findViewById(R.id.p_num);

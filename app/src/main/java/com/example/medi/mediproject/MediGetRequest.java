@@ -1,9 +1,7 @@
 package com.example.medi.mediproject;
 
-import android.app.DownloadManager;
 import android.content.Context;
 import android.util.Log;
-import android.widget.LinearLayout;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
