@@ -44,7 +44,7 @@
         <activity android:name=".PromptDiaperActivity"/>
         <activity android:name=".PromptGreenActivity"/>
         <activity android:name=".RecordUrineActivity"/>
-
+        <activity android:name=".PreActivity"/>
 
         <!--
         <activity

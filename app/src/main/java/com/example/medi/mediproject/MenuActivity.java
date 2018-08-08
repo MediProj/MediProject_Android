@@ -39,7 +39,7 @@ public class MenuActivity extends Activity {
         tv_stool.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent2 = new Intent(MenuActivity.this, TimeDateActivity.class);
+                Intent intent2 = new Intent(MenuActivity.this,PreActivity.class);
                 intent2.putExtra("val",0);
                 intent2.putExtra("pid", pid);
                 startActivity(intent2);
@@ -50,7 +50,7 @@ public class MenuActivity extends Activity {
         tv_urine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent2 = new Intent(MenuActivity.this,TimeDateActivity.class);
+                Intent intent2 = new Intent(MenuActivity.this,PreActivity.class);
                 intent2.putExtra("val",1);
                 intent2.putExtra("pid", pid);
                 startActivity(intent2);
@@ -62,7 +62,7 @@ public class MenuActivity extends Activity {
         tv_consume.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent2 = new Intent(MenuActivity.this,TimeDateActivity.class);
+                Intent intent2 = new Intent(MenuActivity.this,PreActivity.class);
                 intent2.putExtra("val",2);
                 intent2.putExtra("pid", pid);
                 startActivity(intent2);

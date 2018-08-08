@@ -86,7 +86,8 @@ public class TimeDateActivity extends Activity {
         bt_prev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent2 = new Intent(TimeDateActivity.this,MenuActivity.class);
+                Intent intent2 = new Intent(TimeDateActivity.this,PreActivity.class);
+                intent2.putExtra("val",page_id);
                 intent2.putExtra("pid",pid);
                 startActivity(intent2);
 
