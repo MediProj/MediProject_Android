@@ -24,7 +24,7 @@ public class ReportActivity extends Activity {
     ListView listView;
     ListViewAdapter listViewAdapter;
     ArrayList <ReportItem> list;
-    TextView title, tv_report_title;
+    TextView tv_report_title;
     Button bt_prev,bt_edit;
     String name,pid;
     Date date;
@@ -47,14 +47,12 @@ public class ReportActivity extends Activity {
         String str_date = String.valueOf(month)+"월 "+String.valueOf(day) + "일 ";
         date = new Date(year,month,day);
 
-        title =findViewById(R.id.title);
         bt_prev=findViewById(R.id.Bnt_prev);
         bt_edit = findViewById(R.id.bt_edit);
         tv_report_title = findViewById(R.id.tv_report_date);
         list = new ArrayList<ReportItem>();
         listView = findViewById(R.id.ReportList);
 
-        title.setText("기록 조회 및 수정");
         tv_report_title.setText(name + "님의 "+ str_date + "기록 입니다");
 
 

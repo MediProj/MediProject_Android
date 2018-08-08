@@ -38,7 +38,6 @@ public class TimeDateActivity extends Activity {
         super.onCreate(SavedInstanceState);
         setContentView(R.layout.activity_tima_date);
 
-        title=findViewById(R.id.title);
         tv=findViewById(R.id.tv);
         bt_next=findViewById(R.id.Bnt_next);
         bt_prev=findViewById(R.id.Bnt_prev);
@@ -51,7 +50,7 @@ public class TimeDateActivity extends Activity {
         pid = intent.getStringExtra("pid");
         name = MediValues.patientData.get(pid).get("name");
         str_pk = MediValues.patientData.get(pid).get("pk");
-
+/*
         switch (page_id){
             //stool
             case 0:
@@ -63,7 +62,7 @@ public class TimeDateActivity extends Activity {
             case 2:
                 title.setText("섭취량 기록");
         }
-
+*/
         tv.setText(name +"님 날짜와 시간을 선택하고\n다음 버튼을 눌러주세요");
 
         //Date
