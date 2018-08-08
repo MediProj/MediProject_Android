@@ -48,7 +48,7 @@ public class PreActivity extends Activity {
         else  if(page_id==2)
             title="섭취량 측정";
 
-        tv.setText(title+"\n"+ name+"님 " + time+"으로\n 기록을 원하시면 다음을 눌러주세요");
+        tv.setText(String.valueOf(page_id)+"="+title+"\n"+ name+"님 " + time+"으로\n 기록을 원하시면 다음을 눌러주세요");
 
         bt_edit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -76,13 +76,15 @@ public class PreActivity extends Activity {
                     intent2.putExtra("pid", pid);
                     intent2.putExtra("val", page_id);
                     startActivity(intent2);
-                    } else if (page_id == 1) {
+                    }
+                else if (page_id == 1) {
                     Intent intent2 = new Intent(PreActivity.this, ContainerSelectActivity.class);
                     intent2.putExtra("pid", pid);
                     intent2.putExtra("val", page_id);
                     startActivity(intent2);
 
-                } else if (page_id == 2) {
+                }
+                else if (page_id == 2) {
                     Intent intent2 = new Intent(PreActivity.this, ConsumeMenuActivity.class);
                     intent2.putExtra("pid", pid);
                     intent2.putExtra("val", page_id);
