@@ -15,16 +15,16 @@
         style="@style/linearViewContent"
         android:baselineAligned="false">
 
-        <GridView
-            android:id="@+id/menuGrid"
+        <ListView
+            android:id="@+id/menuList"
             android:layout_width="0px"
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:gravity="center"
-            android:numColumns="2"
+            android:numColumns="1"
             android:verticalSpacing="10dp"
             android:horizontalSpacing="10dp" >
-        </GridView>
+        </ListView>
 
         <LinearLayout
             android:layout_width="0px"

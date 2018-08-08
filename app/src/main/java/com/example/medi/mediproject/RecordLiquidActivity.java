@@ -1,16 +1,28 @@
 package com.example.medi.mediproject;
 
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.ViewGroup;
+import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
+
+import java.util.ArrayList;
 
 public class RecordLiquidActivity extends BaseActivity {
     String pid;
     int user_pk;
     EditText et_liquid;
+    ListView listView;
+    ListViewAdapter listViewAdapter;
+    ArrayList<String> MenuList;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -24,6 +36,19 @@ public class RecordLiquidActivity extends BaseActivity {
         buttonPrev = (Button) findViewById(R.id.btnPrev);
         buttonNext = findViewById(R.id.btnNext);
         buttonNext.setText("등록");
+
+        MenuList.add("물");
+        MenuList.add("커피");
+        MenuList.add("맥주");
+        MenuList.add("과일");
+        MenuList.add("음료수");
+        MenuList.add("소주");
+        MenuList.add("야쿠르트");
+        MenuList.add("우유");
+
+        listViewAdapter = new ListViewAdapter(getApplicationContext(),MenuList);
+        listView.setAdapter(listViewAdapter);
+
     }
 
     public void onPrevClick(View view) {
@@ -57,6 +82,51 @@ public class RecordLiquidActivity extends BaseActivity {
 
         else
             Toast.makeText(getApplicationContext(),"섭취량을 입력해주세요", Toast.LENGTH_LONG).show();
+    }
+
+    private class ListViewAdapter extends BaseAdapter{
+        ArrayList <String> list;
+        LayoutInflater layoutInflater;
+
+        ListViewAdapter(Context context, ArrayList<String> list){
+            this.list=list;
+            layoutInflater = (LayoutInflater)context.getSystemService(LAYOUT_INFLATER_SERVICE);
+        }
+        @Override
+        public int getCount() {
+            return list.size();
+        }
+
+        @Override
+        public Object getItem(int i) {
+            return list.get(i);
+        }
+
+        @Override
+        public long getItemId(int i) {
+            return i;
+        }
+
+        @Override
+        public View getView(int i, View view, ViewGroup viewGroup) {
+            MenuViewHolder holder=null;
+            if(view==null){
+                view =layoutInflater.inflate(R.layout.menu_item,viewGroup,false);
+                holder = new MenuViewHolder();
+                holder.item_name = findViewById(R.id.menu_name);
+                view.setTag(holder);
+            }
+            else{
+                holder= (MenuViewHolder) view.getTag();
+            }
+
+            holder.item_name.setText(list.get(i));
+            return view;
+        }
+    }
+
+    public class MenuViewHolder{
+        TextView item_name;
     }
 }
 

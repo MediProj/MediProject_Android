@@ -45,7 +45,7 @@ public class PreActivity extends Activity {
         else if(page_id==1)
             title="소변량 측정";
 
-        else  if(page_id==3)
+        else  if(page_id==2)
             title="섭취량 측정";
 
         tv.setText(title+"\n"+ name+"님 " + time+"으로\n 기록을 원하시면 다음을 눌러주세요");

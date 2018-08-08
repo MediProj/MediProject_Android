@@ -45,6 +45,7 @@ public class ConsumeMenuActivity extends Activity {
             public void onClick(View view) {
                 Intent intent2 = new Intent(ConsumeMenuActivity.this,MenuActivity.class);
                 intent2.putExtra("pid", pid);
+                intent2.putExtra("val",2);
                 startActivity(intent2);
             }
         });
