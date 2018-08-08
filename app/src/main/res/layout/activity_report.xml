@@ -6,16 +6,16 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView
-        android:layout_weight="2"
-        style="@style/Title"
-        android:id="@+id/title"
-        android:text="기록 보기 및 수정"/>
+
+    <ImageView
+        style="@style/titleBanner"
+        android:src="@drawable/logo_white"/>
+
 
     <RelativeLayout
         android:layout_gravity="center"
         android:gravity="center"
-        android:layout_weight="7"
+        android:layout_weight="6"
         style="@style/Body">
 
         <RelativeLayout
@@ -30,7 +30,7 @@
                 android:text="8월 4일 인아님 기록"
                 android:layout_centerInParent="true"
                 android:textSize="30sp"
-                style="@style/Content"/>
+                style="@style/prompt"/>
 
             <Button
                 android:id="@+id/bt_edit"
@@ -45,7 +45,6 @@
                 android:layout_height="50sp"/>
 
         </RelativeLayout>
-
         <ListView
             android:id="@+id/ReportList"
             android:layout_below="@+id/ll"
@@ -54,13 +53,18 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
         </ListView>
-
     </RelativeLayout>
 
     <RelativeLayout
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp">
-        <Button android:id="@+id/Bnt_prev" style="@style/Bt_prev"/>
+        style="@style/linearViewBot">
+
+        <Button
+            style="@style/buttonPrev"
+            android:text="이전"/>
+
+        <Button
+            style="@style/buttonNext"
+            android:text="다음"/>
+
     </RelativeLayout>
 </LinearLayout>

@@ -1,30 +1,49 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical" android:layout_width="match_parent"
-    android:layout_height="match_parent">
+style="@style/linearViewScreen">
 
-    <TextView
-        android:id="@+id/tv"
-        android:text="안녕"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+<ImageView
+    style="@style/titleBanner"
+    android:src="@drawable/logo_white"/>
 
-    <Button
-        android:id="@+id/bt_edit"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="수정하기"/>
+<ScrollView
+    style="@style/linearViewCont">
 
-    <Button
-        android:id="@+id/Bnt_next"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="다음"/>
+    <LinearLayout
+        style="@style/layoutHoriz"
+        android:orientation="vertical" >
+
+        <TextView style="@style/prompt"
+            android:id="@+id/tv"
+            android:text="안녕"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+
+        <Button style="@style/prompt"
+            android:id="@+id/bt_edit"
+            android:layout_marginTop="20sp"
+            android:background="@drawable/button"
+            android:backgroundTint="@color/Gray2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="시간 수정하기"/>
+
+    </LinearLayout>
+</ScrollView>
+
+<RelativeLayout
+    style="@style/linearViewBot">
 
     <Button
         android:id="@+id/Bnt_prev"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        style="@style/buttonPrev"
         android:text="이전"/>
+
+    <Button
+        android:id="@+id/Bnt_next"
+        style="@style/buttonNext"
+        android:text="다음"/>
+
+</RelativeLayout>
 
 </LinearLayout>

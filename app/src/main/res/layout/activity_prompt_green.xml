@@ -1,58 +1,61 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    style="@style/linearViewFull"
-    android:background="@color/Back"
-    tools:context=".PromptGreenActivity">
+    style="@style/linearViewScreen">
 
-    <TextView
-        android:id="@+id/titleBar"
-        style="@style/titleBar"
-        android:text="@string/greenTitle" />
+    <ImageView
+        style="@style/titleBanner"
+        android:src="@drawable/logo_white"/>
 
     <LinearLayout
-        style="@style/linearViewContent">
+        android:layout_weight="6"
+        android:layout_height="0sp"
+        style="@style/layoutHoriz"
+        android:orientation="vertical" >
 
-        <ImageView
-            android:id="@+id/greenEx1"
-            style="@style/imgLeft"
-            android:src="@drawable/container_green"
-            android:contentDescription="@string/containerGreenDescription"/>
-
-        <ImageView
-            android:id="@+id/greenEx2"
-            style="@style/imgCenter"
-            android:src="@drawable/container_green"
-            android:contentDescription="@string/containerGreenDescription" />
-
-        <ImageView
-            android:id="@+id/greenEx3"
-            style="@style/imgRight"
-            android:src="@drawable/container_green"
-            android:contentDescription="@string/containerGreenDescription"/>
-
-    </LinearLayout>
-
-    <LinearLayout
-        style="@style/linearViewBottom">
-
-        <RelativeLayout
+        <LinearLayout
+            android:layout_margin="10sp"
+            android:orientation="horizontal"
             android:layout_width="match_parent"
             android:layout_height="match_parent">
 
-            <Button
-                android:id="@+id/btnPrev"
-                style="@style/btnPrev"
-                android:text="@string/prev" />
+            <ImageView
+                android:layout_weight="1"
+                android:layout_margin="10sp"
+                android:id="@+id/bottleEx1"
+                android:layout_width="0dp"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:src="@drawable/container_green"
+                android:contentDescription="@string/containerBottleDescription"/>
 
-            <Button
-                android:id="@+id/btnNext"
-                style="@style/btnNext"
-                android:text="@string/next" />
+            <ImageView
+                android:id="@+id/bottleEx2"
+                style="@style/imgCenter"
+                android:src="@drawable/container_green"
+                android:contentDescription="@string/containerBottleDescription" />
 
-        </RelativeLayout>
+            <ImageView
+                android:id="@+id/bottleEx3"
+                style="@style/imgRight"
+                android:src="@drawable/container_green"
+                android:contentDescription="@string/containerBottleDescription"/>
+
+        </LinearLayout>
 
     </LinearLayout>
+
+    <RelativeLayout
+        style="@style/linearViewBot">
+
+        <Button
+            android:id="@+id/Bnt_prev"
+            style="@style/buttonPrev"
+            android:text="TEST1"/>
+
+        <Button
+            android:id="@+id/Bnt_next"
+            style="@style/buttonNext"
+            android:text="TEST2"/>
+    </RelativeLayout>
 
 </LinearLayout>

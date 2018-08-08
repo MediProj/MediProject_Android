@@ -48,7 +48,7 @@ public class PreActivity extends Activity {
         else  if(page_id==2)
             title="섭취량 측정";
 
-        tv.setText(String.valueOf(page_id)+"="+title+"\n"+ name+"님 " + time+"으로\n 기록을 원하시면 다음을 눌러주세요");
+        tv.setText(name+"님 \n" + time+"으로\n 기록을 원하시면 다음을 눌러주세요");
 
         bt_edit.setOnClickListener(new View.OnClickListener() {
             @Override

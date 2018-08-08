@@ -6,12 +6,13 @@
     android:background="@color/Back"
     tools:context=".RecordUrineActivity">
 
-    <TextView
-        android:id="@+id/titleBar"
-        style="@style/titleBar"
-        android:text="@string/urineTitle" />
+
+    <ImageView
+        style="@style/titleBanner"
+        android:src="@drawable/logo_white"/>
 
     <LinearLayout
+        android:layout_weight="6"
         style="@style/linearViewContent"
         android:gravity="center_vertical">
 
@@ -57,25 +58,19 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        style="@style/linearViewBottom">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <RelativeLayout
+        style="@style/linearViewBot">
 
-            <Button
-                android:id="@+id/btnPrev"
-                style="@style/btnPrev"
-                android:text="@string/prev" />
+        <Button
+            style="@style/buttonPrev"
+            android:text="이전"/>
 
-            <Button
-                android:id="@+id/btnNext"
-                style="@style/btnNext"
-                android:text="@string/next" />
+        <Button
+            style="@style/buttonNext"
+            android:text="다음"/>
 
-        </RelativeLayout>
-
-    </LinearLayout>
+    </RelativeLayout>
 
 </LinearLayout>
+

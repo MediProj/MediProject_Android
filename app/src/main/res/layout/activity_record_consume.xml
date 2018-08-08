@@ -1,18 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:weightSum="10"
-    android:background="@color/Back"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+style="@style/linearViewScreen">
 
-    <TextView
-        android:layout_weight="2"
-        style="@style/Title" android:id="@+id/title" android:text="섭취량 기록"/>
+    <ImageView
+    style="@style/titleBanner"
+    android:src="@drawable/logo_white"/>
 
     <RadioGroup
-        android:layout_marginTop="30sp"
+        android:layout_marginTop="10sp"
         android:id="@+id/consume_check"
-        android:layout_weight="1"
+        android:layout_weight="2"
         android:layout_gravity="center"
         android:layout_width="wrap_content"
         android:layout_height="0dp"
@@ -42,7 +39,6 @@
             android:layout_width="wrap_content"
             android:layout_height="match_parent" />
 
-
         <RadioButton
             android:id="@+id/c4"
             android:text="기타"
@@ -54,24 +50,26 @@
 
     <ListView
         android:id="@+id/ConsumeList"
-        android:layout_weight="6"
-        android:layout_margin="50sp"
+        android:layout_weight="4"
+        android:layout_marginHorizontal="100sp"
+        android:layout_marginVertical="10sp"
         android:layout_width="match_parent"
         android:layout_height="0sp">
 
     </ListView>
-    <RelativeLayout
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp">
 
-        <Button
-            android:id="@+id/Bnt_prev"
-            style="@style/Bt_prev" />
+<RelativeLayout
+    style="@style/linearViewBot">
+    <Button
+        android:id="@+id/Bnt_prev"
+        style="@style/buttonPrev"
+        android:text="TEST1"/>
 
-        <Button
-            android:id="@+id/Bnt_next"
-            style="@style/Bt_next" />
-    </RelativeLayout>
+    <Button
+        android:id="@+id/Bnt_next"
+        style="@style/buttonNext"
+        android:text="TEST2"/>
+
+</RelativeLayout>
 
 </LinearLayout>
