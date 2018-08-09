@@ -14,10 +14,11 @@
 
 
         <activity android:name=".Login.SplashActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape"
             android:theme="@style/SplashTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
@@ -26,26 +27,59 @@
             android:configChanges="orientation"
             android:screenOrientation="landscape">
         </activity>
-        <activity android:name=".Login.MainActivity"/>
-        <activity android:name=".MenuActivity"/>
-        <activity android:name=".ConsumeMenuActivity"/>
-        <activity android:name=".RecordConsumeActivity"/>
-        <activity android:name=".TimeDateActivity"/>
-        <activity android:name=".VolleyTestActivity">
+
+        <activity android:name=".Login.MainActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".MenuActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".ConsumeMenuActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".RecordConsumeActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape"/>
+
+        <activity android:name=".TimeDateActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape"/>
+
+        <activity android:name=".VolleyTestActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape">
 
         </activity>
-        <activity android:name=".ContainerSelectActivity"/>
-        <activity android:name=".RecordLiquidActivity"/>
-        <activity android:name=".StoolActivity">
+        <activity android:name=".ContainerSelectActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".RecordLiquidActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".StoolActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape">
 
         </activity>
 
-        <activity android:name=".PromptBottleActivity"/>
-        <activity android:name=".ReportActivity"/>
-        <activity android:name=".PromptDiaperActivity"/>
-        <activity android:name=".PromptGreenActivity"/>
-        <activity android:name=".RecordUrineActivity"/>
-        <activity android:name=".PreActivity"/>
+        <activity android:name=".PromptBottleActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape" />
+        <activity android:name=".ReportActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".PromptDiaperActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".PromptGreenActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".RecordUrineActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape"/>
+        <activity android:name=".PreActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape"/>
 
         <!--
         <activity
