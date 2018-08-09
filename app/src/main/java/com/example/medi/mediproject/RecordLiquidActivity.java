@@ -40,8 +40,8 @@ public class RecordLiquidActivity extends BaseActivity {
 
         Menu_name=findViewById(R.id.menu_name);
         et_liquid = findViewById(R.id.drinkPrint);
-        buttonPrev = (Button) findViewById(R.id.btnPrev);
-        buttonNext = findViewById(R.id.btnNext);
+        buttonPrev = (Button) findViewById(R.id.Bnt_prev);
+        buttonNext = findViewById(R.id.Bnt_next);
         buttonNext.setText("등록");
         listView = findViewById(R.id.menuList);
 

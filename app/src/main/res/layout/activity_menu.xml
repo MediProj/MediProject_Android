@@ -19,7 +19,6 @@
 
         <TextView
             android:id="@+id/Bnt_logout"
-
             android:text="나가기"
             android:textColor="@color/White"
             android:textStyle="bold"
@@ -41,7 +40,6 @@
 
         <TextView
             android:id="@+id/tv"
-
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
 
@@ -49,8 +47,6 @@
             android:textSize="40sp"
             android:textStyle="bold"
             android:textColor="@color/Black"
-            android:fontFamily="@font/noto_sans_cjk_kr_regular"
-
             android:layout_centerInParent="true"/>
 
     </RelativeLayout>
@@ -90,89 +86,4 @@
 
     </LinearLayout>
 
-    <!--
-    <LinearLayout
-        android:gravity="center"
-        android:layout_weight="2"
-        android:layout_width="match_parent"
-        android:layout_height="0sp">
-        <Button
-            android:id="@+id/Bnt_logout"
-            android:background="@drawable/button"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-
-            android:layout_marginVertical="15sp"
-            android:textColor="@color/White"
-            android:textStyle="bold"
-            android:textSize="30sp"
-            android:text="로그아웃"/>
-    </LinearLayout>
-
-
-    <TextView style="@style/Title"
-        android:id="@+id/title"
-        android:layout_weight="2"
-        android:textSize="50sp"
-        android:text="SNUH"/>
-
-    <LinearLayout
-        style="@style/Body"
-        android:layout_weight="7"
-        android:weightSum="7"
-        android:layout_gravity="center"
-        android:gravity="center"
-        android:orientation="vertical">
-
-        <TextView
-            android:layout_weight="1"
-            android:text="Hellooo"
-            android:id="@+id/tv"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp"
-            android:textStyle="bold"
-            style="@style/Content"/>
-
-        <TextView
-            style="@style/Menu"
-            android:layout_weight="1"
-            android:id="@+id/stool"
-            android:text="대변"/>
-        <TextView
-            android:layout_weight="1"
-            style="@style/Menu"
-            android:id="@+id/urine"
-            android:text="소변"/>
-
-        <TextView
-            android:layout_weight="1"
-            style="@style/Menu"
-            android:id="@+id/consume"
-            android:text="섭취량"/>
-
-        <TextView
-            android:layout_weight="1"
-            style="@style/Menu"
-            android:id="@+id/report"
-            android:text="기록보기"/>
-
-        <TextView
-            android:layout_weight="1"
-            android:layout_width="wrap_content"
-            android:layout_height="0dp" />
-
-    </LinearLayout>
-
-    <RelativeLayout
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp">
-
-        <Button
-            android:layout_weight="1"
-            android:text="로그아웃"
-            android:id="@+id/Bnt_logout"
-            style="@style/Bt_prev"/>
-    </RelativeLayout>
--->
 </LinearLayout>

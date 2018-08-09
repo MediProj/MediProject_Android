@@ -1,15 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    style="@style/linearViewFull"
-    android:background="@color/Back"
-    tools:context=".ContainerSelectActivity">
+    style="@style/linearViewScreen">
 
-    <TextView
-        android:id="@+id/titleBar"
-        style="@style/titleBar"
-        android:text="@string/containerTitle" />
+
+    <ImageView
+        style="@style/titleBanner"
+        android:src="@drawable/logo_white"/>
+
 
     <LinearLayout
         style="@style/linearViewContent">
@@ -34,20 +31,15 @@
 
     </LinearLayout>
 
-    <LinearLayout
-        style="@style/linearViewBottom">
 
-        <RelativeLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
+    <RelativeLayout
+        style="@style/linearViewBot">
 
-            <Button
-                android:id="@+id/btnPrev"
-                style="@style/btnPrev"
-                android:text="@string/prev" />
+        <Button
+            android:id="@+id/Bnt_prev"
+            style="@style/buttonPrev"
+            android:text="이전"/>
 
-        </RelativeLayout>
-
-    </LinearLayout>
+   </RelativeLayout>
 
 </LinearLayout>

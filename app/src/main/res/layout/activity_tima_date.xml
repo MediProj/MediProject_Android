@@ -9,7 +9,7 @@
         android:src="@drawable/logo_white"/>
 
     <TextView
-        android:layout_weight="1"
+        android:layout_weight="2"
         android:id="@+id/tv"
         android:text="날짜와 시간을 선택하고 '다음'을 눌러주세요"
         style="@style/Content"
@@ -19,7 +19,7 @@
         android:layout_height="0sp" />
 
     <LinearLayout
-        android:layout_weight="5"
+        android:layout_weight="4"
         android:orientation="horizontal"
         android:weightSum="4"
         android:layout_width="match_parent"

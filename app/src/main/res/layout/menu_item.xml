@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <TextView style="@style/header1"
+    <TextView style="@style/prompt"
         android:text="메뉴"
         android:gravity="center"
         android:id="@+id/menu_name"

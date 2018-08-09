@@ -1,62 +1,69 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:orientation="vertical"
-    android:weightSum="10"
-    android:background="@color/Back"
-    android:layout_width="match_parent" android:layout_height="match_parent">
+    style="@style/linearViewScreen">
+
+
+    <ImageView
+        style="@style/titleBanner"
+        android:src="@drawable/logo_white"/>
 
     <TextView
-        android:layout_weight="2"
-        style="@style/Title" android:id="@+id/title" android:text="섭취량 기록"/>
+        android:layout_weight="1"
+        android:id="@+id/tv"
+        android:text="기록하실 항목을 선택하세요"
+        style="@style/prompt"
+        android:gravity="center"
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
     <LinearLayout
-        android:layout_weight="7"
-        android:orientation="vertical"
-        android:weightSum="4"
-        android:layout_width="match_parent"
-        android:layout_height="0dp">
+        android:layout_weight="4"
+            android:orientation="horizontal"
+            android:weightSum="4"
+            android:layout_width="match_parent"
+            android:layout_height="0dp">
 
-        <TextView
-            android:layout_weight="1"
-            android:id="@+id/tv"
-            android:text="기록하실 항목을 선택하세요"
-            style="@style/Content"
-            android:gravity="center"
-            android:layout_gravity="center_horizontal"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content" />
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="0sp"
+                android:layout_height="match_parent" />
+            <Button
+                android:id="@+id/bt_liq"
+                android:layout_margin="30sp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_width="0sp"
+                android:background="@drawable/button"
+                android:layout_gravity="center"
+                style="@style/Menu"
+                android:text="액체 음식물 기록" />
 
-        <Button
-            android:id="@+id/bt_liq"
-            android:layout_margin="20sp"
-            android:layout_weight="1"
-            android:layout_height="0dp"
-            style="@style/Menu"
-            android:layout_width="200sp"
-            android:layout_gravity="center_horizontal"
-            android:text="액체 음식물 기록" />
+            <Button
+                android:id="@+id/bt_con"
+                android:layout_margin="30sp"
+                android:layout_weight="1"
+                android:layout_height="match_parent"
+                android:layout_width="0sp"
+                style="@style/Menu"
+                android:background="@drawable/button"
+                android:layout_gravity="center"
+                android:text="식사 기록" />
 
-        <Button
-            android:id="@+id/bt_con"
-            android:layout_margin="20sp"
-            android:layout_weight="1"
-            android:layout_height="0dp"
-            android:layout_width="200sp"
-            style="@style/Menu"
-            android:layout_gravity="center_horizontal"
-            android:text="식사 기록" />
-
-
+            <TextView
+                android:layout_weight="1"
+                android:layout_width="0sp"
+                android:layout_height="match_parent" />
     </LinearLayout>
 
     <RelativeLayout
-        android:layout_weight="1"
-        android:layout_width="match_parent"
-        android:layout_height="0dp">
+        style="@style/linearViewBot">
 
         <Button
             android:id="@+id/Bnt_prev"
-            style="@style/Bt_prev" />
+            style="@style/buttonPrev"
+            android:text="이전"/>
+
     </RelativeLayout>
 
 </LinearLayout>

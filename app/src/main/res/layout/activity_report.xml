@@ -20,6 +20,7 @@
 
         <RelativeLayout
             android:id="@+id/ll"
+            android:layout_marginBottom="10sp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
 
@@ -29,8 +30,7 @@
                 android:layout_height="wrap_content"
                 android:text="8월 4일 인아님 기록"
                 android:layout_centerInParent="true"
-                android:textSize="30sp"
-                style="@style/prompt"/>
+                android:textSize="20sp" />
 
             <Button
                 android:id="@+id/bt_edit"
@@ -46,9 +46,10 @@
 
         </RelativeLayout>
         <ListView
+
             android:id="@+id/ReportList"
             android:layout_below="@+id/ll"
-            android:layout_margin="50sp"
+            android:layout_marginHorizontal="80sp"
             android:layout_centerInParent="true"
             android:layout_width="wrap_content"
             android:layout_height="match_parent">
@@ -57,14 +58,11 @@
 
     <RelativeLayout
         style="@style/linearViewBot">
-
         <Button
+            android:id="@+id/Bnt_prev"
             style="@style/buttonPrev"
-            android:text="이전"/>
-
-        <Button
-            style="@style/buttonNext"
-            android:text="다음"/>
+            android:text="처음으로"/>
 
     </RelativeLayout>
+
 </LinearLayout>

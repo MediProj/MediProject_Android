@@ -21,9 +21,10 @@ style="@style/linearViewScreen">
 
         <Button style="@style/prompt"
             android:id="@+id/bt_edit"
-            android:layout_marginTop="20sp"
+            android:layout_marginTop="30sp"
             android:background="@drawable/button"
-            android:backgroundTint="@color/Gray2"
+            android:backgroundTint="@color/Green"
+            android:textColor="@color/White"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="시간 수정하기"/>

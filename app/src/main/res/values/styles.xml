@@ -5,6 +5,7 @@
     <!-- TOP -->
 
     <style name="linearViewScreen" >
+        <item name="android:background">@color/Back</item>
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:orientation">vertical</item>

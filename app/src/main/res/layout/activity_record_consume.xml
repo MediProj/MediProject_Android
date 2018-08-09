@@ -63,12 +63,12 @@ style="@style/linearViewScreen">
     <Button
         android:id="@+id/Bnt_prev"
         style="@style/buttonPrev"
-        android:text="TEST1"/>
+        android:text="이전"/>
 
     <Button
         android:id="@+id/Bnt_next"
         style="@style/buttonNext"
-        android:text="TEST2"/>
+        android:text="등록"/>
 
 </RelativeLayout>
 

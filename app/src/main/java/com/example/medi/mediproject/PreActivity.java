@@ -35,7 +35,7 @@ public class PreActivity extends Activity {
         day = cal.get(Calendar.DATE);
         hour = cal.get(Calendar.HOUR_OF_DAY);
         minute=cal.get(Calendar.MINUTE);
-        String time = year+"년 "+month +"월 " + day +"일 "+ hour +"시 " + minute+"분 ";
+        String time = year+"년 "+month +"월 " + day +"일 "+ hour +"시 " + minute+"분";
         String title="";
 
         if(page_id==0)
@@ -55,6 +55,7 @@ public class PreActivity extends Activity {
             public void onClick(View view) {
                 Intent intent2 = new Intent(PreActivity.this,TimeDateActivity.class);
                 intent2.putExtra("pid", pid);
+                intent2.putExtra("val", page_id);
                 startActivity(intent2);
             }
         });

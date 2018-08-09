@@ -29,8 +29,6 @@ public class MainActivity extends Activity {
         p_name = findViewById(R.id.p_name);
         p_num = findViewById(R.id.p_num);
         TextView text = findViewById(R.id.text);
-        Typeface tf = ResourcesCompat.getFont(getApplicationContext(), R.font.test);
-        text.setTypeface(tf);
 
         bt_login.setOnClickListener(new View.OnClickListener() {
             @Override
