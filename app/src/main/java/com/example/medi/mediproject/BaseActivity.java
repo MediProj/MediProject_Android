@@ -2,17 +2,18 @@ package com.example.medi.mediproject;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
 
-public class BaseActivity extends Activity {
+public class BaseActivity extends AppCompatActivity {
     protected Button buttonNext;
     protected Button buttonPrev;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test);
+        //setContentView(R.layout.activity_test);
 
         View decorView = getWindow().getDecorView();
         // Hide both the navigation bar and the status bar.
