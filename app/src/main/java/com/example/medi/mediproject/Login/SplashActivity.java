@@ -8,11 +8,13 @@ import android.support.v7.app.AppCompatActivity;
 import android.util.Log;
 import android.widget.Toast;
 
+import com.android.volley.DefaultRetryPolicy;
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.Volley;
+import com.example.medi.mediproject.BaseActivity;
 import com.example.medi.mediproject.MediValues;
 
 import org.json.JSONArray;
@@ -24,7 +26,7 @@ import java.util.Map;
 import java.util.StringTokenizer;
 
 
-public class SplashActivity extends AppCompatActivity {
+public class SplashActivity extends BaseActivity {
     private RequestQueue queue;
     private String authToken;
 
@@ -65,24 +67,23 @@ public class SplashActivity extends AppCompatActivity {
                     @Override
                     public void onErrorResponse(VolleyError response) {
                         Log.d("Response: Error", response.toString());
+                        Toast.makeText(getApplicationContext(),"인터넷 연결 후 재실행 하세요.", Toast.LENGTH_LONG).show();
+                        new Handler().postDelayed(new Runnable() {
+                            @Override
+                            public void run() {
+                                finish();
+                            }
+                        }, 3000);
                     }
                 }
         );
 
-        //stringRequest.setTag(TAG);
         jsObjRequest.setTag(TAG);
+        jsObjRequest.setRetryPolicy(new DefaultRetryPolicy(
+                5000, DefaultRetryPolicy.DEFAULT_MAX_RETRIES, DefaultRetryPolicy.DEFAULT_BACKOFF_MULT
+        ));
 
         queue.add(jsObjRequest);
-        new Handler().postDelayed(new Runnable() {
-            @Override
-            public void run() {
-                Intent intent = new Intent(SplashActivity.this, MainActivity.class);
-                startActivity(intent);
-                finish();
-            }
-        }, 3000);
-
-
     }
 
 
@@ -94,6 +95,10 @@ public class SplashActivity extends AppCompatActivity {
                         //Log.d("Response: ", response.toString());
                         Toast.makeText(getApplicationContext(),"hello", Toast.LENGTH_LONG).show();
                         parsePatientJSON(response);
+
+                        Intent intent = new Intent(SplashActivity.this, MainActivity.class);
+                        startActivity(intent);
+                        finish();
                     }
                 },
                 new Response.ErrorListener() {
