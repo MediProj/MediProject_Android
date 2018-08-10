@@ -6,9 +6,15 @@ import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
 import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
+import android.graphics.Color;
+import android.graphics.Typeface;
 import android.os.Bundle;
+import android.view.Gravity;
+import android.view.LayoutInflater;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
@@ -20,6 +26,8 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 import java.util.zip.Inflater;
+
+import static java.util.Calendar.DATE;
 
 public class TimeDateActivity extends Activity {
     Button bt_prev, bt_next, bt_time,bt_date;
@@ -50,19 +58,7 @@ public class TimeDateActivity extends Activity {
         pid = intent.getStringExtra("pid");
         name = MediValues.patientData.get(pid).get("name");
         str_pk = MediValues.patientData.get(pid).get("pk");
-/*
-        switch (page_id){
-            //stool
-            case 0:
-                title.setText("대변 횟수 측정");
-                break;
-            case 1:
-                title.setText("소변량 측정");
-                break;
-            case 2:
-                title.setText("섭취량 기록");
-        }
-*/
+
         tv.setText(name +"님 날짜와 시간을 선택하고\n다음 버튼을 눌러주세요");
 
         //Date
@@ -134,7 +130,7 @@ public class TimeDateActivity extends Activity {
         Calendar cal = Calendar.getInstance();
         year= cal.get(Calendar.YEAR);
         month= cal.get(Calendar.MONTH);
-        day = cal.get(Calendar.DATE);
+        day = cal.get(DATE);
         hour = cal.get(Calendar.HOUR_OF_DAY);
         minute=cal.get(Calendar.MINUTE);
 
@@ -150,8 +146,33 @@ public class TimeDateActivity extends Activity {
                             today_flag =true;
                     }
                         },year,month,day);
-                datePickerDialog.getDatePicker().setCalendarViewShown(false);
+
+                // DatePicker set up
+                datePickerDialog.getDatePicker().updateDate(year, month, day);
+                datePickerDialog.getDatePicker().setCalendarViewShown(true);
+                datePickerDialog.getDatePicker().setSpinnersShown(false);
                 datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
+                datePickerDialog.getDatePicker().setScaleX(2.0f);
+                datePickerDialog.getDatePicker().setScaleY(2.0f);
+                datePickerDialog.getDatePicker().setPadding(100, 350, 100, 100);
+                datePickerDialog.getDatePicker().setForegroundGravity(Gravity.CENTER);
+
+                // CalendarView set up
+                datePickerDialog.getDatePicker().getCalendarView().setShowWeekNumber(false);
+                datePickerDialog.getDatePicker().getCalendarView().setDate(Calendar.getInstance().getTimeInMillis(), true, true);
+                datePickerDialog.getDatePicker().getCalendarView().setUnfocusedMonthDateColor(getResources().getColor(R.color.Gray2));
+                datePickerDialog.getDatePicker().setMinimumWidth(1600);
+                datePickerDialog.getDatePicker().setMinimumHeight(1300);
+
+                datePickerDialog.show();
+
+                // Dialog Button set up
+                datePickerDialog.getButton(Dialog.BUTTON_POSITIVE).setTextSize(40);
+                datePickerDialog.getButton(Dialog.BUTTON_POSITIVE).setTypeface(null, Typeface.BOLD);
+                datePickerDialog.getButton(Dialog.BUTTON_POSITIVE).setText("확인");
+                datePickerDialog.getButton(Dialog.BUTTON_NEGATIVE).setTextSize(40);
+                datePickerDialog.getButton(Dialog.BUTTON_NEGATIVE).setText("취소");
+
                 return datePickerDialog;
 
             case DIALOG_TIME :
