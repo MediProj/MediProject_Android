@@ -5,27 +5,18 @@ import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
 import android.app.TimePickerDialog;
-import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
 import android.view.Gravity;
-import android.view.LayoutInflater;
 import android.view.View;
-import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.widget.Toast;
 
-import java.sql.Time;
-import java.text.SimpleDateFormat;
 import java.util.Calendar;
-import java.util.Date;
-import java.util.zip.Inflater;
 
 import static java.util.Calendar.DATE;
 
@@ -44,7 +35,7 @@ public class TimeDateActivity extends Activity {
 
     public void onCreate(Bundle SavedInstanceState){
         super.onCreate(SavedInstanceState);
-        setContentView(R.layout.activity_tima_date);
+        setContentView(R.layout.activity_time_date);
 
         tv=findViewById(R.id.tv);
         bt_next=findViewById(R.id.Bnt_next);
