@@ -1,18 +1,15 @@
 package com.example.medi.mediproject.Login;
 
-import android.support.annotation.Nullable;
-
-import java.util.HashMap;
-import java.util.Map;
-
-import org.json.JSONArray;
-
 import com.android.volley.AuthFailureError;
-import com.android.volley.Response;
 import com.android.volley.Response.ErrorListener;
 import com.android.volley.Response.Listener;
 import com.android.volley.toolbox.JsonArrayRequest;
 import com.example.medi.mediproject.MediValues;
+
+import org.json.JSONArray;
+
+import java.util.HashMap;
+import java.util.Map;
 
 public class MediDataRequest extends JsonArrayRequest {
 

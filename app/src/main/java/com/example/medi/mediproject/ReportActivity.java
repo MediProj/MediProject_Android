@@ -17,7 +17,6 @@ import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
 
-import static java.lang.String.format;
 import static java.lang.String.valueOf;
 
 public class ReportActivity extends Activity {

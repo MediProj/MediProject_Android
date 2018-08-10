@@ -1,8 +1,6 @@
 package com.example.medi.mediproject;
 
 
-import java.util.Date;
-
 public class ReportItem {
     String date;
     String name;

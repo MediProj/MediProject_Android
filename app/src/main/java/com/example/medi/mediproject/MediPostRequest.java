@@ -2,8 +2,6 @@ package com.example.medi.mediproject;
 
 import android.content.Context;
 import android.util.Log;
-import android.view.View;
-import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;

@@ -8,7 +8,6 @@ import android.widget.Button;
 import android.widget.TextView;
 
 import java.util.Calendar;
-import java.util.zip.Inflater;
 
 public class PreActivity extends Activity {
     TextView tv;

@@ -8,8 +8,6 @@ import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
-import com.android.volley.RequestQueue;
-
 public class StoolActivity extends Activity {
 
     Button bt_prev, bt_next;
