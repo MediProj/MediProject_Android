@@ -1,6 +1,5 @@
 package com.example.medi.mediproject;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -16,7 +15,7 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-public class RecordConsumeActivity extends Activity {
+public class RecordConsumeActivity extends BaseActivity {
     Button bt_next,bt_prev;
     int user_pk,type;
     ArrayList <ConsumeItem> list;

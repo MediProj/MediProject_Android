@@ -1,6 +1,5 @@
 package com.example.medi.mediproject;
 
-import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -19,7 +18,7 @@ import java.util.List;
 
 import static java.lang.String.valueOf;
 
-public class ReportActivity extends Activity {
+public class ReportActivity extends BaseActivity {
     ListView listView;
     ListViewAdapter listViewAdapter;
     ArrayList <ReportItem> list;

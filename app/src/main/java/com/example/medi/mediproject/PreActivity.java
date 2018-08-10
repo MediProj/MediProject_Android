@@ -1,6 +1,5 @@
 package com.example.medi.mediproject;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +8,7 @@ import android.widget.TextView;
 
 import java.util.Calendar;
 
-public class PreActivity extends Activity {
+public class PreActivity extends BaseActivity {
     TextView tv;
     Button bt_next, bt_prev, bt_edit;
     int page_id;

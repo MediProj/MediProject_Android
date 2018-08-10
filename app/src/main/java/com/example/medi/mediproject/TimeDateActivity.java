@@ -1,6 +1,5 @@
 package com.example.medi.mediproject;
 
-import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.DatePickerDialog;
 import android.app.Dialog;
@@ -20,7 +19,7 @@ import java.util.Calendar;
 
 import static java.util.Calendar.DATE;
 
-public class TimeDateActivity extends Activity {
+public class TimeDateActivity extends BaseActivity {
     Button bt_prev, bt_next, bt_time,bt_date;
     TextView title,tv;
     final int DIALOG_DATE = 1;

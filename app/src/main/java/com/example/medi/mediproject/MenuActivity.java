@@ -1,6 +1,5 @@
 package com.example.medi.mediproject;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
@@ -9,7 +8,7 @@ import android.widget.Toast;
 
 import com.example.medi.mediproject.Login.MainActivity;
 
-public class MenuActivity extends Activity {
+public class MenuActivity extends BaseActivity {
     TextView tv,tv_stool, tv_urine, tv_consume,tv_report;
     TextView bt_prev;
     String name,pid,pk;

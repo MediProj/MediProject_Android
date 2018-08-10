@@ -1,12 +1,11 @@
 package com.example.medi.mediproject;
 
-import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class ConsumeMenuActivity extends Activity {
+public class ConsumeMenuActivity extends BaseActivity {
     Button bt_liq, bt_cons;
     Button bt_prev;
 
