@@ -4,7 +4,7 @@ style="@style/linearViewScreen">
 
 <ImageView
     style="@style/titleBanner"
-    android:src="@drawable/logo_white"/>
+    android:src="@drawable/white_logo_2"/>
 
 <ScrollView
     style="@style/linearViewCont">

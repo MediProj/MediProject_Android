@@ -15,7 +15,7 @@
         <ImageView
             android:layout_height="match_parent"
             style="@style/titleBanner"
-            android:src="@drawable/logo_white"/>
+            android:src="@drawable/white_logo_2"/>
 
         <TextView
             android:id="@+id/Bnt_logout"

@@ -7,7 +7,7 @@
 
     <ImageView
         style="@style/titleBanner"
-        android:src="@drawable/logo_white"/>
+        android:src="@drawable/white_logo_2"/>
 
     <RelativeLayout
         android:layout_weight="6"
