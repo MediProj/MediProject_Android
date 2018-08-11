@@ -142,17 +142,17 @@ public class TimeDateActivity extends BaseActivity {
                 datePickerDialog.getDatePicker().setCalendarViewShown(true);
                 datePickerDialog.getDatePicker().setSpinnersShown(false);
                 datePickerDialog.getDatePicker().setMaxDate(System.currentTimeMillis());
-                datePickerDialog.getDatePicker().setScaleX(2.0f);
-                datePickerDialog.getDatePicker().setScaleY(2.0f);
-                datePickerDialog.getDatePicker().setPadding(100, 350, 100, 100);
+                datePickerDialog.getDatePicker().setScaleX(1.6f);
+                datePickerDialog.getDatePicker().setScaleY(1.6f);
+                datePickerDialog.getDatePicker().setPadding(100, 180, 100, 100);
                 datePickerDialog.getDatePicker().setForegroundGravity(Gravity.CENTER);
+                datePickerDialog.getDatePicker().setMinimumWidth(1000);
+                datePickerDialog.getDatePicker().setMinimumHeight(800);
 
                 // CalendarView set up
                 datePickerDialog.getDatePicker().getCalendarView().setShowWeekNumber(false);
                 datePickerDialog.getDatePicker().getCalendarView().setDate(Calendar.getInstance().getTimeInMillis(), true, true);
                 datePickerDialog.getDatePicker().getCalendarView().setUnfocusedMonthDateColor(getResources().getColor(R.color.Gray2));
-                datePickerDialog.getDatePicker().setMinimumWidth(1600);
-                datePickerDialog.getDatePicker().setMinimumHeight(1300);
 
                 datePickerDialog.show();
 
