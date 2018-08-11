@@ -81,7 +81,7 @@ public class RecordConsumeActivity extends BaseActivity {
                 Intent intent2 = new Intent(RecordConsumeActivity.this, ReportActivity.class);
 
                 //식사량 정보 받아서 POST 요청 (type/밥/국/반찬)
-                float cs = type*1000000+ list.get(0).amount*100000 + list.get(1).amount*10000 + list.get(2).amount*1000+ list.get(3).amount*100 + list.get(4).amount*10 + list.get(5).amount;
+                float cs = type*100000+ list.get(0).amount*10000 + list.get(1).amount*1000 + list.get(2).amount*100+ list.get(3).amount*10 + list.get(4).amount ;
                 MediPostRequest postRequest = new MediPostRequest(user_pk,0,0.0f,cs,0.0f,view.getContext());
                 Toast.makeText(getApplicationContext(),"성공적으로 등록되었습니다", Toast.LENGTH_LONG).show();
 
