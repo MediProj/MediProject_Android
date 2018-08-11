@@ -20,6 +20,7 @@ import java.util.List;
 public class RecordLiquidActivity extends BaseActivity {
     String pid;
     int user_pk;
+    int picked_item=0;
     TextView Menu_name;
     EditText et_liquid;
     ListView listView;
@@ -44,13 +45,10 @@ public class RecordLiquidActivity extends BaseActivity {
 
         MenuList = new ArrayList<>();
         MenuList.add("물");
-        MenuList.add("커피");
-        MenuList.add("맥주");
-        MenuList.add("과일");
-        MenuList.add("음료수");
-        MenuList.add("소주");
-        MenuList.add("야쿠르트");
-        MenuList.add("우유");
+        MenuList.add("이온음료");
+        MenuList.add("사과");
+        MenuList.add("오렌지");
+        MenuList.add("빵");
 
         listViewAdapter = new ListViewAdapter(getApplicationContext(),MenuList);
         listView.setAdapter(listViewAdapter);
@@ -59,6 +57,10 @@ public class RecordLiquidActivity extends BaseActivity {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                 Menu_name.setText(MenuList.get(i));
+                picked_item= i;
+
+
+                // 얍입력 부분 구현
             }
         });
 
@@ -69,6 +71,10 @@ public class RecordLiquidActivity extends BaseActivity {
         Intent intent = new Intent(RecordLiquidActivity.this, TimeDateActivity.class);
         intent.putExtra("val",2);
         intent.putExtra("pid", pid);
+
+
+        // 액체 환산 기능 구현
+
         startActivity(intent);
     }
 

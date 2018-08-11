@@ -8,6 +8,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.RadioButton;
 import android.widget.TextView;
@@ -59,7 +60,9 @@ public class RecordConsumeActivity extends BaseActivity {
         list = new ArrayList<>();
         list.add(new ConsumeItem("밥", 0));
         list.add(new ConsumeItem("국", 0));
-        list.add(new ConsumeItem("반찬", 0));
+        list.add(new ConsumeItem("반찬1", 0));
+        list.add(new ConsumeItem("반찬2", 0));
+        list.add(new ConsumeItem("후식", 0));
 
         listView = findViewById(R.id.ConsumeList);
 
@@ -127,6 +130,7 @@ public class RecordConsumeActivity extends BaseActivity {
                 holder.plus=view.findViewById(R.id.plus);
                 holder.minus=view.findViewById(R.id.minus);
                 holder.fname=view.findViewById(R.id.name);
+                holder.img=view.findViewById(R.id.img);
                 view.setTag(holder);
             }
             else{
@@ -137,7 +141,26 @@ public class RecordConsumeActivity extends BaseActivity {
             final String name= this.list.get(i).name;
             holder.fname.setText(name);
 
-           holder.plus.setOnClickListener(new View.OnClickListener() {
+            switch(i) {
+                case 0:
+                    holder.img.setImageResource(R.drawable.c1);
+                    break;
+                case 1:
+                    holder.img.setImageResource(R.drawable.c2);
+                    break;
+                case 2:
+                    holder.img.setImageResource(R.drawable.c3);
+                    break;
+                case 3:
+                    holder.img.setImageResource(R.drawable.c4);
+                    break;
+                case 4:
+                    holder.img.setImageResource(R.drawable.c5);
+                    break;
+            }
+
+
+            holder.plus.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
                     if(listViewAdapter.list.get(i).amount<6) {
@@ -183,6 +206,8 @@ public class RecordConsumeActivity extends BaseActivity {
 
 
     class ConsumeViewHolder{
+        ImageView img;
         TextView fname,amount,plus,minus;
+
     }
 }
