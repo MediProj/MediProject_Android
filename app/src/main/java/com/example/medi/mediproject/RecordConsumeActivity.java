@@ -86,9 +86,10 @@ public class RecordConsumeActivity extends BaseActivity {
 
                 //식사량 정보 받아서 POST 요청 (type/밥/국/반찬)
                 float cs = type*100000+ list.get(0).amount*10000 + list.get(1).amount*1000 + list.get(2).amount*100+ list.get(3).amount*10 + list.get(4).amount ;
-                MediPostRequest postRequest = new MediPostRequest(user_pk,0,0.0f,cs,0.0f,view.getContext());
+                float liquid =liquid= cal_liq();
 
-                Toast.makeText(getApplicationContext(),"성공적으로 등록되었습니다", Toast.LENGTH_LONG).show();
+                MediPostRequest postRequest = new MediPostRequest(user_pk,0,liquid,cs,0.0f,view.getContext());
+                Toast.makeText(getApplicationContext(),"총 "+liquid + "cc가 성공적으로 등록되었습니다", Toast.LENGTH_LONG).show();
 
                 intent2.putExtra("pid",pid);
                 startActivity(intent2);
@@ -168,7 +169,7 @@ public class RecordConsumeActivity extends BaseActivity {
             holder.plus.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    if(listViewAdapter.list.get(i).amount<6) {
+                    if(listViewAdapter.list.get(i).amount<8) {
                         int amount = listViewAdapter.list.get(i).amount;
                         finalHolder.amount.setText(getStringAmount(amount+1));
                         listViewAdapter.updateList(i, name, amount+1);
@@ -196,19 +197,38 @@ public class RecordConsumeActivity extends BaseActivity {
                 case 2: return "1/2";
                 case 3: return "3/4";
                 case 4: return "1";
-                case 5: return "3/2";
-                case 6: return "2";
+                case 5: return "5/4";
+                case 6: return "3/2";
+                case 7: return "7/4";
+                case 8: return "2";
             }
             return "0";
         }
 
         public void updateList(int i,String name, int newAmount){
-
             this.list.remove(i);
             this.list.add(i, new ConsumeItem(name, newAmount));
         }
     }
 
+    float cal_liq(){
+        float res =0.0f;
+
+        //밥,국
+        res = list.get(0).amount*120.0f;
+        res += list.get(1).amount*230.0f;
+
+        //반찬1 고기류 반찬
+        res += list.get(2).amount*60.0f;
+
+        //반찬2 채소류 반찬
+        res += list.get(3).amount*70.0f;
+
+        //후식
+        res += list.get(4).amount*120.0f;
+
+        return res*0.25f;
+    }
 
     class ConsumeViewHolder{
         ImageView img;
