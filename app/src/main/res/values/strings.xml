@@ -35,5 +35,7 @@
 
     <!-- Picker -->
     <string name="btnPick">선택</string>
+    <string name="promptPick">위 선택 버튼을 눌러주세요.</string>
+    <string name="alertPick">선택 버튼을 눌러주세요.</string>
 
 </resources>
