@@ -1,7 +1,6 @@
 package com.example.medi.mediproject;
 
 import android.app.AlertDialog;
-import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,9 +10,8 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
-import android.widget.Toast;
-
-import java.sql.Time;
+import java.util.Calendar;
+import java.util.TimeZone;
 
 public class TimeDateActivity extends BaseActivity {
     Button bt_prev, bt_next, bt_pick; //, bt_time,bt_date;
@@ -25,7 +23,9 @@ public class TimeDateActivity extends BaseActivity {
     String pid,str_pk;
     int page_id=0;
     int year, month, day, hour, minute;
+
     boolean dateSet = false;
+    boolean dateCorrect = false;
 
     public void onCreate(Bundle SavedInstanceState){
         super.onCreate(SavedInstanceState);
@@ -70,7 +70,6 @@ public class TimeDateActivity extends BaseActivity {
                 intent2.putExtra("val",page_id);
                 intent2.putExtra("pid",pid);
                 startActivity(intent2);
-
             }
         });
 
@@ -95,7 +94,23 @@ public class TimeDateActivity extends BaseActivity {
 
                     alert.getWindow().setLayout(700, 250);
                 }
+                else if(!dateCorrect) {
+                    AlertDialog.Builder alertBuilder = new AlertDialog.Builder(TimeDateActivity.this);
+                    LayoutInflater inf = TimeDateActivity.this.getLayoutInflater();
 
+                    alertBuilder.setView(inf.inflate(R.layout.date_time_wrong_alert, null));
+                    alertBuilder.setPositiveButton("확인", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialogInterface, int i) {
+                            dialogInterface.dismiss();
+                        }
+                    });
+
+                    AlertDialog alert = alertBuilder.create();
+                    alert.show();
+
+                    alert.getWindow().setLayout(900, 250);
+                }
                 //다음 페이지로 이동
                 else {
                     if (page_id==0) {
@@ -133,5 +148,14 @@ public class TimeDateActivity extends BaseActivity {
         res.setText("선택하신 날짜와 시간: " + String.format("%d년 %d월 %d일 %d시 %d분", year, month, day, hour, minute));
 
         dateSet = true;
+
+        Calendar tmpCal = Calendar.getInstance(); //.getInstance(TimeZone.getTimeZone("KST"));
+        tmpCal.set(pickDate.getYear(), pickDate.getMonth(), pickDate.getDayOfMonth(),
+                pickTime.getCurrentHour(), pickTime.getCurrentMinute(), 0);
+
+        long setTime = tmpCal.getTimeInMillis();
+        long curTime = Calendar.getInstance().getTimeInMillis();
+
+        dateCorrect = curTime >= setTime;
     }
 }
