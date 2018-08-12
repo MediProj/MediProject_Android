@@ -45,7 +45,6 @@
         android:id="@+id/val2"
         android:background="@drawable/rectangle"
         android:layout_weight="1"
-        android:text="val2"
         android:textSize="25sp"
         android:gravity="center"
         android:layout_width="0sp"

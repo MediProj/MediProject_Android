@@ -6,9 +6,7 @@ import android.view.View;
 import android.widget.RadioButton;
 
 public class CheckUrineActivity extends BaseActivity {
-
-    RadioButton c1,c2,c3,c4;
-    String pid;
+     String pid;
     int type =1;
 
     public void onCreate(Bundle savedInstanceState){
@@ -18,10 +16,11 @@ public class CheckUrineActivity extends BaseActivity {
         Intent intent = getIntent();
         pid = intent.getStringExtra("pid");
 
-        c1= findViewById(R.id.c1);
-        c2=findViewById(R.id.c2);
-        c3 = findViewById(R.id.c3);
-        c4 = findViewById(R.id.c4);
+
+        final RadioButton c1 = findViewById(R.id.c1);
+        final RadioButton c2 = findViewById(R.id.c2);
+        final RadioButton c3 = findViewById(R.id.c3);
+        final RadioButton c4 = findViewById(R.id.c4);
         c1.setChecked(true);
 
         RadioButton.OnClickListener optionOnClickListener = new RadioButton.OnClickListener() {

@@ -8,18 +8,14 @@
 
     <RadioGroup
         android:layout_weight="6"
+        android:weightSum="5"
+        android:orientation="horizontal"
+        android:layout_marginHorizontal="20sp"
         android:layout_width="match_parent"
         android:layout_height="0sp">
 
-        <LinearLayout
-            android:orientation="horizontal"
-            android:weightSum="5"
-            android:layout_marginHorizontal="100sp"
 
-            android:layout_width="match_parent"
-            android:layout_height="match_parent">
-
-             <RadioButton
+        <RadioButton
             android:id="@+id/c1"
             style="@style/prompt"
             android:text="정상"
@@ -28,7 +24,7 @@
             android:layout_width="0sp"
             android:layout_height="match_parent" />
 
-            <RadioButton
+        <RadioButton
             android:id="@+id/c2"
             style="@style/prompt"
             android:text="혈변"
@@ -38,7 +34,7 @@
             android:layout_height="match_parent" />
 
 
-            <RadioButton
+        <RadioButton
             android:id="@+id/c3"
             style="@style/prompt"
             android:textAlignment="center"
@@ -48,16 +44,16 @@
             android:layout_height="match_parent" />
 
 
-            <RadioButton
+        <RadioButton
             android:id="@+id/c4"
             android:textSize="30sp"
             android:textAlignment="center"
-            android:text="혈변/설사는 아니지만,정상 대변은 아닌 것 같습니다"
+            android:text="혈변/설사는 아니지만, 정상 대변은 아닌 것 같습니다"
             android:layout_weight="2"
             android:layout_width="0sp"
             android:layout_height="match_parent" />
-        </LinearLayout>
     </RadioGroup>
+
     <RelativeLayout
         style="@style/linearViewBot">
         <Button
