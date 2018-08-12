@@ -12,9 +12,10 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import java.util.Calendar;
+import java.util.TimeZone;
 
 public class TimeDateActivity extends BaseActivity {
-    Button bt_prev, bt_next, bt_pick; //, bt_time,bt_date;
+    Button bt_prev, bt_next, bt_pick;
     TextView tv, res;
     DatePicker pickDate;
     TimePicker pickTime;
@@ -149,12 +150,15 @@ public class TimeDateActivity extends BaseActivity {
 
         dateSet = true;
 
-        Calendar tmpCal = Calendar.getInstance(); //.getInstance(TimeZone.getTimeZone("KST"));
+        Calendar tmpCal = Calendar.getInstance();
         tmpCal.set(pickDate.getYear(), pickDate.getMonth(), pickDate.getDayOfMonth(),
                 pickTime.getCurrentHour(), pickTime.getCurrentMinute(), 0);
 
         long setTime = tmpCal.getTimeInMillis();
-        long curTime = Calendar.getInstance().getTimeInMillis();
+
+        Calendar curCal = Calendar.getInstance();
+        curCal.setTimeZone(TimeZone.getTimeZone("KST"));
+        long curTime = curCal.getTimeInMillis();
 
         dateCorrect = curTime >= setTime;
     }
