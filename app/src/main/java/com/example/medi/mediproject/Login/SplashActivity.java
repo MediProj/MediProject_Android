@@ -92,7 +92,6 @@ public class SplashActivity extends BaseActivity {
                     @Override
                     public void onResponse(JSONArray response) {
                         //Log.d("Response: ", response.toString());
-                        Toast.makeText(getApplicationContext(),"hello", Toast.LENGTH_LONG).show();
                         parsePatientJSON(response);
 
                         Intent intent = new Intent(SplashActivity.this, MainActivity.class);

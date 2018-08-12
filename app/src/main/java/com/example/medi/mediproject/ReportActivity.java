@@ -59,6 +59,10 @@ public class ReportActivity extends BaseActivity {
         list.add(new ReportItem(str_date, "액체섭취량", "오렌지","120cc"));
         list.add(new ReportItem(str_date, "소변", "거품뇨","100cc"));
         list.add(new ReportItem(str_date, "식사", "점심","밥 1/2\n국 1/4\n반찬1 1"));
+        list.add(new ReportItem(str_date, "대변", "1",""));
+        list.add(new ReportItem(str_date, "액체섭취량", "오렌지","120cc"));
+        list.add(new ReportItem(str_date, "소변", "거품뇨","100cc"));
+        list.add(new ReportItem(str_date, "식사", "점심","밥 1/2\n국 1/4\n반찬1 1"));
 
         listViewAdapter= new ListViewAdapter(getApplicationContext(),list);
         listView.setAdapter(listViewAdapter);

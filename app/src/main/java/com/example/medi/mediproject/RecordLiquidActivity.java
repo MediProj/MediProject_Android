@@ -21,7 +21,7 @@ public class RecordLiquidActivity extends BaseActivity {
     String pid;
     String unit=" 컵";
     int user_pk;
-    int picked_item=0;
+    int picked_item=-1;
     int bt_cnt=0;
     boolean zero_flag=true;
     TextView Menu_name, Menu_amt, plus, minus;
@@ -82,23 +82,26 @@ public class RecordLiquidActivity extends BaseActivity {
         plus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                zero_flag=false;
-                bt_cnt++;
-                Menu_amt.setText(String.valueOf(bt_cnt*0.25f)+unit);
+                if (picked_item != -1) {
+                    zero_flag = false;
+                    bt_cnt++;
+                    Menu_amt.setText(String.valueOf(bt_cnt * 0.25f) + unit);
+                }
             }
         });
 
         minus.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if(bt_cnt>0)
-                    bt_cnt--;
+             if(picked_item!=-1) {
+                 if (bt_cnt > 0)
+                     bt_cnt--;
 
-                if(bt_cnt==0)
-                    zero_flag=true;
+                 if (bt_cnt == 0)
+                     zero_flag = true;
 
-                Menu_amt.setText(String.valueOf(bt_cnt*0.25f)+unit);
-
+                 Menu_amt.setText(String.valueOf(bt_cnt * 0.25f) + unit);
+             }
             }
         });
 

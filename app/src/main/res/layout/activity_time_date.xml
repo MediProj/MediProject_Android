@@ -12,7 +12,7 @@
         android:layout_weight="2"
         android:id="@+id/tv"
         android:text="날짜와 시간을 선택하고 '다음'을 눌러주세요"
-        style="@style/Content"
+        style="@style/prompt"
         android:gravity="center"
         android:layout_gravity="center_horizontal"
         android:layout_width="wrap_content"
