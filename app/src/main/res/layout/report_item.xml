@@ -5,7 +5,7 @@
     android:gravity="center"
     android:background="@color/Back"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="50sp">
 
 
     <TextView
@@ -41,12 +41,19 @@
         android:layout_width="0sp"
         android:layout_height="50sp" />
 
-    <TextView
-        android:id="@+id/val2"
-        android:background="@drawable/rectangle"
+    <ScrollView
         android:layout_weight="1"
-        android:textSize="25sp"
-        android:gravity="center"
         android:layout_width="0sp"
-        android:layout_height="50sp" />
+        android:orientation="vertical"
+        android:background="@drawable/rectangle"
+        android:layout_height="match_parent">
+
+        <TextView
+            android:id="@+id/val2"
+            android:textSize="25sp"
+            android:gravity="center"
+            android:layout_width="match_parent"
+            android:layout_height="50sp" />
+     </ScrollView>
+
 </LinearLayout>
