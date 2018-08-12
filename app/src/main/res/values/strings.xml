@@ -33,4 +33,7 @@
     <string name="drinkPrompt">섭취하신 액체의 양을 입력하세요.</string>
     <string name="drinkHint">액체량 입력</string>
 
+    <!-- Picker -->
+    <string name="btnPick">선택</string>
+
 </resources>
