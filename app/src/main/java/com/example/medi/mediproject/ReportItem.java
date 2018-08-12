@@ -2,19 +2,26 @@ package com.example.medi.mediproject;
 
 
 public class ReportItem {
-    String date;
-    String name;
-    Integer stool_cnt;
-    float urine_amt, liquid_amt, consume_amt;
-
-    public ReportItem(String date, String name, Integer stool,float urine, float liquid, float consume){
+    private String date,tag,val1, val2;
+    public ReportItem(String date, String tag, String val1, String val2){
         this.date=date;
-        this.name= name;
-        this.stool_cnt=stool;
-        this.urine_amt=urine;
-        this.liquid_amt=liquid;
-        this.consume_amt=consume;
+        this.tag=tag;
+        this.val1=val1;
+        this.val2= val2;
     }
 
+    public String getDate(){
+        return this.date;
+    }
 
+    public String getTag(){
+        return this.tag;
+    }
+
+    public String getVal1(){
+        return this.val1;
+    }
+    public String getVal2(){
+        return this.val2;
+    }
 }

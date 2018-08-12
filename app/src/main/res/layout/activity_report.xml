@@ -12,17 +12,19 @@
         android:src="@drawable/white_logo_2"/>
 
 
-    <RelativeLayout
+    <LinearLayout
+        android:orientation="vertical"
         android:layout_gravity="center"
         android:gravity="center"
         android:layout_weight="6"
+        android:weightSum="6"
         style="@style/Body">
 
         <RelativeLayout
+            android:layout_weight="2"
             android:id="@+id/ll"
-            android:layout_marginBottom="10sp"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="0sp">
 
             <TextView
                 android:id="@+id/tv_report_date"
@@ -30,31 +32,33 @@
                 android:layout_height="wrap_content"
                 android:text="8월 4일 인아님 기록"
                 android:layout_centerInParent="true"
-                android:textSize="20sp" />
+                android:textSize="40sp" />
 
             <Button
                 android:id="@+id/bt_edit"
                 android:layout_centerVertical="true"
-                android:layout_margin="20sp"
+                android:layout_marginLeft="10sp"
                 android:text="  수정  "
-                android:textSize="20dp"
+                android:textSize="30dp"
                 android:textColor="@color/White"
+                android:layout_marginVertical="10sp"
                 android:layout_toRightOf="@+id/tv_report_date"
                 android:backgroundTint="@color/Green"
                 android:layout_width="wrap_content"
-                android:layout_height="50sp"/>
+                android:layout_height="wrap_content"/>
 
         </RelativeLayout>
         <ListView
-
+            android:layout_weight="4"
             android:id="@+id/ReportList"
             android:layout_below="@+id/ll"
-            android:layout_marginHorizontal="80sp"
+            android:layout_marginHorizontal="40sp"
+            android:layout_marginBottom="10sp"
             android:layout_centerInParent="true"
-            android:layout_width="wrap_content"
-            android:layout_height="match_parent">
+            android:layout_width="match_parent"
+            android:layout_height="0sp">
         </ListView>
-    </RelativeLayout>
+    </LinearLayout>
 
     <RelativeLayout
         style="@style/linearViewBot">

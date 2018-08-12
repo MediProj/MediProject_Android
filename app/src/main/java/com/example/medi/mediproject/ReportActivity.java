@@ -55,7 +55,11 @@ public class ReportActivity extends BaseActivity {
 
 
         //임시로
-        list.add(new ReportItem(str_date, name, 1,0.0f,0.0f,0.0f));
+        list.add(new ReportItem(str_date, "대변", "1",""));
+        list.add(new ReportItem(str_date, "액체섭취량", "오렌지","120cc"));
+        list.add(new ReportItem(str_date, "소변", "거품뇨","100cc"));
+        list.add(new ReportItem(str_date, "식사", "점심","밥 1/2\n국 1/4\n반찬1 1"));
+
         listViewAdapter= new ListViewAdapter(getApplicationContext(),list);
         listView.setAdapter(listViewAdapter);
 
@@ -109,27 +113,28 @@ public class ReportActivity extends BaseActivity {
                 view =inflater.inflate(R.layout.report_item,viewGroup,false);
                 holder = new ViewHolder();
                 holder.tv_time= view.findViewById(R.id.time);
-                holder.tv_stool=view.findViewById(R.id.stool);
-                holder.tv_urine=view.findViewById(R.id.urine);
-                holder.tv_liquid=view.findViewById(R.id.liquid);
-                holder.tv_consume=view.findViewById(R.id.consume);
+                holder.tv_tag=view.findViewById(R.id.tag);
+                holder.tv_val1=view.findViewById(R.id.val1);
+                holder.tv_val2=view.findViewById(R.id.val2);
                 view.setTag(holder);
             }
             else{
                 holder=(ViewHolder)view.getTag();
             }
 
-            holder.tv_time.setText(list.get(i).date);
-            holder.tv_stool.setText(valueOf(list.get(i).stool_cnt));
-            holder.tv_urine.setText(valueOf(list.get(i).urine_amt));
-            holder.tv_liquid.setText(String.valueOf(list.get(i).liquid_amt));
-            holder.tv_consume.setText(valueOf(list.get(i).consume_amt));
+            holder.tv_time.setText(list.get(i).getDate());
+            holder.tv_tag.setText(list.get(i).getTag());
+            holder.tv_val1.setText(list.get(i).getVal1());
+
+            if(!(list.get(i).getTag().equals("대변"))){
+                holder.tv_val2.setText(list.get(i).getVal2());
+            }
 
             return view;
         }
     }
 
     public class ViewHolder {
-        TextView tv_time,tv_stool, tv_urine,tv_consume,tv_liquid;
+        TextView tv_time,tv_tag, tv_val1,tv_val2;
     }
 }
