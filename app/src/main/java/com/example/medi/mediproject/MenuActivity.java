@@ -21,8 +21,6 @@ public class MenuActivity extends BaseActivity {
 
         //Patient Info (name/number)
         pid= intent.getStringExtra("pid");
-        name= MediValues.patientData.get(pid).get("name");
-
         tv =findViewById(R.id.tv);
         tv_stool=findViewById(R.id.stool);
         tv_urine=findViewById(R.id.urine);
@@ -30,6 +28,10 @@ public class MenuActivity extends BaseActivity {
         tv_report =findViewById(R.id.report);
         bt_prev=findViewById(R.id.Bnt_logout);
 
+
+        name= MediValues.patientData.get(pid).get("name");
+        TextView title_pname = findViewById(R.id.p_name);
+        title_pname.setText(name+" 님");
         //인사
         tv.setText(name + "님 안녕하세요! 메뉴를 선택해 주세요");
 

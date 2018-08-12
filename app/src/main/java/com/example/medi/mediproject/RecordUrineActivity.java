@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 
 public class RecordUrineActivity extends BaseActivity {
     String pid;
@@ -18,6 +19,10 @@ public class RecordUrineActivity extends BaseActivity {
 
         Intent intent =getIntent();
         pid=intent.getStringExtra("pid");
+
+        String name= MediValues.patientData.get(pid).get("name");
+        TextView title_pname = findViewById(R.id.p_name);
+        title_pname.setText(name+" 님");
 
         final String str_user_pk = MediValues.patientData.get(pid).get("user_pk");
         int user_pk = Integer.parseInt(str_user_pk);

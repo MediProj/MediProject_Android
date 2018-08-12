@@ -27,6 +27,10 @@ public class StoolActivity extends BaseActivity {
         str_user_pk = MediValues.patientData.get(pid).get("user_pk");
         user_pk = Integer.parseInt(str_user_pk);
 
+        String name= MediValues.patientData.get(pid).get("name");
+        TextView title_pname = findViewById(R.id.p_name);
+        title_pname.setText(name+" 님");
+
         //stool num ++
         stool_num = MediValues.stool_count;
 

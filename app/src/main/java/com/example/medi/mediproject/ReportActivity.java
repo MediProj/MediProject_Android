@@ -37,6 +37,9 @@ public class ReportActivity extends BaseActivity {
         name= MediValues.patientData.get(pid).get("name");
         listView = findViewById(R.id.ReportList);
 
+        TextView title_pname = findViewById(R.id.p_name);
+        title_pname.setText(name+" 님");
+
         //오늘날짜
         Calendar cal = Calendar.getInstance();
         int year = cal.get(Calendar.YEAR);

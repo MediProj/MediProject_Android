@@ -32,6 +32,10 @@ public class RecordConsumeActivity extends BaseActivity {
         pid= intent.getStringExtra("pid");
         user_pk = Integer.parseInt(MediValues.patientData.get(pid).get("user_pk"));
 
+        String name= MediValues.patientData.get(pid).get("name");
+        TextView title_pname = findViewById(R.id.p_name);
+        title_pname.setText(name+" 님");
+
         bt_next=findViewById(R.id.Bnt_next);
         bt_prev=findViewById(R.id.Bnt_prev);
         bt_next.setText("등록");

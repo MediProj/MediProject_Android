@@ -51,6 +51,9 @@ public class TimeDateActivity extends BaseActivity {
         name = MediValues.patientData.get(pid).get("name");
         str_pk = MediValues.patientData.get(pid).get("pk");
 
+        TextView title_pname = findViewById(R.id.p_name);
+        title_pname.setText(name+" 님");
+
         tv.setText(name +"님 날짜와 시간을 선택하고\n다음 버튼을 눌러주세요");
 
         res.setText(R.string.promptPick);

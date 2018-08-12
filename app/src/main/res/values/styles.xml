@@ -27,6 +27,37 @@
         <item name="android:background">#004B87</item>
     </style>
 
+
+    <style name="title_pname">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:textSize">30sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_margin">10sp</item>
+        <item name="android:layout_alignParentBottom">true</item>
+    </style>
+
+    <style name="title_jay">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:text">Jay Medical</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textColor">@color/White</item>
+        <item name="android:layout_alignParentRight">true</item>
+        <item name="android:layout_alignParentBottom">true</item>
+        <item name="android:layout_margin">10sp</item>
+    </style>
+
+    <style name="title_logo">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">match_parent</item>
+    </style>
+
+
+
+
     <!-- CENTER -->
 
     <style name="linearViewCont" parent="@style/layoutHoriz" >

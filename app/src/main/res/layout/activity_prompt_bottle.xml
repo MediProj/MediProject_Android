@@ -1,12 +1,20 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/linearViewScreen">
+    <RelativeLayout
+        style="@style/titleBanner">
 
-    <ImageView
-        style="@style/titleBanner"
-        android:src="@drawable/white_logo_2"/>
+        <TextView
+            android:id="@+id/p_name"
+            style="@style/title_pname"/>
 
-    <LinearLayout
+        <TextView style="@style/title_jay" />
+
+        <ImageView
+            android:src="@drawable/white_logo_2"
+            style="@style/title_logo"/>
+    </RelativeLayout>
+  <LinearLayout
         android:layout_weight="6"
         android:layout_height="0sp"
         style="@style/layoutHoriz"

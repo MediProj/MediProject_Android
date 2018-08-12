@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.TextView;
 
 public class PromptDiaperActivity extends BaseActivity {
     String pid;
@@ -14,6 +15,11 @@ public class PromptDiaperActivity extends BaseActivity {
 
         Intent intent = getIntent();
         pid = intent.getStringExtra("pid");
+
+        String name= MediValues.patientData.get(pid).get("name");
+        TextView title_pname = findViewById(R.id.p_name);
+        title_pname.setText(name+" 님");
+
         buttonPrev = (Button) findViewById(R.id.btnPrev);
         buttonNext = (Button) findViewById(R.id.btnNext);
     }

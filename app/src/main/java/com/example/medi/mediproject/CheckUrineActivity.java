@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.RadioButton;
+import android.widget.TextView;
 
 public class CheckUrineActivity extends BaseActivity {
      String pid;
@@ -15,6 +16,10 @@ public class CheckUrineActivity extends BaseActivity {
 
         Intent intent = getIntent();
         pid = intent.getStringExtra("pid");
+
+        String name= MediValues.patientData.get(pid).get("name");
+        TextView title_pname = findViewById(R.id.p_name);
+        title_pname.setText(name+" 님");
 
 
         final RadioButton c1 = findViewById(R.id.c1);

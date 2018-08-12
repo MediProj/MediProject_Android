@@ -38,6 +38,10 @@ public class RecordLiquidActivity extends BaseActivity {
         pid = intent.getStringExtra("pid");
         user_pk = Integer.parseInt(MediValues.patientData.get(pid).get("user_pk"));
 
+        String name= MediValues.patientData.get(pid).get("name");
+        TextView title_pname = findViewById(R.id.p_name);
+        title_pname.setText(name+" 님");
+
         Menu_name=findViewById(R.id.menu_name);
         Menu_amt = findViewById(R.id.drinkPrint);
         plus= findViewById(R.id.plus);
