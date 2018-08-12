@@ -37,7 +37,7 @@ public class StoolActivity extends BaseActivity {
         bt_prev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent2 = new Intent(StoolActivity.this, TimeDateActivity.class);
+                Intent intent2 = new Intent(StoolActivity.this, CheckStoolActivity.class);
                 intent2.putExtra("val", 0);
                 intent2.putExtra("pid",pid);
                 MediPostRequest postRequest = new MediPostRequest(user_pk,stool_num+1, 0.0f,0.0f,0.0f, view.getContext());

@@ -67,7 +67,7 @@ public class TimeDateActivity extends BaseActivity {
             }
         });
 
-        //prev(Menu page)
+        //prev(Menu page)]
         bt_prev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -92,13 +92,13 @@ public class TimeDateActivity extends BaseActivity {
                 //다음 페이지로 이동
                 else {
                     if (page_id==0) {
-                        Intent intent2 = new Intent(TimeDateActivity.this, StoolActivity.class);
+                        Intent intent2 = new Intent(TimeDateActivity.this, CheckStoolActivity.class);
                         MediGetRequest getRequest = new MediGetRequest(str_pk, "stool_count",view.getContext());
                         intent2.putExtra("pid", pid);
                         startActivity(intent2);
                     }
                     else if(page_id==1) {
-                        Intent intent2 = new Intent(TimeDateActivity.this, ContainerSelectActivity.class);
+                        Intent intent2 = new Intent(TimeDateActivity.this, CheckUrineActivity.class);
                         intent2.putExtra("pid", pid);
                         startActivity(intent2);
                     }

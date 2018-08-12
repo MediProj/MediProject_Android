@@ -71,13 +71,13 @@ public class PreActivity extends BaseActivity {
             public void onClick(View view) {
                 //다음 페이지로 이동
                 if (page_id == 0) {
-                    Intent intent2 = new Intent(PreActivity.this, StoolActivity.class);
+                    Intent intent2 = new Intent(PreActivity.this, CheckStoolActivity.class);
                     intent2.putExtra("pid", pid);
                     intent2.putExtra("val", page_id);
                     startActivity(intent2);
                     }
                 else if (page_id == 1) {
-                    Intent intent2 = new Intent(PreActivity.this, ContainerSelectActivity.class);
+                    Intent intent2 = new Intent(PreActivity.this, CheckUrineActivity.class);
                     intent2.putExtra("pid", pid);
                     intent2.putExtra("val", page_id);
                     startActivity(intent2);

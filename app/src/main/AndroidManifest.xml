@@ -29,6 +29,15 @@
             android:screenOrientation="landscape">
         </activity>
 
+        <activity android:name=".CheckUrineActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape"/>
+
+        <activity android:name=".CheckStoolActivity"
+            android:configChanges="orientation"
+            android:screenOrientation="landscape"/>
+
+
         <activity android:name=".Login.MainActivity"
             android:configChanges="orientation"
             android:screenOrientation="landscape"/>

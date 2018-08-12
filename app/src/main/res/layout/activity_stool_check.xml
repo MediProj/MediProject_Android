@@ -6,16 +6,20 @@
         style="@style/titleBanner"
         android:src="@drawable/white_logo_2"/>
 
-    <LinearLayout
-        android:orientation="horizontal"
-        android:weightSum="5"
-        android:layout_marginHorizontal="100sp"
-
+    <RadioGroup
         android:layout_weight="6"
         android:layout_width="match_parent"
         android:layout_height="0sp">
 
-        <RadioButton
+        <LinearLayout
+            android:orientation="horizontal"
+            android:weightSum="5"
+            android:layout_marginHorizontal="100sp"
+
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+             <RadioButton
             android:id="@+id/c1"
             style="@style/prompt"
             android:text="정상"
@@ -24,7 +28,7 @@
             android:layout_width="0sp"
             android:layout_height="match_parent" />
 
-        <RadioButton
+            <RadioButton
             android:id="@+id/c2"
             style="@style/prompt"
             android:text="혈변"
@@ -34,7 +38,7 @@
             android:layout_height="match_parent" />
 
 
-        <RadioButton
+            <RadioButton
             android:id="@+id/c3"
             style="@style/prompt"
             android:textAlignment="center"
@@ -44,7 +48,7 @@
             android:layout_height="match_parent" />
 
 
-        <RadioButton
+            <RadioButton
             android:id="@+id/c4"
             android:textSize="30sp"
             android:textAlignment="center"
@@ -52,9 +56,8 @@
             android:layout_weight="2"
             android:layout_width="0sp"
             android:layout_height="match_parent" />
-
-
-    </LinearLayout>
+        </LinearLayout>
+    </RadioGroup>
     <RelativeLayout
         style="@style/linearViewBot">
         <Button
