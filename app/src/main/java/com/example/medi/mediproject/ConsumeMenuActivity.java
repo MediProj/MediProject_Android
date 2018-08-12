@@ -42,7 +42,7 @@ public class ConsumeMenuActivity extends BaseActivity {
         bt_prev.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent2 = new Intent(ConsumeMenuActivity.this,MenuActivity.class);
+                Intent intent2 = new Intent(ConsumeMenuActivity.this, TimeDateActivity.class);
                 intent2.putExtra("pid", pid);
                 intent2.putExtra("val",2);
                 startActivity(intent2);

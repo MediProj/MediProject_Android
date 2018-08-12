@@ -41,7 +41,7 @@ public class CheckUrineActivity extends BaseActivity {
     }
 
     protected void onPrevClick(View view) {
-        Intent intent = new Intent(CheckUrineActivity.this, PreActivity.class);
+        Intent intent = new Intent(CheckUrineActivity.this, TimeDateActivity.class);
         intent.putExtra("pid",pid);
         intent.putExtra("val",1);
         startActivity(intent);

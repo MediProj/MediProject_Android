@@ -40,7 +40,7 @@ public class CheckStoolActivity extends BaseActivity {
     }
 
     protected void onPrevClick(View view) {
-        Intent intent = new Intent(CheckStoolActivity.this, PreActivity.class);
+        Intent intent = new Intent(CheckStoolActivity.this, TimeDateActivity.class);
         intent.putExtra("pid",pid);
         intent.putExtra("val", 0);
         startActivity(intent);

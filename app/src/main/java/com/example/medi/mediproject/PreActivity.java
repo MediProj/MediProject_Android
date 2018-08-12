@@ -8,6 +8,14 @@ import android.widget.TextView;
 
 import java.util.Calendar;
 
+/*
+ ***** IMPORTANT *****
+ *                   *
+ * 더 이상 안 쓰는 Act*
+ *                   *
+ *********************
+*/
+
 public class PreActivity extends BaseActivity {
     TextView tv;
     Button bt_next, bt_prev, bt_edit;
