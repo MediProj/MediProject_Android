@@ -10,8 +10,8 @@ import android.widget.Button;
 import android.widget.DatePicker;
 import android.widget.TextView;
 import android.widget.TimePicker;
+
 import java.util.Calendar;
-import java.util.TimeZone;
 
 public class TimeDateActivity extends BaseActivity {
     Button bt_prev, bt_next, bt_pick; //, bt_time,bt_date;
