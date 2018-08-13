@@ -54,7 +54,7 @@ public class TimeDateActivity extends BaseActivity {
         TextView title_pname = findViewById(R.id.p_name);
         title_pname.setText(name+" 님");
 
-        tv.setText(name +"님 날짜와 시간을 선택하고\n다음 버튼을 눌러주세요");
+        tv.setText("날짜와 시간을 선택하고 다음 버튼을 눌러주세요");
 
         res.setText(R.string.promptPick);
 
