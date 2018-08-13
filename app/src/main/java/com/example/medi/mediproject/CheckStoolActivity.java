@@ -10,6 +10,8 @@ public class CheckStoolActivity extends BaseActivity {
 
     int type=1;
     String pid;
+
+    @Override
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_stool_check);
@@ -45,14 +47,14 @@ public class CheckStoolActivity extends BaseActivity {
         c1.setOnClickListener(optionOnClickListener);
     }
 
-    protected void onPrevClick(View view) {
+    public void onPrevClick(View view) {
         Intent intent = new Intent(CheckStoolActivity.this, TimeDateActivity.class);
         intent.putExtra("pid",pid);
         intent.putExtra("val", 0);
         startActivity(intent);
     }
 
-    protected void onNextClick(View view) {
+    public void onNextClick(View view) {
         Intent intent = new Intent(CheckStoolActivity.this, StoolActivity.class);
         intent.putExtra("pid",pid);
         startActivity(intent);

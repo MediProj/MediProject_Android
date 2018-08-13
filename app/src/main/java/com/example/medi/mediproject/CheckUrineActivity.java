@@ -44,14 +44,14 @@ public class CheckUrineActivity extends BaseActivity {
         c1.setOnClickListener(optionOnClickListener);
     }
 
-    protected void onPrevClick(View view) {
+    public void onPrevClick(View view) {
         Intent intent = new Intent(CheckUrineActivity.this, TimeDateActivity.class);
         intent.putExtra("pid",pid);
         intent.putExtra("val",1);
         startActivity(intent);
     }
 
-    protected void onNextClick(View view) {
+    public void onNextClick(View view) {
         Intent intent = new Intent(CheckUrineActivity.this,  ContainerSelectActivity.class);
         intent.putExtra("pid",pid);
         startActivity(intent);
