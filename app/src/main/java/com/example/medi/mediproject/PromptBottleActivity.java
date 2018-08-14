@@ -21,8 +21,8 @@ public class PromptBottleActivity extends BaseActivity {
         TextView title_pname = findViewById(R.id.p_name);
         title_pname.setText(name+" 님");
 
-        buttonPrev = (Button) findViewById(R.id.btnPrev);
-        buttonNext = (Button) findViewById(R.id.btnNext);
+        buttonPrev = (Button) findViewById(R.id.Bnt_prev);
+        //buttonNext = (Button) findViewById(R.id.btnNext);
     }
 
     public void onPrevClick(View view) {

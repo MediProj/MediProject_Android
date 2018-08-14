@@ -30,8 +30,8 @@ public class RecordUrineActivity extends BaseActivity {
         weightUrine = (EditText) findViewById(R.id.weightPrint);
         sendUrine = (Button) findViewById(R.id.urineSend);
 
-        buttonPrev = (Button) findViewById(R.id.btnPrev);
-        buttonNext = (Button) findViewById(R.id.btnNext);
+        buttonPrev = (Button) findViewById(R.id.Bnt_prev);
+        //buttonNext = (Button) findViewById(R.id.btnNext);
 
         sendUrine.setOnClickListener(new View.OnClickListener() {
             @Override
