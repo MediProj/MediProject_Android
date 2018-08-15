@@ -31,7 +31,6 @@ public class MediGetRequest {
                 Log.d("Respnse", response.toString());
                 try {
                     String tmp= response.getString(key);
-                    MediValues.stool_count= Integer.parseInt(tmp);
 
                 } catch (JSONException e) {
                     e.printStackTrace();

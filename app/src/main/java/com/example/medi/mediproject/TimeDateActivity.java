@@ -119,7 +119,6 @@ public class TimeDateActivity extends BaseActivity {
                 else {
                     if (page_id==0) {
                         Intent intent2 = new Intent(TimeDateActivity.this, CheckStoolActivity.class);
-                        MediGetRequest getRequest = new MediGetRequest(str_pk, "stool_count",view.getContext());
                         intent2.putExtra("pid", pid);
                         startActivity(intent2);
                     }

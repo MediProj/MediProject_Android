@@ -11,7 +11,8 @@ public class StoolActivity extends BaseActivity {
 
     Button bt_prev, bt_next;
     TextView tv_stool_num;
-    String pid,str_user_pk;
+    String pid,name,time;
+    float amount;
     int user_pk, stool_num=0;
 
     public void onCreate(Bundle SavedInstanceState) {
@@ -24,19 +25,14 @@ public class StoolActivity extends BaseActivity {
 
         final Intent intent = getIntent();
         pid=intent.getStringExtra("pid");
-        str_user_pk = MediValues.patientData.get(pid).get("user_pk");
-        user_pk = Integer.parseInt(str_user_pk);
+        name = MediValues.patientData.get(pid).get("name");
+        time = "2015-08-15T19:40:31+09:00";
 
-        String name= MediValues.patientData.get(pid).get("name");
         TextView title_pname = findViewById(R.id.p_name);
         title_pname.setText(name+" 님");
 
-        //stool num ++
-        stool_num = MediValues.stool_count;
-
         //next bnt 텍스트 수전
         bt_next.setText("등록");
-        tv_stool_num.setText("등록시, 오늘 총 " + String.valueOf(stool_num+1) + "회로 기록됩니다");
 
         bt_prev.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -44,7 +40,6 @@ public class StoolActivity extends BaseActivity {
                 Intent intent2 = new Intent(StoolActivity.this, CheckStoolActivity.class);
                 intent2.putExtra("val", 0);
                 intent2.putExtra("pid",pid);
-                MediPostRequest postRequest = new MediPostRequest(user_pk,stool_num+1, 0.0f,0.0f,0.0f, view.getContext());
                 startActivity(intent2);
             }
         });
@@ -53,6 +48,7 @@ public class StoolActivity extends BaseActivity {
             @Override
             public void onClick(View view) {
                 Intent intent2 = new Intent(StoolActivity.this, ReportActivity.class);
+                MediPostRequest postRequest = new MediPostRequest(view.getContext(), pid, name,MediValues.OUTPUT, MediValues.STOOL, 1.0f, time );
                 Toast.makeText(getApplicationContext(),"성공적으로 등록되었습니다", Toast.LENGTH_LONG).show();
                 intent2.putExtra("pid",pid);
                 startActivity(intent2);

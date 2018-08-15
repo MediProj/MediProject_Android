@@ -8,6 +8,14 @@ public class MediValues {
     public static String ACCESS_TOKEN = "";
 
     public static Map<String, Map<String, String>> patientData;
-    public static int stool_count;
-    public static float urine_amount, consume_amount, liquid_amount;
+
+    static final int INPUT = 1;
+    static final int OUTPUT = 2;
+
+    static final int STOOL = 10;
+    static final int URINE = 6;
+
+    static final int CONSUME =1;
+
+
 }

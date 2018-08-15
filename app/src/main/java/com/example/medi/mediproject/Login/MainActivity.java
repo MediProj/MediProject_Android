@@ -33,7 +33,6 @@ public class MainActivity extends BaseActivity {
             public void onClick(View view) {
                 Intent intent = new Intent(MainActivity.this, MenuActivity.class);
                 CheckRegister();
-
                 if (!Login)
                     Toast.makeText(getApplicationContext(), "잘못된 이름/환자번호 입니다", Toast.LENGTH_LONG).show();
 

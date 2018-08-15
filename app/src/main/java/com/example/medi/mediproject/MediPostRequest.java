@@ -2,6 +2,7 @@ package com.example.medi.mediproject;
 
 import android.content.Context;
 import android.util.Log;
+import android.widget.Toast;
 
 import com.android.volley.AuthFailureError;
 import com.android.volley.Request;
@@ -15,24 +16,29 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.sql.Time;
 import java.util.HashMap;
 import java.util.Map;
 
 public class MediPostRequest {
-    private int user_pk;
-    private int stool_count;
-    private float liquid_amount;
-    private float consume_amount;
-    private float urine_amount;
+
+    private  String pid;
+    private String name;
+    private int io_type;
+    private int record_type;
+    private String time;
+    private float amount;
 
     private final String url = "http://54.202.222.14/records/api/records-list/";
 
-    MediPostRequest(int pk, int stool, float lq, float cs, float ur, Context context) {
-        user_pk = pk;
-        stool_count = stool;
-        liquid_amount = lq;
-        consume_amount = cs;
-        urine_amount = ur;
+    MediPostRequest(Context context, String pid, String name, int io_type, int record_type, float amount, String time){
+
+        this.pid = pid;
+        this.name = name;
+        this.io_type = io_type;
+        this.record_type = record_type;
+        this.amount=amount;
+        this.time = time;
 
         RequestQueue queue;
 
@@ -44,12 +50,12 @@ public class MediPostRequest {
 
         try {
             post = new JSONObject();
-            post.put("patient", user_pk);
-            post.put("stool_count",stool_count);
-            post.put("liquid_amount",liquid_amount);
-            post.put("consume_amount",consume_amount);
-            post.put("urine_amount",urine_amount);
-            tmp.put(post);
+            post.put("patient_pid", pid);
+            post.put("patient_name", name);
+            post.put("io_type", io_type);
+            post.put("record_type", record_type);
+            post.put("amount", amount);
+            post.put("registered_time",time );
         } catch (JSONException e) {
             e.printStackTrace();
         }

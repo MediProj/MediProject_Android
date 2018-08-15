@@ -6,9 +6,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class RecordUrineActivity extends BaseActivity {
-    String pid;
+    String pid,name, time;
     private EditText weightUrine;
     private Button sendUrine;
 
@@ -19,15 +20,14 @@ public class RecordUrineActivity extends BaseActivity {
 
         Intent intent =getIntent();
         pid=intent.getStringExtra("pid");
+        name= MediValues.patientData.get(pid).get("name");
+        time ="";
 
-        String name= MediValues.patientData.get(pid).get("name");
         TextView title_pname = findViewById(R.id.p_name);
         title_pname.setText(name+" 님");
 
-        final String str_user_pk = MediValues.patientData.get(pid).get("user_pk");
-        int user_pk = Integer.parseInt(str_user_pk);
 
-        weightUrine = (EditText) findViewById(R.id.weightPrint);
+        weightUrine = (EditText) findViewById(R.id.urineUnit);
         sendUrine = (Button) findViewById(R.id.urineSend);
 
         buttonPrev = (Button) findViewById(R.id.Bnt_prev);
@@ -36,11 +36,6 @@ public class RecordUrineActivity extends BaseActivity {
         sendUrine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                if(!weightUrine.getText().toString().equals("")) {
-                    MediPostRequest postRequest = new MediPostRequest(
-                            Integer.parseInt(str_user_pk),
-                            0, 0.0f, 0.0f, Float.parseFloat(weightUrine.getText().toString()), view.getContext());
-                }
             }
         });
     }
@@ -52,9 +47,15 @@ public class RecordUrineActivity extends BaseActivity {
     }
 
     public void onNextClick(View view) {
-        Intent intent = new Intent(RecordUrineActivity.this, ReportActivity.class);
-        intent.putExtra("pid", pid);
-        startActivity(intent);
+        if(!weightUrine.getText().toString().equals("")) {
+            MediPostRequest postRequest = new MediPostRequest(view.getContext(), pid, name, MediValues.OUTPUT, MediValues.URINE, -1.0f, time);
+            Intent intent = new Intent(RecordUrineActivity.this, ReportActivity.class);
+            intent.putExtra("pid", pid);
+            startActivity(intent);
+        }
+        else{
+            Toast.makeText(getApplicationContext(), "무게를 입력해 주세요", Toast.LENGTH_LONG).show();
+        }
     }
 }
 

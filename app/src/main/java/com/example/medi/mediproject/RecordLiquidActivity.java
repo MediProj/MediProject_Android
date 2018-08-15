@@ -18,9 +18,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class RecordLiquidActivity extends BaseActivity {
-    String pid;
     String unit=" 컵";
-    int user_pk;
     int picked_item=-1;
     int bt_cnt=0;
     boolean zero_flag=true;
@@ -28,6 +26,7 @@ public class RecordLiquidActivity extends BaseActivity {
     ListView listView;
     ListViewAdapter listViewAdapter;
     ArrayList<String> MenuList;
+    String pid, name, time;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -36,9 +35,9 @@ public class RecordLiquidActivity extends BaseActivity {
 
         Intent intent =getIntent();
         pid = intent.getStringExtra("pid");
-        user_pk = Integer.parseInt(MediValues.patientData.get(pid).get("user_pk"));
+        name= MediValues.patientData.get(pid).get("name");
+        time="";
 
-        String name= MediValues.patientData.get(pid).get("name");
         TextView title_pname = findViewById(R.id.p_name);
         title_pname.setText(name+" 님");
 
@@ -128,8 +127,7 @@ public class RecordLiquidActivity extends BaseActivity {
                 liquid = cal_liq(picked_item,bt_cnt);
 
                 //POST request
-                MediPostRequest postRequest = new MediPostRequest(user_pk, 0,
-                        liquid, 0.0f, 0.0f, view.getContext());
+                MediPostRequest postRequest = new MediPostRequest(view.getContext(), pid, name, MediValues.INPUT, MediValues.CONSUME, liquid,time);
                 Toast.makeText(getApplicationContext(), "총 "+String.valueOf(liquid)+ "cc가 성공적으로 등록되었습니다", Toast.LENGTH_LONG).show();
 
                 //next page

@@ -22,7 +22,7 @@ public class RecordConsumeActivity extends BaseActivity {
     ArrayList <ConsumeItem> list;
     ListViewAdapter listViewAdapter;
     ListView listView;
-    String pid;
+    String pid, name, time;
 
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -30,9 +30,9 @@ public class RecordConsumeActivity extends BaseActivity {
 
         Intent intent = getIntent();
         pid= intent.getStringExtra("pid");
-        user_pk = Integer.parseInt(MediValues.patientData.get(pid).get("user_pk"));
+        name = MediValues.patientData.get(pid).get("name");
+        time ="";
 
-        String name= MediValues.patientData.get(pid).get("name");
         TextView title_pname = findViewById(R.id.p_name);
         title_pname.setText(name+" 님");
 
@@ -88,7 +88,7 @@ public class RecordConsumeActivity extends BaseActivity {
                 float cs = type*100000+ list.get(0).amount*10000 + list.get(1).amount*1000 + list.get(2).amount*100+ list.get(3).amount*10 + list.get(4).amount ;
                 float liquid =liquid= cal_liq();
 
-                MediPostRequest postRequest = new MediPostRequest(user_pk,0,liquid,cs,0.0f,view.getContext());
+                MediPostRequest postRequest = new MediPostRequest(view.getContext(), pid, name, MediValues.INPUT, MediValues.CONSUME,liquid,time );
                 Toast.makeText(getApplicationContext(),"총 "+liquid + "cc가 성공적으로 등록되었습니다", Toast.LENGTH_LONG).show();
 
                 intent2.putExtra("pid",pid);
