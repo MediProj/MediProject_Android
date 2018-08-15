@@ -10,7 +10,7 @@ import android.widget.Toast;
 public class StoolActivity extends BaseActivity {
 
     Button bt_prev, bt_next;
-    TextView tv_stool_num;
+    TextView tv1, tv2;
     String pid,name,time;
     float amount;
     int user_pk, stool_num=0;
@@ -21,15 +21,22 @@ public class StoolActivity extends BaseActivity {
 
         bt_next = findViewById(R.id.Bnt_next);
         bt_prev = findViewById(R.id.Bnt_prev);
-        tv_stool_num = findViewById(R.id.tv_stool_num);
+        tv1 = findViewById(R.id.tv1);
+        tv2=findViewById(R.id.tv2);
 
         final Intent intent = getIntent();
         pid=intent.getStringExtra("pid");
+        String tmp_time = intent.getStringExtra("time");
+        String stool_type = intent.getStringExtra("type");
+
         name = MediValues.patientData.get(pid).get("name");
         time = "2015-08-15T19:40:31+09:00";
 
         TextView title_pname = findViewById(R.id.p_name);
         title_pname.setText(name+" 님");
+
+        tv1.setText(tmp_time +"에 ");
+        tv2.setText(stool_type + " 대변 1회를 기록합니다");
 
         //next bnt 텍스트 수전
         bt_next.setText("등록");

@@ -8,6 +8,7 @@ import android.widget.TextView;
 
 public class CheckStoolActivity extends BaseActivity {
 
+    String str_type="";
     int type=1;
     String pid;
 
@@ -31,16 +32,19 @@ public class CheckStoolActivity extends BaseActivity {
 
         RadioButton.OnClickListener optionOnClickListener = new RadioButton.OnClickListener() {
             public void onClick(View v) {
-                if(c1.isChecked()) {
-                    c1.setChecked(false);
+                if (c1.isChecked()) {
                     type = 1;
+                    str_type = "정상";
+                } else if (c2.isChecked()) {
+                    str_type = "혈변";
+                    type = 2;
+                } else if (c3.isChecked()) {
+                    str_type = "설사 ";
+                    type = 3;
+                } else {
+                    type = 4;
+                    str_type="기타(정상은 아님)";
                 }
-                else if(c2.isChecked())
-                    type =2;
-                else if(c3.isChecked())
-                    type=3;
-                else
-                    type=4;
             }
         };
 
@@ -57,6 +61,7 @@ public class CheckStoolActivity extends BaseActivity {
     public void onNextClick(View view) {
         Intent intent = new Intent(CheckStoolActivity.this, StoolActivity.class);
         intent.putExtra("pid",pid);
+        intent.putExtra("type", str_type);
         startActivity(intent);
     }
 }

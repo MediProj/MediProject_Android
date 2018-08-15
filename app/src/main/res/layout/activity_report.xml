@@ -41,6 +41,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="8월 4일 인아님 기록"
+                android:textColor="@color/Black"
+                android:textStyle="bold"
                 android:layout_centerInParent="true"
                 android:textSize="40sp" />
 

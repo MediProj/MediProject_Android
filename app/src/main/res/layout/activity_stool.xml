@@ -24,7 +24,7 @@
         style="@style/Body">
 
         <TextView
-        android:id="@+id/tv_stool_num"
+        android:id="@+id/tv2"
         android:text="총 1회 기록"
         style="@style/prompt"
         android:layout_centerInParent="true"
@@ -32,9 +32,10 @@
         android:layout_height="wrap_content" />
 
         <TextView
+            android:id="@+id/tv1"
         android:text="대변 + 1회를 등록하시겠습니까?"
         style="@style/prompt"
-        android:layout_above="@+id/tv_stool_num"
+        android:layout_above="@+id/tv2"
         android:layout_centerHorizontal="true"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />

@@ -9,6 +9,7 @@ import android.widget.TextView;
 public class CheckUrineActivity extends BaseActivity {
      String pid;
     int type =1;
+    String str_type;
 
     public void onCreate(Bundle savedInstanceState){
         super.onCreate(savedInstanceState);
@@ -30,14 +31,19 @@ public class CheckUrineActivity extends BaseActivity {
 
         RadioButton.OnClickListener optionOnClickListener = new RadioButton.OnClickListener() {
             public void onClick(View v) {
-                if(c1.isChecked())
-                    type =1;
-                else if(c2.isChecked())
-                    type =2;
-                else if(c3.isChecked())
-                    type=3;
-                else
-                    type=4;
+                if (c1.isChecked()) {
+                    type = 1;
+                    str_type = "정상";
+                } else if (c2.isChecked()) {
+                    str_type = "혈뇨";
+                    type = 2;
+                } else if (c3.isChecked()) {
+                    str_type = "거품뇨 ";
+                    type = 3;
+                } else {
+                    type = 4;
+                    str_type="기타(정상은 아님)";
+                }
             }
         };
 
@@ -54,6 +60,7 @@ public class CheckUrineActivity extends BaseActivity {
     public void onNextClick(View view) {
         Intent intent = new Intent(CheckUrineActivity.this,  ContainerSelectActivity.class);
         intent.putExtra("pid",pid);
+        intent.putExtra("type", str_type);
         startActivity(intent);
     }
 }

@@ -33,7 +33,7 @@ public class MenuActivity extends BaseActivity {
         TextView title_pname = findViewById(R.id.p_name);
         title_pname.setText(name+" 님");
         //인사
-        tv.setText(name + "님 안녕하세요! 메뉴를 선택해 주세요");
+        tv.setText(name + "("+pid +")" +"님 무엇을 기록하시겠습니까?\n이름,환자번호가 잘못된 경우 '나가기 버튼을 눌러주세요");
 
         //Stool page
         tv_stool.setOnClickListener(new View.OnClickListener() {
