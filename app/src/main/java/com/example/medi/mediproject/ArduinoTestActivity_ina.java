@@ -15,6 +15,7 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.felhr.usbserial.UsbSerialDevice;
 import com.felhr.usbserial.UsbSerialInterface;
@@ -23,15 +24,18 @@ import java.io.UnsupportedEncodingException;
 import java.util.HashMap;
 import java.util.Map;
 
-public class ArduinoTestActivity extends Activity {
+public class ArduinoTestActivity_ina extends Activity {
     public final String ACTION_USB_PERMISSION = "com.hariharan.arduinousb.USB_PERMISSION";
-    Button startButton, sendButton, clearButton, stopButton;
+    Button startButton,stopButton;
     TextView textView;
     EditText editText;
     UsbManager usbManager;
     UsbDevice device;
     UsbSerialDevice serialPort;
     UsbDeviceConnection connection;
+    String res=null;
+    boolean open_flag =false;
+    int cnt=0;
 
     UsbSerialInterface.UsbReadCallback mCallback = new UsbSerialInterface.UsbReadCallback() { //Defining a Callback which triggers whenever data is read.
         @Override
@@ -39,8 +43,15 @@ public class ArduinoTestActivity extends Activity {
             String data = null;
             try {
                 data = new String(arg0, "UTF-8");
-                data.concat("/n");
-                tvAppend(textView, data);
+
+                if(res==null){
+                    res=data;
+                    textView.setText(res+"g");
+                }
+
+        //                data.concat("/n");
+        //                tvAppend(textView, data);
+
             } catch (UnsupportedEncodingException e) {
                 e.printStackTrace();
             }
@@ -57,7 +68,8 @@ public class ArduinoTestActivity extends Activity {
                     connection = usbManager.openDevice(device);
                     serialPort = UsbSerialDevice.createUsbSerialDevice(device, connection);
                     if (serialPort != null) {
-                        if (serialPort.open()) { //Set Serial Connection Parameters.
+
+                        if (serialPort.open() && open_flag) { //Set Serial Connection Parameters.
                             setUiEnabled(true);
                             serialPort.setBaudRate(9600);
                             serialPort.setDataBits(UsbSerialInterface.DATA_BITS_8);
@@ -80,7 +92,6 @@ public class ArduinoTestActivity extends Activity {
                 onClickStart(startButton);
             } else if (intent.getAction().equals(UsbManager.ACTION_USB_DEVICE_DETACHED)) {
                 onClickStop(stopButton);
-
             }
         }
 
@@ -90,35 +101,37 @@ public class ArduinoTestActivity extends Activity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_arduino_test);
+        setContentView(R.layout.activity_record_urine_ina);
         usbManager = (UsbManager) getSystemService(this.USB_SERVICE);
-        startButton = (Button) findViewById(R.id.buttonStart);
-        sendButton = (Button) findViewById(R.id.buttonSend);
-        clearButton = (Button) findViewById(R.id.buttonClear);
-        stopButton = (Button) findViewById(R.id.buttonStop);
-        editText = (EditText) findViewById(R.id.editText);
-        textView = (TextView) findViewById(R.id.textView);
+
+        startButton = (Button) findViewById(R.id.askWeight);
+        stopButton = (Button) findViewById(R.id.urineSend);
+
+        editText = (EditText) findViewById(R.id.urineUnit);
+        textView = (TextView) findViewById(R.id.weightPrint);
+
         setUiEnabled(false);
+
         IntentFilter filter = new IntentFilter();
         filter.addAction(ACTION_USB_PERMISSION);
         filter.addAction(UsbManager.ACTION_USB_DEVICE_ATTACHED);
         filter.addAction(UsbManager.ACTION_USB_DEVICE_DETACHED);
         registerReceiver(broadcastReceiver, filter);
 
-
     }
 
     public void setUiEnabled(boolean bool) {
         startButton.setEnabled(!bool);
-        sendButton.setEnabled(bool);
         stopButton.setEnabled(bool);
         textView.setEnabled(bool);
-
     }
 
     public void onClickStart(View view) {
+        Toast.makeText(getApplicationContext(),"hello",Toast.LENGTH_LONG).show();
+        open_flag=true;
 
         HashMap<String, UsbDevice> usbDevices = usbManager.getDeviceList();
+
         if (!usbDevices.isEmpty()) {
             boolean keep = true;
             for (Map.Entry<String, UsbDevice> entry : usbDevices.entrySet()) {
@@ -133,7 +146,6 @@ public class ArduinoTestActivity extends Activity {
                     connection = null;
                     device = null;
                 }
-
                 if (!keep)
                     break;
             }
@@ -142,25 +154,14 @@ public class ArduinoTestActivity extends Activity {
 
     }
 
-    public void onClickSend(View view) {
-        String string = editText.getText().toString();
-        serialPort.write(string.getBytes());
-        tvAppend(textView, "\nData Sent : " + string + "\n");
-
-    }
-
     public void onClickStop(View view) {
-        setUiEnabled(false);
         serialPort.close();
-        tvAppend(textView,"\nSerial Connection Closed! \n");
-
+        open_flag=false;
+        Toast.makeText(getApplicationContext(), "Stop!", Toast.LENGTH_LONG).show();
+        setUiEnabled(false);
     }
 
-    public void onClickClear(View view) {
-        textView.setText(" ");
-    }
-
-    private void tvAppend(TextView tv, CharSequence text) {
+    private void tvAppend(TextView tv, final CharSequence text) {
         final TextView ftv = tv;
         final CharSequence ftext = text;
 
@@ -168,7 +169,11 @@ public class ArduinoTestActivity extends Activity {
             @Override
             public void run() {
                 ftv.append(ftext);
+                cnt++;
+                Toast.makeText(getApplicationContext(), String.valueOf(cnt) + " "+text, Toast.LENGTH_LONG).show();
+
             }
+
         });
     }
 

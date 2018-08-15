@@ -75,6 +75,7 @@
         <Button
             android:id="@+id/Bnt_prev"
             style="@style/buttonPrev"
+
             android:text="처음으로"/>
 
     </RelativeLayout>
