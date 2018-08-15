@@ -44,6 +44,7 @@
                 android:layout_weight="3"
                 android:textStyle="bold"
                 android:textSize="40sp"
+                android:textColor="#000"
                 android:layout_margin="20dp"
                 android:gravity="end" />
 
@@ -63,12 +64,12 @@
     <RelativeLayout
         style="@style/linearViewBot">
         <Button
-            android:id="@+id/Bnt_prev"
+            android:id="@+id/Btn_prev"
             style="@style/buttonPrev"
             android:text="이전"/>
 
         <Button
-            android:id="@+id/Bnt_next"
+            android:id="@+id/Btn_next"
             style="@style/buttonNext"
             android:text="등록"/>
 
