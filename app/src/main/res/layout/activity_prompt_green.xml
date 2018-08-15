@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".PromptGreenActivity"
     style="@style/linearViewScreen">
 
     <RelativeLayout
@@ -35,19 +37,19 @@
                 android:layout_width="0dp"
                 android:layout_gravity="center"
                 android:layout_height="wrap_content"
-                android:src="@drawable/container_green"
+                android:src="@drawable/weight1_green"
                 android:contentDescription="@string/containerBottleDescription"/>
 
             <ImageView
                 android:id="@+id/bottleEx2"
                 style="@style/imgCenter"
-                android:src="@drawable/container_green"
+                android:src="@drawable/weight2_green"
                 android:contentDescription="@string/containerBottleDescription" />
 
             <ImageView
                 android:id="@+id/bottleEx3"
                 style="@style/imgRight"
-                android:src="@drawable/container_green"
+                android:src="@drawable/weight3_green"
                 android:contentDescription="@string/containerBottleDescription"/>
 
         </LinearLayout>

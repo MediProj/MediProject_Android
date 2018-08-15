@@ -33,19 +33,19 @@
                 android:id="@+id/bottleEx1"
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:src="@drawable/container_bottle"
+                android:src="@drawable/weight1_bottle"
                 android:contentDescription="@string/containerBottleDescription"/>
 
                 <ImageView
                     android:id="@+id/bottleEx2"
                     style="@style/imgCenter"
-                    android:src="@drawable/container_bottle"
+                    android:src="@drawable/weight2_bottle"
                     android:contentDescription="@string/containerBottleDescription" />
 
                 <ImageView
                     android:id="@+id/bottleEx3"
                     style="@style/imgRight"
-                    android:src="@drawable/container_bottle"
+                    android:src="@drawable/weight3_bottle"
                     android:contentDescription="@string/containerBottleDescription"/>
 
             </LinearLayout>
