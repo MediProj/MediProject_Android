@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    style="@style/linearViewScreen"
+    android:background="@color/Back"
+    tools:context=".RecordUrineActivity">
+
+
+    <RelativeLayout
+        style="@style/titleBanner">
+
+        <TextView
+            android:id="@+id/p_name"
+            style="@style/title_pname"/>
+
+        <TextView style="@style/title_jay" />
+
+        <ImageView
+            android:src="@drawable/white_logo_2"
+            style="@style/title_logo"/>
+    </RelativeLayout>
+
+    <ScrollView
+        style="@style/linearScrollView" >
+
+        <LinearLayout
+            style="@style/layoutHoriz"
+            android:gravity="center_vertical">
+
+            <Button
+                style="@style/buttonDef"
+                android:id="@+id/askWeight"
+                android:layout_width="0px"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:textColor="#000"
+                android:text="@string/weightBtn" />
+
+            <TextView
+                android:id="@+id/weightPrint"
+                android:layout_width="0px"
+                android:layout_height="100dp"
+                android:layout_weight="3"
+                android:textStyle="bold"
+                android:textSize="40sp"
+                android:textColor="#000"
+                android:layout_margin="20dp"
+                android:gravity="end" />
+
+            <TextView
+                android:id="@+id/urineUnit"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/urineUnit"
+                android:textSize="40sp"
+                android:textStyle="bold"/>
+
+        </LinearLayout>
+
+    </ScrollView>
+
+    <RelativeLayout
+        style="@style/linearViewBot">
+        <Button
+            android:id="@+id/Btn_prev"
+            style="@style/buttonPrev"
+            android:text="이전"/>
+
+        <Button
+            android:id="@+id/Btn_next"
+            style="@style/buttonNext"
+            android:text="등록"/>
+
+    </RelativeLayout>
+
+</LinearLayout>
+
