@@ -10,7 +10,7 @@ import android.widget.Toast;
 
 public class RecordUrineActivity extends BaseActivity {
     String pid,name, time;
-    private EditText weightUrine;
+    private TextView weightUrine;
     private Button sendUrine;
 
     @Override
@@ -27,17 +27,10 @@ public class RecordUrineActivity extends BaseActivity {
         title_pname.setText(name+" 님");
 
 
-        weightUrine = (EditText) findViewById(R.id.urineUnit);
-        sendUrine = (Button) findViewById(R.id.urineSend);
+        weightUrine = (TextView) findViewById(R.id.urineUnit);
 
         buttonPrev = (Button) findViewById(R.id.Bnt_prev);
         //buttonNext = (Button) findViewById(R.id.btnNext);
-
-        sendUrine.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-            }
-        });
     }
 
     public void onPrevClick(View view) {

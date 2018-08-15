@@ -7,7 +7,7 @@ style="@style/linearViewScreen">
     android:src="@drawable/white_logo_2"/>
 
 <ScrollView
-    style="@style/linearViewCont">
+    style="@style/linearScrollView">
 
     <LinearLayout
         style="@style/layoutHoriz"
@@ -30,6 +30,7 @@ style="@style/linearViewScreen">
             android:text="시간 수정하기"/>
 
     </LinearLayout>
+
 </ScrollView>
 
 <RelativeLayout

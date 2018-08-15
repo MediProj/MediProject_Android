@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    style="@style/linearViewFull"
+    style="@style/linearViewScreen"
     android:background="@color/Back"
     tools:context=".RecordUrineActivity">
 
@@ -21,54 +21,44 @@
             style="@style/title_logo"/>
     </RelativeLayout>
 
-    <LinearLayout
-        android:layout_weight="6"
-        style="@style/linearViewContent"
-        android:gravity="center_vertical">
+    <ScrollView
+        style="@style/linearScrollView" >
 
-        <Button
-            style="@style/btnNav"
-            android:id="@+id/askWeight"
-            android:layout_width="0px"
-            android:layout_height="100dp"
-            android:layout_weight="1"
-            android:text="@string/weightBtn" />
+        <LinearLayout
+            style="@style/layoutHoriz"
+            android:gravity="center_vertical">
 
-        <EditText
-            android:id="@+id/weightPrint"
-            android:layout_width="0px"
-            android:layout_height="100dp"
-            android:layout_weight="3"
-            android:hint="@string/urineHint"
-            android:textStyle="bold"
-            android:textSize="40sp"
-            android:layout_margin="20dp"
-            android:inputType="numberDecimal"
-            android:gravity="end" />
+            <Button
+                style="@style/buttonDef"
+                android:id="@+id/askWeight"
+                android:layout_width="0px"
+                android:layout_height="100dp"
+                android:layout_weight="1"
+                android:textColor="#000"
+                android:text="@string/weightBtn" />
 
-        <TextView
-            android:id="@+id/urineUnit"
-            android:layout_width="0px"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="@string/urineUnit"
-            android:textSize="40sp"
-            android:textStyle="bold"/>
+            <TextView
+                android:id="@+id/weightPrint"
+                android:layout_width="0px"
+                android:layout_height="100dp"
+                android:layout_weight="3"
+                android:textStyle="bold"
+                android:textSize="40sp"
+                android:layout_margin="20dp"
+                android:gravity="end" />
 
-        <Button
-            style="@style/btnNav"
-            android:id="@+id/urineSend"
-            android:layout_width="0px"
-            android:layout_height="wrap_content"
-            android:layout_weight="1"
-            android:text="확인"
-            android:textSize="25sp"
-            android:textStyle="bold"
-            />
+            <TextView
+                android:id="@+id/urineUnit"
+                android:layout_width="0px"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/urineUnit"
+                android:textSize="40sp"
+                android:textStyle="bold"/>
 
-    </LinearLayout>
+        </LinearLayout>
 
-
+    </ScrollView>
 
     <RelativeLayout
         style="@style/linearViewBot">

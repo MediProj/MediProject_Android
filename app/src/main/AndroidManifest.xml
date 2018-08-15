@@ -19,7 +19,6 @@
             android:configChanges="orientation"
             android:screenOrientation="landscape"
             android:theme="@style/SplashTheme">
-
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
@@ -57,24 +56,11 @@
             android:configChanges="orientation"
             android:screenOrientation="landscape"/>
 
-        <!--
         <activity
             android:name=".ArduinoTestActivity"
             android:label="@string/app_name" >
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
 
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
-            <intent-filter>
-                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
-            </intent-filter>
-
-            <meta-data
-                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
-                android:resource="@xml/device_filter" />
         </activity>
-        -->
 
         <activity android:name=".ContainerSelectActivity"
             android:configChanges="orientation"
@@ -102,7 +88,18 @@
             android:screenOrientation="landscape"/>
         <activity android:name=".RecordUrineActivity"
             android:configChanges="orientation"
-            android:screenOrientation="landscape"/>
+            android:screenOrientation="landscape">
+
+
+            <intent-filter>
+                <action android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED" />
+            </intent-filter>
+
+            <meta-data
+                android:name="android.hardware.usb.action.USB_DEVICE_ATTACHED"
+                android:resource="@xml/device_filter" />
+
+        </activity>
         <activity android:name=".PreActivity"
             android:configChanges="orientation"
             android:screenOrientation="landscape"/>

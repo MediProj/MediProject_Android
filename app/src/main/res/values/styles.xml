@@ -27,7 +27,6 @@
         <item name="android:background">#004B87</item>
     </style>
 
-
     <style name="title_pname">
         <item name="android:layout_width">wrap_content</item>
         <item name="android:layout_height">wrap_content</item>
@@ -55,16 +54,14 @@
         <item name="android:layout_height">match_parent</item>
     </style>
 
-
-
-
     <!-- CENTER -->
 
-    <style name="linearViewCont" parent="@style/layoutHoriz" >
+    <style name="linearScrollView" parent="@style/layoutHoriz" >
         <item name="android:layout_weight">6</item>
         <item name="android:layout_margin">15dp</item>
         <item name="android:orientation">vertical</item>
         <item name="android:scrollbars">vertical</item>
+        <item name="android:fillViewport">true</item>
     </style>
 
     <style name="textView" >
@@ -88,6 +85,32 @@
     <style name="editText" parent="@style/textView" >
         <item name="android:textSize">40sp</item>
     </style>
+
+    <!-- 3 image Button -->
+
+    <style name="img" >
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">0px</item>
+        <item name="android:layout_weight">1</item>
+        <item name="android:background">#FFFFFF</item>
+        <item name="android:scaleType">fitCenter</item>
+        <item name="android:layout_margin">20dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:gravity">center_vertical</item>
+    </style>
+
+    <style name="imgLeft" parent="@style/img">
+        <item name="android:layout_alignParentLeft">true</item>
+    </style>
+
+    <style name="imgCenter" parent="@style/img">
+        <item name="android:layout_centerHorizontal">true</item>
+    </style>
+
+    <style name="imgRight" parent="@style/img">
+        <item name="android:layout_alignParentRight">true</item>
+    </style>
+    <!-- 3 Image Layout END -->
 
     <!-- BOTTOM -->
 
@@ -135,14 +158,19 @@
     </style>
     <!-- Splash Screen END -->
 
-    <!-- Base Layout Widgets SETUP -->
+
+    <!-- OLD
+
+    <<<<<<< Base Layout Widgets SETUP
+
     <style name="linearViewFull" >
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">match_parent</item>
         <item name="android:orientation">vertical</item>
         <item name="android:gravity">center_horizontal</item>
     </style>
-    <!-- <item name="android:fontFamily">@font/noto_sans_cjk_kr_regular</item> -->
+
+    <<< <item name="android:fontFamily">@font/noto_sans_cjk_kr_regular</item>
 
     <style name="titleBar" >
         <item name="android:layout_width">match_parent</item>
@@ -168,18 +196,18 @@
 
     <style name="btnPrev" parent="@style/btnNav" >
         <item name="android:layout_alignParentLeft">true</item>
-        <!-- <item name="android:layout_alignParentStart">true</item> -->
+        <<< <item name="android:layout_alignParentStart">true</item>
         <item name="android:onClick">onPrevClick</item>
     </style>
 
     <style name="btnNext" parent="@style/btnNav" >
         <item name="android:layout_alignParentRight">true</item>
-        <!-- <item name="android:layout_alignParentEnd">true</item> -->
+        <<<< <item name="android:layout_alignParentEnd">true</item>
         <item name="android:onClick">onNextClick</item>
     </style>
-    <!-- Base Layout Widgets END -->
+    <<<< Base Layout Widgets END
 
-    <!-- 3 Image Layout SETUP -->
+    <<<< 3 Image Layout SETUP
     <style name="linearViewHoriz">
         <item name="android:layout_width">match_parent</item>
         <item name="android:layout_height">0px</item>
@@ -208,25 +236,21 @@
         <item name="android:layout_below">@id/p_name</item>
         <item name="android:layout_above">@id/Bnt_prev</item>
     </style>
-    <!--
-
-        -->
 
     <style name="imgLeft" parent="@style/img">
         <item name="android:layout_alignParentLeft">true</item>
-        <!-- <item name="android:layout_alignParentStart">true</item> -->
     </style>
 
     <style name="imgCenter" parent="@style/img">
         <item name="android:layout_centerHorizontal">true</item>
-        <!-- <item name="android:layout_alignParentStart">true</item> -->
     </style>
 
     <style name="imgRight" parent="@style/img">
         <item name="android:layout_alignParentRight">true</item>
-        <!-- <item name="android:layout_alignParentEnd">true</item> -->
     </style>
-    <!-- 3 Image Layout END -->
+    <<<< 3 Image Layout END
+
+    -->
 
     <!-- ina style -->
 

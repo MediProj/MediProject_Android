@@ -7,10 +7,11 @@
         android:src="@drawable/white_logo_2"/>
 
     <ScrollView
-        style="@style/linearViewCont">
+        style="@style/linearScrollView">
 
         <LinearLayout
             style="@style/layoutHoriz"
+            android:layout_height="wrap_content"
             android:orientation="vertical" >
 
             <TextView

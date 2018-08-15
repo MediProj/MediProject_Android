@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context=".ContainerSelectActivity"
     style="@style/linearViewScreen">
-
 
     <RelativeLayout
         style="@style/titleBanner">
@@ -17,28 +18,36 @@
             style="@style/title_logo"/>
     </RelativeLayout>
 
-    <LinearLayout
-        style="@style/linearViewContent">
+    <ScrollView
+        style="@style/linearScrollView">
 
-        <ImageButton
-            android:id="@+id/imgDiaper"
-            style="@style/imgLeft"
-            android:src="@drawable/container_diaper"
-            android:contentDescription="@string/containerDiaperDescription"/>
+        <LinearLayout
+            style="@style/layoutHoriz"
+            android:orientation="horizontal"
+            android:layout_height="wrap_content">
 
-        <ImageButton
-            android:id="@+id/imgBottle"
-            style="@style/imgCenter"
-            android:src="@drawable/container_bottle"
-            android:contentDescription="@string/containerBottleDescription" />
+            <ImageButton
+                android:id="@+id/imgDiaper"
+                style="@style/imgLeft"
+                android:src="@drawable/container_diaper"
+                android:contentDescription="@string/containerDiaperDescription" />
 
-        <ImageButton
-            android:id="@+id/imgGreen"
-            style="@style/imgRight"
-            android:src="@drawable/container_green"
-            android:contentDescription="@string/containerGreenDescription"/>
+            <ImageButton
+                android:id="@+id/imgBottle"
+                style="@style/imgCenter"
+                android:layout_height="match_parent"
+                android:src="@drawable/container_bottle"
+                android:contentDescription="@string/containerBottleDescription" />
 
-    </LinearLayout>
+            <ImageButton
+                android:id="@+id/imgGreen"
+                style="@style/imgRight"
+                android:src="@drawable/container_green"
+                android:contentDescription="@string/containerGreenDescription"/>
+
+        </LinearLayout>
+
+    </ScrollView>
 
 
     <RelativeLayout
