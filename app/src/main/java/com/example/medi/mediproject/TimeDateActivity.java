@@ -12,6 +12,7 @@ import android.widget.TextView;
 import android.widget.TimePicker;
 
 import java.util.Calendar;
+import java.util.Locale;
 import java.util.TimeZone;
 
 public class TimeDateActivity extends BaseActivity {
@@ -23,7 +24,7 @@ public class TimeDateActivity extends BaseActivity {
     String name =null;
     String pid,str_pk;
     int page_id=0;
-    int year, month, day, hour, minute;
+    int year, month, day, hour, minute, second;
 
     boolean dateSet = false;
     boolean dateCorrect = false;
@@ -154,8 +155,11 @@ public class TimeDateActivity extends BaseActivity {
 
         hour = pickTime.getCurrentHour();
         minute = pickTime.getCurrentMinute();
+        second = 0;
 
-        res.setText("선택하신 날짜와 시간: " + String.format("%d년 %d월 %d일 %d시 %d분", year, month, day, hour, minute));
+        res.setText("선택하신 날짜와 시간: " + String.format(Locale.KOREA, "%d년 %d월 %d일 %d시 %d분", year, month, day, hour, minute));
+        MediValues.mediDate = String.format(Locale.US, "%d-%d-%d", year, month, day);
+        MediValues.mediTime = String.format(Locale.US, "%d:%d:%d", hour, minute, second);
 
         dateSet = true;
 

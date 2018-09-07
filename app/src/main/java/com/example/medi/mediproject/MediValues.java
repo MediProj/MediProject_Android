@@ -8,6 +8,8 @@ public class MediValues {
     public static String ACCESS_TOKEN = "";
 
     public static Map<String, Map<String, String>> patientData;
+    public static String mediDate;
+    public static String mediTime;
 
     static final int INPUT = 1;
     static final int OUTPUT = 2;
@@ -15,7 +17,7 @@ public class MediValues {
     static final int STOOL = 10;
     static final int URINE = 6;
 
-    static final int CONSUME =1;
+    static final int CONSUME = 1;
 
 
 }
