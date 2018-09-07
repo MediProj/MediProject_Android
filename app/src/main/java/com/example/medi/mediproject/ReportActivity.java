@@ -99,9 +99,6 @@ public class ReportActivity extends BaseActivity {
         list.add(new ReportItem(str_date, "식사", "점심","밥 1/2\n국 1/4\n반찬1 1"));
         */
 
-        listViewAdapter= new ListViewAdapter(getApplicationContext(),list);
-        listView.setAdapter(listViewAdapter);
-
         bt_edit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -127,7 +124,7 @@ public class ReportActivity extends BaseActivity {
             String amount = MediValues.patientRecord[i].get("amount");
 
             StringTokenizer tok_date = new StringTokenizer(date, "-");
-            date = String.format("%s년 %s월 %s일", tok_date.nextToken(), tok_date.nextToken(), tok_date.nextToken());
+            date = String.format("%s/%s/%s", tok_date.nextToken(), tok_date.nextToken(), tok_date.nextToken());
 
             StringTokenizer tok_time = new StringTokenizer(time, ":");
             time = String.format("%s시 %s분", tok_time.nextToken(), tok_time.nextToken());
@@ -210,6 +207,8 @@ public class ReportActivity extends BaseActivity {
             public void run() {
                 progress.dismiss();
                 fillList();
+                listViewAdapter= new ListViewAdapter(getApplicationContext(),list);
+                listView.setAdapter(listViewAdapter);
             }
         }, 5000);
     }
