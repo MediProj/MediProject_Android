@@ -32,7 +32,7 @@ public class SplashActivity extends BaseActivity {
     public static final String TAG = "MainTAG";
 
     private String urlToken ="http://54.202.222.14/api-token-auth/";
-    private String urlData ="http://54.202.222.14/patients/api/patients-list/";
+    private String urlData ="http://54.202.222.14/dashboard/patients/api/patients-dashboard/";
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -52,7 +52,7 @@ public class SplashActivity extends BaseActivity {
                 new Response.Listener<JSONObject>() {
                     @Override
                     public void onResponse(JSONObject response) {
-                        //Log.d("Response: ", response.toString());
+                        Log.d("Response: ", response.toString());
                         StringTokenizer tokens = new StringTokenizer(response.toString(), "\"");
                         tokens.nextToken();
                         tokens.nextToken();
@@ -122,7 +122,7 @@ public class SplashActivity extends BaseActivity {
                 String pid = entry.getString("pid");
                 String name = entry.getString("name");
                 String birth = entry.getString("birth");
-                String pk= entry.getString("pk");
+                String pk = entry.getString("pk");
 
                 Map<String, String> temp = new HashMap<>();
                 temp.put("name", name);
