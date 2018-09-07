@@ -18,20 +18,20 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class MediGetRequest {
-    private String url  = "http://54.202.222.14/patients/api/patients-list/";
+    private String url  = "http://54.202.222.14/dashboard/patients/api/patients-dashboard/";
 
     MediGetRequest(String pk, final String key, Context context){
-        url = url +String.valueOf(pk)+"/";
+        url = url + String.valueOf(pk) + "/";
         RequestQueue queue;
         queue = Volley.newRequestQueue((Context) context);
 
         JsonObjectRequest objectRequest = new JsonObjectRequest(Request.Method.GET, url,null, new Response.Listener<JSONObject>() {
             @Override
             public void onResponse(JSONObject response) {
-                Log.d("Respnse", response.toString());
+                Log.d("GET_Respnse: ", response.toString());
                 try {
-                    String tmp= response.getString(key);
-
+                    String tmp = response.getString(key);
+                    Log.d("RECORDS_Respnse: ", tmp);
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -39,7 +39,7 @@ public class MediGetRequest {
         }, new Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Log.d("Error", error.toString());
+                Log.d("GET_Error: ", error.toString());
             }
         }){
             @Override
