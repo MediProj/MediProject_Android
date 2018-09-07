@@ -10,6 +10,7 @@ public class MediValues {
     public static Map<String, Map<String, String>> patientData;
     public static String mediDate;
     public static String mediTime;
+    public static Map<String, String> patientRecord[];
 
     static final int INPUT = 1;
     static final int OUTPUT = 2;
@@ -18,6 +19,4 @@ public class MediValues {
     static final int URINE = 6;
 
     static final int CONSUME = 1;
-
-
 }

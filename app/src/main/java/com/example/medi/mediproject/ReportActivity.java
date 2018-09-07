@@ -1,8 +1,11 @@
 package com.example.medi.mediproject;
 
+import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -10,11 +13,25 @@ import android.widget.BaseAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
+
+import com.android.volley.RequestQueue;
+import com.android.volley.Response;
+import com.android.volley.VolleyError;
+import com.android.volley.toolbox.Volley;
+import com.example.medi.mediproject.Login.MediDataRequest;
+
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
+import java.util.StringTokenizer;
 
 import static java.lang.String.valueOf;
 
@@ -24,8 +41,15 @@ public class ReportActivity extends BaseActivity {
     ArrayList <ReportItem> list;
     TextView tv_report_title;
     Button bt_prev,bt_edit;
-    String name,pid;
+    String name,pid, pk;
     Date date;
+
+    private RequestQueue queue;
+    public static final String TAG = "ReportTAG";
+
+    private String urlToken ="http://54.202.222.14/api-token-auth/";
+    private String urlData ="http://54.202.222.14/dashboard/patients/api/patients-dashboard/";
+
 
     public void onCreate(Bundle SavedInstanceState){
         super.onCreate(SavedInstanceState);
@@ -35,6 +59,12 @@ public class ReportActivity extends BaseActivity {
         final Intent intent = getIntent();
         pid = intent.getStringExtra("pid");
         name= MediValues.patientData.get(pid).get("name");
+        pk = MediValues.patientData.get(pid).get("pk");
+
+        queue = Volley.newRequestQueue(this);
+        urlData = urlData.concat(pk);
+        getPatientRecords();
+
         listView = findViewById(R.id.ReportList);
 
         TextView title_pname = findViewById(R.id.p_name);
@@ -58,6 +88,7 @@ public class ReportActivity extends BaseActivity {
 
 
         //임시로
+        /*
         list.add(new ReportItem(str_date, "대변", "1",""));
         list.add(new ReportItem(str_date, "액체섭취량", "오렌지","120cc"));
         list.add(new ReportItem(str_date, "소변", "거품뇨","100cc"));
@@ -66,6 +97,7 @@ public class ReportActivity extends BaseActivity {
         list.add(new ReportItem(str_date, "액체섭취량", "오렌지","120cc"));
         list.add(new ReportItem(str_date, "소변", "거품뇨","100cc"));
         list.add(new ReportItem(str_date, "식사", "점심","밥 1/2\n국 1/4\n반찬1 1"));
+        */
 
         listViewAdapter= new ListViewAdapter(getApplicationContext(),list);
         listView.setAdapter(listViewAdapter);
@@ -85,6 +117,23 @@ public class ReportActivity extends BaseActivity {
                 startActivity(intent2);
             }
         });
+    }
+
+    public void fillList() {
+        for(int i = 0; i < MediValues.patientRecord.length; i++) {
+            String date = MediValues.patientRecord[i].get("date");
+            String time = MediValues.patientRecord[i].get("time");
+            String type = MediValues.patientRecord[i].get("type");
+            String amount = MediValues.patientRecord[i].get("amount");
+
+            StringTokenizer tok_date = new StringTokenizer(date, "-");
+            date = String.format("%s년 %s월 %s일", tok_date.nextToken(), tok_date.nextToken(), tok_date.nextToken());
+
+            StringTokenizer tok_time = new StringTokenizer(time, ":");
+            time = String.format("%s시 %s분", tok_time.nextToken(), tok_time.nextToken());
+
+            list.add(new ReportItem(date, time, type, amount));
+        }
     }
 
     private class ListViewAdapter extends BaseAdapter{
@@ -143,5 +192,25 @@ public class ReportActivity extends BaseActivity {
 
     public class ViewHolder {
         TextView tv_time,tv_tag, tv_val1,tv_val2;
+    }
+
+    protected void getPatientRecords() {
+        MediGetRequest GETrequest = new MediGetRequest(pk, "records", this);
+        final ProgressDialog progress = new ProgressDialog(this);
+
+        progress.setTitle("로딩중");
+        progress.setMessage("기록 조회 중입니다...");
+        progress.setCancelable(false);
+        progress.show();
+
+        // 기록 조회를 위해 5초 기다림
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                progress.dismiss();
+                fillList();
+            }
+        }, 5000);
     }
 }
