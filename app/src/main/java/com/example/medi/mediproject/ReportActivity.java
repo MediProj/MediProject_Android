@@ -75,7 +75,6 @@ public class ReportActivity extends BaseActivity {
         int year = cal.get(Calendar.YEAR);
         int month= cal.get(Calendar.MONTH)+1;
         int day = cal.get(Calendar.DATE);
-        String str_date = String.valueOf(month)+"월 "+String.valueOf(day) + "일 ";
         date = new Date(year,month,day);
 
         bt_prev=findViewById(R.id.Bnt_prev);
@@ -85,19 +84,6 @@ public class ReportActivity extends BaseActivity {
         listView = findViewById(R.id.ReportList);
 
         tv_report_title.setText(name + "님의 기록 입니다");
-
-
-        //임시로
-        /*
-        list.add(new ReportItem(str_date, "대변", "1",""));
-        list.add(new ReportItem(str_date, "액체섭취량", "오렌지","120cc"));
-        list.add(new ReportItem(str_date, "소변", "거품뇨","100cc"));
-        list.add(new ReportItem(str_date, "식사", "점심","밥 1/2\n국 1/4\n반찬1 1"));
-        list.add(new ReportItem(str_date, "대변", "1",""));
-        list.add(new ReportItem(str_date, "액체섭취량", "오렌지","120cc"));
-        list.add(new ReportItem(str_date, "소변", "거품뇨","100cc"));
-        list.add(new ReportItem(str_date, "식사", "점심","밥 1/2\n국 1/4\n반찬1 1"));
-        */
 
         bt_edit.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -188,7 +174,26 @@ public class ReportActivity extends BaseActivity {
                 @Override
                 public void onClick(View view) {
                     MediDeleteRequest delRecord = new MediDeleteRequest(MediValues.pkRecordTag[i], getApplicationContext());
-                    getPatientRecords();
+
+                    final ProgressDialog progress = new ProgressDialog(ReportActivity.this);
+
+                    progress.setTitle("로딩중");
+                    progress.setMessage("기록 삭제 중입니다...");
+                    progress.setCancelable(false);
+                    progress.show();
+
+                    MediValues.patientRecord = null;
+                    MediValues.pkRecordTag = null;
+                    list.clear();
+
+                    Handler handler = new Handler();
+                    handler.postDelayed(new Runnable() {
+                        @Override
+                        public void run() {
+                            progress.dismiss();
+                            getPatientRecords();
+                        }
+                    }, 5000);
                 }
             });
 
