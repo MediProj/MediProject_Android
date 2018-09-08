@@ -58,16 +58,19 @@ public class MediGetRequest {
 
     protected void parseRecordJSON(JSONArray response) {
         MediValues.patientRecord = (Map<String, String>[]) new HashMap<?,?>[response.length()];
+        MediValues.pkRecordTag = new String[response.length()];
 
         for(int i = 0; i < response.length(); i++) {
             try {
                 JSONObject entry = response.getJSONObject(i);
+                String pk = entry.getString("pk");
                 String date = entry.getString("data_date");
                 String time = entry.getString("data_time");
                 String type = entry.getString("record_type");
                 String amount = entry.getString("amount");
 
                 MediValues.patientRecord[i] = new HashMap<>();
+                MediValues.pkRecordTag[i] = pk;
                 MediValues.patientRecord[i].put("date", date);
                 MediValues.patientRecord[i].put("time", time);
                 MediValues.patientRecord[i].put("type", type);

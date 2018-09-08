@@ -40,7 +40,7 @@ public class ReportActivity extends BaseActivity {
     ListViewAdapter listViewAdapter;
     ArrayList <ReportItem> list;
     TextView tv_report_title;
-    Button bt_prev,bt_edit;
+    Button bt_prev, bt_edit;
     String name,pid, pk;
     Date date;
 
@@ -84,7 +84,7 @@ public class ReportActivity extends BaseActivity {
         list = new ArrayList<ReportItem>();
         listView = findViewById(R.id.ReportList);
 
-        tv_report_title.setText(name + "님의 "+ str_date + "기록 입니다");
+        tv_report_title.setText(name + "님의 기록 입니다");
 
 
         //임시로
@@ -159,7 +159,7 @@ public class ReportActivity extends BaseActivity {
         }
 
         @Override
-        public View getView(int i, View view, ViewGroup viewGroup) {
+        public View getView(final int i, View view, ViewGroup viewGroup) {
             ViewHolder holder = null;
 
             if(view==null){
@@ -169,6 +169,7 @@ public class ReportActivity extends BaseActivity {
                 holder.tv_tag=view.findViewById(R.id.tag);
                 holder.tv_val1=view.findViewById(R.id.val1);
                 holder.tv_val2=view.findViewById(R.id.val2);
+                holder.bt_del = view.findViewById(R.id.btn_delete);
                 view.setTag(holder);
             }
             else{
@@ -183,12 +184,21 @@ public class ReportActivity extends BaseActivity {
                 holder.tv_val2.setText(list.get(i).getVal2());
             }
 
+            holder.bt_del.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    MediDeleteRequest delRecord = new MediDeleteRequest(MediValues.pkRecordTag[i], getApplicationContext());
+                    getPatientRecords();
+                }
+            });
+
             return view;
         }
     }
 
     public class ViewHolder {
         TextView tv_time,tv_tag, tv_val1,tv_val2;
+        Button bt_del;
     }
 
     protected void getPatientRecords() {

@@ -11,6 +11,7 @@ public class MediValues {
     public static String mediDate;
     public static String mediTime;
     public static Map<String, String> patientRecord[];
+    public static String[] pkRecordTag;
 
     static final int INPUT = 1;
     static final int OUTPUT = 2;

@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="horizontal"
-    android:weightSum="4"
+    android:weightSum="17"
     android:gravity="center"
     android:background="@color/Back"
     android:layout_width="match_parent"
@@ -12,7 +12,7 @@
         android:background="@drawable/rectangle"
         android:backgroundTint="@color/Green"
         android:id="@+id/time"
-        android:layout_weight="1"
+        android:layout_weight="4"
         android:textColor="@color/White"
         android:text="date"
         android:textSize="30sp"
@@ -24,7 +24,7 @@
     <TextView
         android:id="@+id/tag"
         android:background="@drawable/rectangle"
-        android:layout_weight="1"
+        android:layout_weight="4"
         android:text="Tag"
         android:textSize="30sp"
         android:gravity="center"
@@ -34,7 +34,7 @@
     <TextView
         android:id="@+id/val1"
         android:background="@drawable/rectangle"
-        android:layout_weight="1"
+        android:layout_weight="4"
         android:text="val1"
         android:textSize="25sp"
         android:gravity="center"
@@ -42,7 +42,7 @@
         android:layout_height="50sp" />
 
     <ScrollView
-        android:layout_weight="1"
+        android:layout_weight="4"
         android:layout_width="0sp"
         android:orientation="vertical"
         android:background="@drawable/rectangle"
@@ -55,5 +55,17 @@
             android:layout_width="match_parent"
             android:layout_height="50sp" />
      </ScrollView>
+
+    <Button
+        android:id="@+id/btn_delete"
+        android:layout_width="0sp"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:text="삭제"
+        android:textSize="25sp"
+        android:textStyle="bold"
+        android:background="#aa2f2f"
+        android:textColor="#FFFFFF"
+        android:layout_margin="5dp"/>
 
 </LinearLayout>

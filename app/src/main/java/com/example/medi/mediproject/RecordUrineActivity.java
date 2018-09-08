@@ -45,7 +45,7 @@ public class RecordUrineActivity extends BaseActivity {
 
                 if( (res==null&& !first) && (data!=null && data !="")){
                     res=data;
-                    textView.setText(res+".0");
+                    textView.setText(res);
                     first=true;
                 }
 
@@ -110,7 +110,7 @@ public class RecordUrineActivity extends BaseActivity {
 
         Intent intent =getIntent();
         pid=intent.getStringExtra("pid");
-        name= MediValues.patientData.get(pid).get("name");
+        //name= MediValues.patientData.get(pid).get("name");
         time ="";
 
         buttonPrev = findViewById(R.id.Bnt_prev);
